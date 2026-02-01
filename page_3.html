@@ -16,33 +16,35 @@
 </head>
 
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="fixed inset-0 bg-[#2D3A3C] bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <div
-            class="bg-white rounded-lg shadow-xl h-auto max-h-[90vh] w-full max-w-[560px] md:h-[422px] md:w-[560px] relative flex flex-col">
+    <div class="fixed inset-0 bg-[#2D3A3C]/50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-[560px]
+             max-h-[90vh] sm:h-[420px]
+             relative flex flex-col overflow-hidden">
             <button class="absolute top-4 right-4 flex items-center justify-center z-10">
-                <img src="./img/modal_icon_close.svg" alt="close" class="w-[24px] h-[24px] md:w-[28px] md:h-[28px]">
+                <img src="./img/modal_icon_close.svg" alt="close" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px]">
             </button>
 
-            <div class="px-4 py-4 md:px-6 md:py-6 flex flex-col items-center justify-center">
-                <h2 class="text-[24px] md:text-[28px] font-bold text-[#2D3A3C] mb-2">認証設定</h2>
-                <p class="text-[12px] md:text-[14px] font-regular text-[#2E3A3C] text-center">
+            <div class="shrink-0 min-h-[105px] flex flex-col items-center justify-center px-4 sm:px-6 text-center">
+                <h2 class="text-[24px] sm:text-[28px] font-bold text-[#2D3A3C] mb-2">認証設定</h2>
+                <p class="text-[14px] font-normal text-[#2E3A3C]">
                     外部システムと連携し、より便利にオクトンを使うことができます。
                 </p>
             </div>
 
-            <div class="flex-1 flex flex-col overflow-y-auto">
+            <div class="flex-1 min-h-0 overflow-y-auto flex flex-col">
                 <div
-                    class="flex-1 border-t border-[#C1C1C1] py-2 md:py-3 hover:bg-gray-50 transition-colors flex items-center px-3 md:px-5">
-                    <div class="flex items-center justify-between w-full">
-                        <div class="flex items-center space-x-2 md:space-x-3 flex-1">
+                    class="shrink-0 min-h-[105px] border-t border-[#C1C1C1] hover:bg-gray-50 transition-colors flex items-center px-4 sm:px-5">
+                    <div class="flex items-center justify-between w-full gap-3">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
                             <img src="./img/modal_icon1.svg" alt="lark"
-                                class="w-[40px] h-[40px] md:w-[56px] md:h-[56px] flex-shrink-0">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex items-center space-x-1 md:space-x-2 mb-1 flex-wrap">
-                                    <h3 class="text-[14px] md:text-[18px] font-bold text-[#2D3A3C]">Lark Drive API認証設定
+                                class="w-[44px] h-[44px] sm:w-[56px] sm:h-[56px] shrink-0">
+                            <div class="min-w-0 flex-1">
+                                <div class="flex items-center gap-2 mb-1 min-w-0">
+                                    <h3 class="text-[16px] sm:text-[18px] font-bold text-[#2D3A3C] truncate">
+                                        Lark Drive API認証設定
                                     </h3>
-                                    <span class="flex items-center text-[#21C763] text-xs">
-                                        <svg class="w-[18px] h-[18px] md:w-[22px] md:h-[22px]" fill="currentColor"
+                                    <span class="shrink-0 text-[#21C763]">
+                                        <svg class="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px]" fill="currentColor"
                                             viewBox="0 0 20 20">
                                             <path fill-rule="evenodd"
                                                 d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -50,12 +52,16 @@
                                         </svg>
                                     </span>
                                 </div>
-                                <p class="text-[12px] md:text-[14px] font-regular text-[#2E3A3C]">Larkと連携します。</p>
+                                <p class="text-[14px] font-normal text-[#2E3A3C]">
+                                    Larkと連携します。
+                                </p>
                             </div>
                         </div>
+
                         <button
-                            class="ml-1 md:ml-2 text-white bg-[#1A92F7] rounded-full h-[32px] w-[32px] md:h-[40px] md:w-[40px] hover:text-blue-700 flex items-center justify-center flex-shrink-0">
-                            <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            class="shrink-0 text-white bg-[#1A92F7] rounded-full h-[40px] w-[40px] flex items-center justify-center"
+                            type="button">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                                 </path>
                             </svg>
@@ -64,25 +70,31 @@
                 </div>
 
                 <div
-                    class="flex-1 border-t border-[#C1C1C1] py-2 md:py-3 hover:bg-gray-50 transition-colors flex items-center px-3 md:px-5">
-                    <div class="flex items-center justify-between w-full">
-                        <div class="flex items-center space-x-2 md:space-x-3 flex-1">
+                    class="shrink-0 min-h-[105px] border-t border-[#C1C1C1] hover:bg-gray-50 transition-colors flex items-center px-4 sm:px-5">
+                    <div class="flex items-center justify-between w-full gap-3">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
                             <img src="./img/modal_icon2.svg" alt="google drive"
-                                class="w-[40px] h-[40px] md:w-[56px] md:h-[56px] flex-shrink-0">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex items-center space-x-1 md:space-x-2 mb-1 flex-wrap">
-                                    <h3 class="text-[14px] md:text-[18px] font-bold text-[#2D3A3C]">Google Drive API認証設定
+                                class="w-[44px] h-[44px] sm:w-[56px] sm:h-[56px] shrink-0">
+                            <div class="min-w-0 flex-1">
+                                <div class="flex items-center gap-2 mb-1 min-w-0">
+                                    <h3 class="text-[16px] sm:text-[18px] font-bold text-[#2D3A3C] truncate">
+                                        Google Drive API認証設定
                                     </h3>
                                     <span
-                                        class="flex items-center text-white text-[10px] md:text-[12px] bg-[#C1C1C1] rounded-[11px] px-1.5 md:px-2 py-0.5 md:py-1">未認証</span>
+                                        class="shrink-0 text-white text-[12px] bg-[#C1C1C1] rounded-[11px] px-2 py-0.5">
+                                        未認証
+                                    </span>
                                 </div>
-                                <p class="text-[12px] md:text-[14px] font-regular text-[#717171]">Google Driveとの連携します。
+                                <p class="text-[14px] font-normal text-[#717171]">
+                                    Google Driveとの連携します。
                                 </p>
                             </div>
                         </div>
+
                         <button
-                            class="ml-1 md:ml-2 text-white bg-[#1A92F7] rounded-full h-[32px] w-[32px] md:h-[40px] md:w-[40px] hover:text-blue-700 flex items-center justify-center flex-shrink-0">
-                            <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            class="shrink-0 text-white bg-[#1A92F7] rounded-full h-[40px] w-[40px] flex items-center justify-center"
+                            type="button">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                                 </path>
                             </svg>
@@ -91,25 +103,31 @@
                 </div>
 
                 <div
-                    class="flex-1 border-t border-[#C1C1C1] py-2 md:py-3 hover:bg-gray-50 transition-colors flex items-center px-3 md:px-5">
-                    <div class="flex items-center justify-between w-full">
-                        <div class="flex items-center space-x-2 md:space-x-3 flex-1">
+                    class="shrink-0 min-h-[105px] border-t border-[#C1C1C1] hover:bg-gray-50 transition-colors flex items-center px-4 sm:px-5">
+                    <div class="flex items-center justify-between w-full gap-3">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
                             <img src="./img/modal_icon3.svg" alt="google sheets"
-                                class="w-[40px] h-[40px] md:w-[56px] md:h-[56px] flex-shrink-0">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex items-center space-x-1 md:space-x-2 mb-1 flex-wrap">
-                                    <h3 class="text-[14px] md:text-[18px] font-bold text-[#2D3A3C]">Google Sheets
-                                        API認証設定</h3>
+                                class="w-[44px] h-[44px] sm:w-[56px] sm:h-[56px] shrink-0">
+                            <div class="min-w-0 flex-1">
+                                <div class="flex items-center gap-2 mb-1 min-w-0">
+                                    <h3 class="text-[16px] sm:text-[18px] font-bold text-[#2D3A3C] truncate">
+                                        Google Sheets API認証設定
+                                    </h3>
                                     <span
-                                        class="flex items-center text-white text-[10px] md:text-[12px] bg-[#C1C1C1] rounded-[11px] px-1.5 md:px-2 py-0.5 md:py-1">未認証</span>
+                                        class="shrink-0 text-white text-[12px] bg-[#C1C1C1] rounded-[11px] px-2 py-0.5">
+                                        未認証
+                                    </span>
                                 </div>
-                                <p class="text-[12px] md:text-[14px] font-regular text-[#717171]">Googleスプレッドシートと連携します。
+                                <p class="text-[14px] font-normal text-[#717171]">
+                                    Googleスプレッドシートと連携します。
                                 </p>
                             </div>
                         </div>
+
                         <button
-                            class="ml-1 md:ml-2 text-white bg-[#1A92F7] rounded-full h-[32px] w-[32px] md:h-[40px] md:w-[40px] hover:text-blue-700 flex items-center justify-center flex-shrink-0">
-                            <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            class="shrink-0 text-white bg-[#1A92F7] rounded-full h-[40px] w-[40px] flex items-center justify-center"
+                            type="button">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                                 </path>
                             </svg>
@@ -120,5 +138,6 @@
         </div>
     </div>
 </body>
+
 
 </html>
