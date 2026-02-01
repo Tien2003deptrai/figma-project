@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ログイン - 書類回収AI BOT オクトン</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+
+        body {
+            font-family: "Noto Sans JP", "Poppins", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-gray-100 text-[#2E3A3C]">
+
+    <div class="fixed inset-0 z-50">
+        <div class="relative flex min-h-full items-center justify-center p-4">
+            <div class="w-full max-w-[640px] overflow-hidden rounded-[12px] bg-white"
+                role="dialog" aria-modal="true">
+                <div class="relative border-b border-[#E5E7EB] px-6 py-5">
+                    <h2 class="text-center text-[28px] font-bold text-[#2E3A3C]">
+                        認証情報編集
+                    </h2>
+                    <p class="text-center text-[14px] font-normal text-[#2E3A3C]">
+                        認証済の情報を編集します。
+                    </p>
+
+                    <button class="absolute right-3 top-3 flex items-center justify-center z-10">
+                        <img src="./img/modal_icon_close.svg" alt="close" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px]">
+                    </button>
+                </div>
+
+                <div class="max-h-[70vh] overflow-y-auto px-6 py-5">
+                    <form class="space-y-5">
+                        <div class="space-y-1">
+                            <label class="block text-[16px] font-bold text-[#2E3A3C]">
+                                Client ID<span class="text-[#DD514C]">*</span>
+                            </label>
+                            <input type="text" value="586636157598-v00edqkpqfbk8392lu1nc3r7gdmnkhbd.apps.googleuser"
+                                class="mt-2 h-11 w-full rounded-lg border border-[#D1D5DB] bg-white px-3 text-[14px] text-[#2E3A3C]" />
+                            <p class="text-[12px] font-normal text-[#6D7475]">
+                                Google Cloud Consoleで発行されたClient ID
+                            </p>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-[16px] font-bold text-[#2E3A3C]">
+                                Client Secret<span class="text-[#DD514C]">*</span>
+                            </label>
+                            <input type="password" value="PASSWORD2utjogewrt"
+                                class="mt-2 h-11 w-full rounded-lg border border-[#D1D5DB] bg-white px-3 text-[14px] text-[#2E3A3C]" />
+                            <p class="text-[12px] font-normal text-[#6D7475]">
+                                Google Cloud Consoleで発行されたClient Secret
+                            </p>
+
+                            <!-- cần check lại cách làm checkbox css -->
+                            <label class="mt-2 inline-flex items-center gap-2 text-[14px] font-normal text-[#2E3A3C] cursor-pointer">
+                                <input type="checkbox" checked
+                                    class="h-4 w-4 border-[#9CA3AF] text-[#1A92F7] focus:ring-[#1A92F7] rounded-[8px]" />
+                                パスワードを表示する
+                            </label>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-[14px] font-bold text-[#2E3A3C]">
+                                リダイレクトURI<span class="text-[#DD514C]">*</span>
+                            </label>
+                            <input type="text" value="https://app.octon-ai.com/google/callback"
+                                class="mt-2 h-11 w-full rounded-lg border border-[#D1D5DB] bg-white px-3 text-[14px] text-[#2E3A3C]" />
+                            <p class="text-[12px] font-normal text-[#6D7475]">
+                                認証後のリダイレクト先URL
+                            </p>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-[14px] font-bold text-[#2E3A3C]">
+                                デフォルトフォルダID
+                            </label>
+                            <input type="text" value="198vOkz-BWHEfIOH4R7ndB-0D4SL9DDwE"
+                                class="mt-2 h-11 w-full rounded-lg border border-[#D1D5DB] bg-white px-3 text-[14px] text-[#2E3A3C]" />
+                            <p class="text-[12px] font-normal text-[#6D7475]">
+                                ファイルをアップロードする際のデフォルトフォルダID
+                            </p>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-[14px] font-bold text-[#2E3A3C]">
+                                管理者メールアドレス<span class="text-[#DD514C]">*</span>
+                            </label>
+                            <input type="email" value="admin@admin.com"
+                                class="mt-2 h-11 w-full rounded-lg border border-[#D1D5DB] bg-white px-3 text-[14px] text-[#2E3A3C]" />
+                            <p class="text-[12px] font-normal text-[#6D7475]">
+                                認証切れの際に通知するメールアドレス
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="border-t border-[#E5E7EB] px-6 py-3">
+                    <div class="flex items-center justify-center gap-3">
+                        <button class="h-11 min-w-[120px] rounded-full bg-[#ECEFF1] px-6 text-[14px] font-semibold text-[#2E3A3C]">
+                            キャンセル
+                        </button>
+                        <button class="h-11 min-w-[120px] rounded-full bg-[#1A92F7] px-6 text-[14px] font-semibold text-white">
+                            保存する
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

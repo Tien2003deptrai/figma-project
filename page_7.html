@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プロジェクト詳細モーダル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+
+        body {
+            font-family: "Noto Sans JP", "Poppins", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#F3F4F6] text-[#2E3A3C]">
+    <!-- ===== Modal Overlay ===== -->
+    <div class="fixed inset-0 z-50">
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <div class="relative flex min-h-full items-center justify-center p-4">
+            <!-- modal -->
+            <div class="w-full max-w-[640px] max-h-[90vh] min-h-[639px] rounded-2xl bg-white flex flex-col overflow-hidden"
+                role="dialog" aria-modal="true">
+                <!-- header -->
+                <div class="relative p-6">
+                    <button class="absolute top-3 right-3 flex items-center justify-center z-10" type="button">
+                        <img src="./img/modal_icon_close.svg" alt="close"
+                            class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px]" />
+                    </button>
+
+                    <div class="flex flex-col sm:flex-row items-start gap-5">
+                        <div class="shrink-0 flex flex-col items-center justify-center">
+                            <div
+                                class="h-[80px] w-[80px] rounded-full bg-[#E5E7EB] overflow-hidden grid place-items-center">
+                                <!-- placeholder image -->
+                                <span class="text-[12px] text-[#2E3A3C]/70"></span>
+                            </div>
+                            <button type="button"
+                                class="mt-2 rounded-[8px] border border-[#D1D5DB] bg-[#F7F7F8] w-[54px] h-[30px] text-[14px] font-normal text-[#2D3A3C]">
+                                編集
+                            </button>
+                        </div>
+
+                        <div class="min-w-0 flex-1 space-y-3">
+                            <section class="space-y-1">
+                                <h2 class="text-[28px] font-extrabold leading-tight">IT導入補助金</h2>
+
+                                <p class="text-[14px] text-[#2E3A3C]">
+                                    中小企業向けIT導入補助金の申請・書類回収プロジェクト
+                                </p>
+                            </section>
+
+                            <section class="space-y-1">
+                                <div class="flex flex-wrap items-center gap-2 text-[12px] text-[#6D7475] font-bold">
+                                    <span>&lt;/&gt; IT_SUBSIDY</span>
+                                </div>
+
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-[#6D7475]">
+                                    <span>最終更新：2026年01月01日 10:31</span>
+                                    <span>作成日時：2025年07月05日 16:11</span>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 pb-3 border-b-2 border-[#E5E7EB] shrink-0">
+                    <div class="flex items-center justify-between text-[14px] font-normal text-[#2E3A3C]">
+                        <span>カテゴリ (5)</span>
+                        <span>案件数 (37件)</span>
+                    </div>
+                </div>
+
+                <!-- divider -->
+                <div class="flex-1 min-h-0 overflow-y-auto bg-white">
+                    <div class="divide-y divide-[#E5E7EB]">
+                        <div class="flex items-center justify-between px-6 py-3 text-[13px]">
+                            <span class="font-bold">インボイス枠（インボイス対応類型）</span>
+                            <span class="text-[14] text-[#2E3A3C]">12件</span>
+                        </div>
+                        <div class="flex items-center justify-between px-6 py-3 text-[13px]">
+                            <span class="font-bold">インボイス枠（電子取引類型）</span>
+                            <span class="text-[14] text-[#2E3A3C]">8件</span>
+                        </div>
+                        <div class="flex items-center justify-between px-6 py-3 text-[13px]">
+                            <span class="font-bold">セキュリティ対策推進枠</span>
+                            <span class="text-[14] text-[#2E3A3C]">6件</span>
+                        </div>
+                        <div class="flex items-center justify-between px-6 py-3 text-[13px]">
+                            <span class="font-bold">複数社連携IT導入枠</span>
+                            <span class="text-[14] text-[#2E3A3C]">1件</span>
+                        </div>
+                        <div class="flex items-center justify-between px-6 py-3 text-[13px]">
+                            <span class="font-bold">通常枠（A・B類型）</span>
+                            <span class="text-[14] text-[#2E3A3C]">10件</span>
+                        </div>
+                    </div>
+
+                    <div class="py-4 border-t-2 border-[#E5E7EB] px-6 space-y-5">
+                        <section>
+                            <p class="text-[14px] text-[#2E3A3C] font-normal">設定メニュー</p>
+                            <div class="mt-3 flex flex-wrap gap-3">
+                                <button type="button"
+                                    class="flex-1 rounded-full bg-[#19B446] h-12 min-w-[188px] text-[14px] font-normal text-white flex items-center justify-center gap-4">
+                                    <i class="fa-brands fa-line w-[24px] h-[24px] text-[24px] flex items-center justify-center"></i>
+                                    <span>LINE設定</span>
+                                </button>
+
+                                <button type="button"
+                                    class="flex-1 rounded-full bg-[#4F46E5] h-12 min-w-[188px] text-[14px] font-normal text-white shadow-sm flex items-center justify-center gap-4">
+                                    <i class="fa-solid fa-robot w-[24px] h-[24px] text-[24px] flex items-center justify-center"></i>
+                                    <span>AIPRO設定</span>
+                                </button>
+
+                                <button type="button"
+                                    class="flex-1 rounded-full bg-[#1A92F7] h-12 min-w-[188px] text-[14px] font-normal text-white shadow-sm flex items-center justify-center gap-4">
+                                    <i class="fa-solid fa-user-gear w-[24px] h-[24px] text-[24px] flex items-center justify-center"></i>
+                                    <span>ユーザ管理</span>
+                                </button>
+                            </div>
+                        </section>
+
+                        <section>
+                            <p class="text-[14px] text-[#2E3A3C] font-normal">その他設定</p>
+                            <div class="mt-3 flex flex-wrap gap-3">
+                                <button type="button"
+                                    class="flex-1 rounded-full border border-[#D1D5DB] bg-[#F6F7F7] h-12 min-w-[188px] text-[14px] font-normal text-[#2D3A3C]">
+                                    回収ステップの設定
+                                </button>
+
+                                <button type="button"
+                                    class="flex-1 rounded-full border border-[#D1D5DB] bg-[#F6F7F7] h-12 min-w-[188px] text-[14px] font-normal text-[#2D3A3C]">
+                                    メッセージの設定
+                                </button>
+
+                                <button type="button"
+                                    class="flex-1 rounded-full bg-[#2E3A3C] h-12 min-w-[188px] text-[14px] font-normal text-white hover:opacity-90">
+                                    管理画面トップ
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
