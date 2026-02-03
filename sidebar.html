@@ -43,147 +43,79 @@
                     </button>
                 </div>
 
-                <div>
+                <div class="flex flex-col py-3">
                     <!-- Admin Home Link -->
-                    <div class="flex items-center justify-between px-5 py-[26px]">
-                        <a
-                            href="#"
-                            class="font-medium font-bold text-[#1A92F7] hover:underline cursor-pointer"
-                            >管理画面ホーム
-                        </a>
-                        <button class="text-sm text-[#1A92F7] font-bold transition-colors">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 text-[#1A92F7] font-bold hover:bg-blue-100/50 transition-colors duration-200"
+                    >
+                        <p>管理画面ホーム</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
 
-                    <hr class="ml-5" />
+                    <hr class="ml-5 my-3" />
 
-                    <!-- Section 1: Basic Operations (基本操作) -->
-                    <div class="flex flex-col gap-4 py-[26px] px-5">
-                        <h3 class="text-[14px] font-bold">● 基本操作</h3>
-                        <div class="flex flex-col gap-4">
-                            <!-- (1) Setup Collection Steps -->
-                            <div class="flex items-center justify-between">
-                                <a
-                                    href="#"
-                                    class="hover:underline cursor-pointer hover:text-[#1A92F7]"
-                                >
-                                    (1) 回収ステップの設定
-                                </a>
-                                <button
-                                    class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors"
-                                >
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
+                    <!-- Section 1: Basic Operations -->
+                    <h3 class="text-[14px] font-bold px-5 py-3">● 基本操作</h3>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>(1) 回収ステップの設定</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>(2) プロジェクト設定</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>(3) メッセージを送る</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
 
-                            <!-- (2) Project Settings -->
-                            <div class="flex items-center justify-between">
-                                <a
-                                    href="#"
-                                    class="hover:underline cursor-pointer hover:text-[#1A92F7]"
-                                >
-                                    (2) プロジェクト設定
-                                </a>
-                                <button
-                                    class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors"
-                                >
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
+                    <hr class="ml-5 my-3" />
 
-                            <!-- (3) Send Message -->
-                            <div class="flex items-center justify-between">
-                                <a
-                                    href="#"
-                                    class="hover:underline cursor-pointer hover:text-[#1A92F7]"
-                                >
-                                    (3) メッセージを送る
-                                </a>
-                                <button
-                                    class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors"
-                                >
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Section 2: Management Menu -->
+                    <h3 class="text-[14px] font-bold px-5 py-3">● 管理メニュー</h3>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>顧客一覧</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>請求の管理</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
 
-                    <hr class="ml-5" />
+                    <hr class="ml-5 my-3" />
 
-                    <!-- Section 2: Management Menu (管理メニュー) -->
-                    <div class="flex flex-col gap-4 py-[26px] px-5">
-                        <h3 class="text-[14px] font-bold">● 管理メニュー</h3>
-                        <div class="flex flex-col gap-4">
-                            <!-- (1) Customer Management -->
-                            <div class="flex items-center justify-between">
-                                <a
-                                    href="#"
-                                    class="hover:underline cursor-pointer hover:text-[#1A92F7]"
-                                >
-                                    顧客一覧
-                                </a>
-                                <button
-                                    class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors"
-                                >
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-
-                            <!-- (2) Billing Management -->
-                            <div class="flex items-center justify-between">
-                                <a
-                                    href="#"
-                                    class="hover:underline cursor-pointer hover:text-[#1A92F7]"
-                                >
-                                    請求の管理
-                                </a>
-                                <button
-                                    class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors"
-                                >
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="ml-5" />
-
-                    <!-- Section 3: Settings Menu (設定メニュー) -->
-                    <div class="flex flex-col gap-4 py-[26px] px-5">
-                        <h3 class="text-[14px] font-bold">● 設定メニュー</h3>
-                        <div class="flex flex-col gap-4">
-                            <!-- (1) Q&A Settings -->
-                            <div class="flex items-center justify-between">
-                                <a
-                                    href="#"
-                                    class="hover:underline cursor-pointer hover:text-[#1A92F7]"
-                                >
-                                    Q&Aの設定
-                                </a>
-                                <button
-                                    class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors"
-                                >
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-
-                            <!-- (2) System Settings -->
-                            <div class="flex items-center justify-between">
-                                <a
-                                    href="#"
-                                    class="hover:underline cursor-pointer hover:text-[#1A92F7]"
-                                >
-                                    システム設定
-                                </a>
-                                <button
-                                    class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors"
-                                >
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Section 3: Settings Menu -->
+                    <h3 class="text-[14px] font-bold px-5 py-3">● 設定メニュー</h3>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>Q&Aの設定</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>システム設定</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
                 </div>
             </div>
         </aside>
