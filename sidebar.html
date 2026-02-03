@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>サイドバー - 書類回収AI BOT オクトン</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+            @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap");
+
+            body {
+                font-family: "Noto Sans JP", "Poppins", sans-serif;
+                background-color: #f4f5f4;
+            }
+        </style>
+    </head>
+
+    <body class="flex min-h-screen overflow-x-hidden">
+        <!-- Sidebar -->
+        <aside
+            class="w-[280px] bg-white shadow-sm border-r border-gray-200 min-h-screen text-[#2E3A3C]"
+        >
+            <div class="flex flex-col">
+                <!-- Header: Project Name -->
+                <div class="bg-[#1A92F7] px-5 py-4 flex items-center bg-opacity-10 justify-between">
+                    <div class="flex items-center gap-3">
+                        <img
+                            src="./img/sidebar-avatar.png"
+                            alt="Avatar"
+                            class="w-[36px] h-[36px] rounded-full"
+                        />
+                        <h2 class="text-[16px] font-bold text-[#003E72] leading-tight">
+                            IT導入補助金
+                        </h2>
+                    </div>
+                    <button class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+
+                <div class="flex flex-col py-3">
+                    <!-- Admin Home Link -->
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 text-[#1A92F7] font-bold hover:bg-blue-100/50 transition-colors duration-200"
+                    >
+                        <p>管理画面ホーム</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
+
+                    <hr class="ml-5 my-3" />
+
+                    <!-- Section 1: Basic Operations -->
+                    <h3 class="text-[14px] font-bold px-5 py-3">● 基本操作</h3>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>(1) 回収ステップの設定</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>(2) プロジェクト設定</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>(3) メッセージを送る</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
+
+                    <hr class="ml-5 my-3" />
+
+                    <!-- Section 2: Management Menu -->
+                    <h3 class="text-[14px] font-bold px-5 py-3">● 管理メニュー</h3>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>顧客一覧</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>請求の管理</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
+
+                    <hr class="ml-5 my-3" />
+
+                    <!-- Section 3: Settings Menu -->
+                    <h3 class="text-[14px] font-bold px-5 py-3">● 設定メニュー</h3>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>Q&Aの設定</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
+                    <a
+                        href="#"
+                        class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                    >
+                        <p>システム設定</p>
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 bg-gray-50 p-6 md:p-8">
+            <div class="bg-white rounded-lg p-6 md:p-8 text-center text-gray-500">
+                <p class="text-[14px] md:text-[16px]">メインコンテンツがここに表示されます</p>
+            </div>
+        </main>
+    </body>
+</html>
