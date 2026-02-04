@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>プロジェクト詳細 - 書類回収AI BOT オクトン</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+            @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap");
+
+            body {
+                font-family: "Poppins", "Poppins", sans-serif;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="min-h-screen flex flex-col overflow-x-hidden text-[#2E3A3C]">
+            <!-- Header -->
+            <header class="h-16 md:h-[64px] flex items-center px-4 md:px-6 w-full bg-[#003E72]">
+                <div class="flex items-center justify-between w-full mx-auto">
+                    <!-- Logo -->
+                    <div>
+                        <img src="./img/logo 1.png" alt="オクトン" class="w-[138px] h-[50px]" />
+                    </div>
+
+                    <!-- User Button -->
+                    <div class="flex items-center gap-5">
+                        <p class="text-[14px] text-white">プロジェクト管理</p>
+                        <button
+                            class="flex items-center gap-2 bg-white/20 rounded-full px-4 h-[36px] w-[140px] hover:bg-white/30 transition-colors"
+                        >
+                            <img
+                                src="./img/user-default.png"
+                                alt="User"
+                                class="w-6 h-6 rounded-full"
+                            />
+                            <span class="text-white text-[14px]">管理者A</span>
+                            <i class="fas fa-chevron-down text-white text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Layout: Sidebar + Content -->
+            <div class="flex flex-1 overflow-hidden bg-gray-100">
+                <!-- Sidebar -->
+                <aside
+                    class="w-[280px] bg-white shadow-sm border-r border-gray-200 min-h-screen text-[#2E3A3C]"
+                >
+                    <div class="flex flex-col">
+                        <!-- Header: Project Name -->
+                        <div
+                            class="bg-[#1A92F7] px-5 py-4 flex items-center bg-opacity-10 justify-between"
+                        >
+                            <div class="flex items-center gap-3">
+                                <img
+                                    src="./img/sidebar-avatar.png"
+                                    alt="Avatar"
+                                    class="w-[36px] h-[36px] rounded-full"
+                                />
+                                <h2 class="text-[16px] font-bold text-[#003E72] leading-tight">
+                                    IT導入補助金
+                                </h2>
+                            </div>
+                            <button
+                                class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors"
+                            >
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="flex flex-col py-3">
+                            <!-- Admin Home Link -->
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 text-[#1A92F7] font-bold hover:bg-blue-100/50 transition-colors duration-200"
+                            >
+                                <p>管理画面ホーム</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+
+                            <hr class="ml-5 my-3" />
+
+                            <!-- Section 1: Basic Operations -->
+                            <h3 class="text-[14px] font-bold px-5 py-3">● 基本操作</h3>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>(1) 回収ステップの設定</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>(2) プロジェクト設定</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>(3) メッセージを送る</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+
+                            <hr class="ml-5 my-3" />
+
+                            <!-- Section 2: Management Menu -->
+                            <h3 class="text-[14px] font-bold px-5 py-3">● 管理メニュー</h3>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>顧客一覧</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>請求の管理</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+
+                            <hr class="ml-5 my-3" />
+
+                            <!-- Section 3: Settings Menu -->
+                            <h3 class="text-[14px] font-bold px-5 py-3">● 設定メニュー</h3>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>Q&Aの設定</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>システム設定</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="flex-1 overflow-y-auto">
+                    <div class="max-w-full mx-auto p-4 md:p-10">
+                        <!-- Project Header Section -->
+                        <div class="flex items-center justify-between mb-7">
+                            <div class="flex items-center gap-4">
+                                <img
+                                    src="./img/sidebar-avatar.png"
+                                    alt="Avatar"
+                                    class="w-16 h-16 rounded-full"
+                                />
+                                <div class="flex flex-col gap-2">
+                                    <div class="flex items-center gap-2">
+                                        <p class="md:text-[24px] font-extrabold">IT導入補助金</p>
+                                        <span>|</span>
+                                        <p class="md:text-[24px]">管理画面ホーム</p>
+                                    </div>
+                                    <p class="text-[14px]">
+                                        中小企業向け IT導入補助金の内容・書類回収プロジェクト
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button
+                                    class="w-12 h-12 bg-white rounded-full text-[#1A92F7] hover:bg-[#1A92F7] hover:text-white transition-colors"
+                                >
+                                    <i class="fas fa-file-csv"></i>
+                                </button>
+                                <button
+                                    class="bg-[#1A92F7] text-white p-3 rounded-full hover:bg-blue-400 w-full md:w-auto"
+                                >
+                                    <i class="fas fa-plus mr-2"></i>案件を追加
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Steps Section -->
+                        <div
+                            class="bg-white rounded-[12px] p-4 mb-6 border border-[#003e72] border-4"
+                        >
+                            <h2 class="text-[18px] font-extrabold text-[#003e72] mb-4">
+                                基本操作（案件作成の流れ）
+                            </h2>
+                            <div
+                                class="flex items-center gap-2 md:gap-4 overflow-x-auto md:overflow-x-visible"
+                            >
+                                <!-- Step 1 -->
+                                <div
+                                    class="rounded-[8px] p-3 bg-[#E1F0FE] flex-1 min-w-0 flex items-center"
+                                >
+                                    <div>
+                                        <p class="font-extrabold text-[18px]">
+                                            1. 回収ステップの設定
+                                        </p>
+                                        <p class="text-[14px]">
+                                            書類回収の流れをステップ式に設定します。
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Arrow 1 -->
+                                <i
+                                    class="fas fa-sharp fa-solid fa-caret-right text-[#F00C0C] flex-shrink-0 hidden md:block"
+                                ></i>
+
+                                <!-- Step 2 -->
+                                <div
+                                    class="rounded-[8px] p-3 bg-[#FDF1CE] flex-1 min-w-0 flex items-center"
+                                >
+                                    <div>
+                                        <p class="font-extrabold text-[18px]">
+                                            2. 案件を作成（顧客登録）
+                                        </p>
+                                        <p class="text-[14px]">案件を作成し、顧客を登録します。</p>
+                                    </div>
+                                </div>
+
+                                <!-- Arrow 2 -->
+                                <i
+                                    class="fas fa-sharp fa-solid fa-caret-right text-[#F00C0C] flex-shrink-0 hidden md:block"
+                                ></i>
+
+                                <!-- Step 3 -->
+                                <div
+                                    class="rounded-[8px] p-3 bg-[#D5F0D9] flex-1 min-w-0 flex items-center"
+                                >
+                                    <div>
+                                        <p class="font-extrabold text-[18px]">
+                                            3. メッセージを送る
+                                        </p>
+                                        <p class="text-[14px]">案件を作成し、顧客を登録します。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Items to Confirm Section -->
+                        <div class="mb-7">
+                            <div class="flex items-center justify-between mb-4">
+                                <h2 class="text-[18px] font-extrabold">
+                                    🚨今すぐ対応が必要な案件 or 自分の担当案件
+                                </h2>
+                                <p class="text-[14px]">💡ここだけ見れば今日の仕事が分かる</p>
+                            </div>
+
+                            <div
+                                class="bg-white rounded-[12px] border border-gray-100 overflow-hidden"
+                            >
+                                <div class="max-h-[300px] overflow-y-auto">
+                                    <table class="w-full" style="table-layout: fixed">
+                                        <colgroup>
+                                            <col style="width: 33.33%" />
+                                            <col style="width: 33.33%" />
+                                            <col style="width: 16.67%" />
+                                            <col style="width: 16.67%" />
+                                            <col style="width: 16.67%" />
+                                        </colgroup>
+                                        <thead
+                                            class="border-b border-[#707070] border-opacity-30 text-left text-[14px] bg-white"
+                                            style="position: sticky; top: 0; z-index: 10"
+                                        >
+                                            <tr>
+                                                <th class="p-5">案件名（顧客）</th>
+                                                <th class="p-5">カテゴリ</th>
+                                                <th class="p-5">
+                                                    <label
+                                                        class="relative inline-flex items-center cursor-pointer select-none flex-shrink-0"
+                                                    >
+                                                        <input
+                                                            id="toggle-compact"
+                                                            type="checkbox"
+                                                            class="sr-only peer"
+                                                        />
+                                                        <div
+                                                            class="w-11 h-6 bg-gray-300 rounded-full transition-colors duration-300 peer-checked:bg-[#1A92F7] flex-shrink-0"
+                                                        ></div>
+                                                        <span
+                                                            class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300 peer-checked:translate-x-5 flex-shrink-0"
+                                                        ></span>
+                                                        <span
+                                                            class="ml-4 text-[14px] whitespace-nowrap flex-shrink-0"
+                                                            >状態</span
+                                                        >
+                                                    </label>
+                                                </th>
+                                                <th class="p-5">期日</th>
+                                                <th class="p-5">担当者</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                                <td class="p-5">
+                                                    <h3
+                                                        class="font-bold text-[18px] text-[#003e72]"
+                                                    >
+                                                        クライアント・インボイス枠案件
+                                                    </h3>
+                                                    <p class="text-gray-500">
+                                                        案件株式会社クライアント
+                                                    </p>
+                                                </td>
+                                                <td class="p-5">
+                                                    <span class="text-[14px]"
+                                                        >インボイス枠（インボイス対応類型）</span
+                                                    >
+                                                </td>
+                                                <td class="p-5">
+                                                    <span class="text-[14px]"
+                                                        >Step.2 書類未提出</span
+                                                    >
+                                                </td>
+                                                <td
+                                                    class="p-5 text-[14px] font-bold text-[#F05B0C]"
+                                                >
+                                                    3日前
+                                                </td>
+                                                <td class="p-5 text-[14px]">
+                                                    <div class="flex items-center gap-2">
+                                                        <img
+                                                            src="./img/user-default.png"
+                                                            alt="User"
+                                                            class="w-6 h-6 rounded-full"
+                                                        />
+                                                        <span>管理者A</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                                <td class="p-5">
+                                                    <h3
+                                                        class="font-bold text-[18px] text-[#003e72]"
+                                                    >
+                                                        山田製作所・インボイス枠案件
+                                                    </h3>
+                                                    <p class="text-gray-500">有限会社山田製作所</p>
+                                                </td>
+                                                <td class="p-5">
+                                                    <span class="text-[14px]"
+                                                        >インボイス枠（インボイス対応類型）</span
+                                                    >
+                                                </td>
+                                                <td class="p-5">
+                                                    <span class="text-[14px]"
+                                                        >Step.3 提出書類：<span
+                                                            class="font-bold text-[#F00C0C]"
+                                                            >不備</span
+                                                        ></span
+                                                    >
+                                                </td>
+                                                <td
+                                                    class="p-5 text-[14px] font-bold text-[#F05B0C]"
+                                                >
+                                                    🔥昨日
+                                                </td>
+                                                <td class="p-5 text-[14px]">
+                                                    <div class="flex items-center gap-2">
+                                                        <img
+                                                            src="./img/user-default.png"
+                                                            alt="User"
+                                                            class="w-6 h-6 rounded-full"
+                                                        />
+                                                        <span>管理者A</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                                <td class="p-5">
+                                                    <h3
+                                                        class="font-bold text-[18px] text-[#003e72]"
+                                                    >
+                                                        オクト・インボイス枠案件❷
+                                                    </h3>
+                                                    <p class="text-gray-500">有限会社オクト</p>
+                                                </td>
+                                                <td class="p-5">
+                                                    <span class="text-[14px]"
+                                                        >インボイス枠（電子取引類型）</span
+                                                    >
+                                                </td>
+                                                <td class="p-5">
+                                                    <span class="text-[14px]"
+                                                        >Step.8 書類未提出</span
+                                                    >
+                                                </td>
+                                                <td
+                                                    class="p-5 text-[14px] font-bold text-[#F4A900]"
+                                                >
+                                                    5日前
+                                                </td>
+                                                <td class="p-5 text-[14px]">
+                                                    <div class="flex items-center gap-2">
+                                                        <img
+                                                            src="./img/user-default.png"
+                                                            alt="User"
+                                                            class="w-6 h-6 rounded-full"
+                                                        />
+                                                        <span>管理者A</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                                <td class="p-5">
+                                                    <h3
+                                                        class="font-bold text-[18px] text-[#003e72]"
+                                                    >
+                                                        Octopus①セキュリティ対策推進
+                                                    </h3>
+                                                    <p class="text-gray-500">株式会社Octopus</p>
+                                                </td>
+                                                <td class="p-5">
+                                                    <span class="text-[14px]"
+                                                        >セキュリティ対策推進枠</span
+                                                    >
+                                                </td>
+                                                <td class="p-5">
+                                                    <span class="text-[14px]"
+                                                        >Step.5 書類未提出</span
+                                                    >
+                                                </td>
+                                                <td
+                                                    class="p-5 text-[14px] font-bold text-[#F4A900]"
+                                                >
+                                                    7日前
+                                                </td>
+                                                <td class="p-5 text-[14px]">
+                                                    <div class="flex items-center gap-2">
+                                                        <img
+                                                            src="./img/user-default.png"
+                                                            alt="User"
+                                                            class="w-6 h-6 rounded-full"
+                                                        />
+                                                        <span>管理者A</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Summary Section -->
+                        <div class="w-full mb-6">
+                            <!-- Header -->
+                            <h2 class="flex items-center gap-2 text-[18px] font-bold mb-4">
+                                📚 カテゴリ別の状況
+                                <span class="font-normal">（カテゴリ数：5）</span>
+                            </h2>
+
+                            <!-- Horizontal scroll -->
+                            <div class="overflow-x-auto">
+                                <div class="flex gap-4 min-w-max pb-2">
+                                    <!-- Card 1 -->
+                                    <div
+                                        class="bg-white rounded-[12px] w-[224px] h-[208px] p-5 flex flex-col justify-between"
+                                    >
+                                        <h3 class="font-bold line-clamp-2">
+                                            インボイス枠（インボイス対応類型）
+                                        </h3>
+                                        <p class="text-right text-[14px]">
+                                            案件数：<span class="font-bold">12件</span>
+                                        </p>
+
+                                        <hr class="bg-[#707070]/10" />
+
+                                        <div class="flex justify-between items-end">
+                                            <div class="flex flex-col items-start">
+                                                <p>未着手：<span class="font-bold">2件</span></p>
+                                                <p>進行中：<span class="font-bold">8件</span></p>
+                                                <p>完了：<span class="font-bold">2件</span></p>
+                                            </div>
+                                            <button
+                                                class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1A92F7] text-white hover:bg-blue-600 transition"
+                                            >
+                                                <i class="fa-solid fa-chevron-right fa-xs"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 2 -->
+                                    <div
+                                        class="bg-white rounded-[12px] w-[224px] h-[208px] p-5 flex flex-col justify-between"
+                                    >
+                                        <h3 class="font-bold line-clamp-2">
+                                            インボイス枠（インボイス対応類型）
+                                        </h3>
+                                        <p class="text-right text-[14px]">
+                                            案件数：<span class="font-bold">12件</span>
+                                        </p>
+
+                                        <hr class="bg-[#707070]/10" />
+
+                                        <div class="flex justify-between items-end">
+                                            <div class="flex flex-col items-start">
+                                                <p>未着手：<span class="font-bold">2件</span></p>
+                                                <p>進行中：<span class="font-bold">8件</span></p>
+                                                <p>完了：<span class="font-bold">2件</span></p>
+                                            </div>
+                                            <button
+                                                class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1A92F7] text-white hover:bg-blue-600 transition"
+                                            >
+                                                <i class="fa-solid fa-chevron-right fa-xs"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 3 -->
+                                    <div
+                                        class="bg-white rounded-[12px] w-[224px] h-[208px] p-5 flex flex-col justify-between"
+                                    >
+                                        <h3 class="font-bold line-clamp-2">
+                                            インボイス枠（インボイス対応類型）
+                                        </h3>
+                                        <p class="text-right text-[14px]">
+                                            案件数：<span class="font-bold">12件</span>
+                                        </p>
+
+                                        <hr class="bg-[#707070]/10" />
+
+                                        <div class="flex justify-between items-end">
+                                            <div class="flex flex-col items-start">
+                                                <p>未着手：<span class="font-bold">2件</span></p>
+                                                <p>進行中：<span class="font-bold">8件</span></p>
+                                                <p>完了：<span class="font-bold">2件</span></p>
+                                            </div>
+                                            <button
+                                                class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1A92F7] text-white hover:bg-blue-600 transition"
+                                            >
+                                                <i class="fa-solid fa-chevron-right fa-xs"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 4 -->
+                                    <div
+                                        class="bg-white rounded-[12px] w-[224px] h-[208px] p-5 flex flex-col justify-between"
+                                    >
+                                        <h3 class="font-bold line-clamp-2">
+                                            インボイス枠（インボイス対応類型）
+                                        </h3>
+                                        <p class="text-right text-[14px]">
+                                            案件数：<span class="font-bold">12件</span>
+                                        </p>
+
+                                        <hr class="bg-[#707070]/10" />
+
+                                        <div class="flex justify-between items-end">
+                                            <div class="flex flex-col items-start">
+                                                <p>未着手：<span class="font-bold">2件</span></p>
+                                                <p>進行中：<span class="font-bold">8件</span></p>
+                                                <p>完了：<span class="font-bold">2件</span></p>
+                                            </div>
+                                            <button
+                                                class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1A92F7] text-white hover:bg-blue-600 transition"
+                                            >
+                                                <i class="fa-solid fa-chevron-right fa-xs"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 5 -->
+                                    <div
+                                        class="bg-white rounded-[12px] w-[224px] h-[208px] p-5 flex flex-col justify-between"
+                                    >
+                                        <h3 class="font-bold line-clamp-2">
+                                            インボイス枠（インボイス対応類型）
+                                        </h3>
+                                        <p class="text-right text-[14px]">
+                                            案件数：<span class="font-bold">12件</span>
+                                        </p>
+
+                                        <hr class="bg-[#707070]/10" />
+
+                                        <div class="flex justify-between items-end">
+                                            <div class="flex flex-col items-start">
+                                                <p>未着手：<span class="font-bold">2件</span></p>
+                                                <p>進行中：<span class="font-bold">8件</span></p>
+                                                <p>完了：<span class="font-bold">2件</span></p>
+                                            </div>
+                                            <button
+                                                class="w-8 h-8 flex items-center justify-center rounded-full bg-[#1A92F7] text-white hover:bg-blue-600 transition"
+                                            >
+                                                <i class="fa-solid fa-chevron-right fa-xs"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full mb-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Left Column -->
+                            <div class="w-full flex flex-col gap-4 h-[400px]">
+                                <!-- Summary Stats -->
+                                <div class="flex flex-col">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h2 class="text-[18px] font-extrabold">🧮 サマリー</h2>
+                                        <div class="flex gap-3 text-[14px]">
+                                            <a
+                                                href="#"
+                                                class="text-[#1A92F7] font-bold hover:text-blue-600"
+                                                >今月</a
+                                            >
+                                            <span class="text-gray-300">/</span>
+                                            <a href="#" class="text-gray-500 hover:text-gray-700"
+                                                >先月</a
+                                            >
+                                            <span class="text-gray-300">/</span>
+                                            <a href="#" class="text-gray-500 hover:text-gray-700"
+                                                >全期間</a
+                                            >
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="px-4 py-3 bg-white rounded-[12px] border border-gray-100"
+                                    >
+                                        <div>
+                                            <span class="text-[14px] text-gray-600">案件数</span>
+                                            <span class="ml-3 font-bold text-[32px] text-[#1A92F7]"
+                                                >25</span
+                                            >
+                                            <span class="text-[14px] font-medium text-[#1A92F7]"
+                                                >件</span
+                                            >
+                                            <span class="text-[13px] text-gray-500 ml-2"
+                                                >（進行中15件 ／ 完了10件）</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Recent Activity -->
+                                <div class="flex flex-col gap-3 flex-1 min-h-0">
+                                    <h2 class="text-[18px] font-extrabold">💨 最近の動き</h2>
+                                    <div
+                                        class="flex-1 overflow-y-auto bg-white rounded-[12px] p-5 flex flex-col gap-4 border border-gray-100 min-h-0"
+                                    >
+                                        <div class="pb-4 border-b border-gray-100">
+                                            <p class="text-[14px] text-[#2E3A3C]">
+                                                <span class="font-bold">山田製作所：</span
+                                                >決算書が提出されました
+                                            </p>
+                                            <div class="flex items-center gap-2 mt-2">
+                                                <img
+                                                    src="./img/user-default.png"
+                                                    alt="User"
+                                                    class="w-5 h-5 rounded-full"
+                                                />
+                                                <p class="text-[12px] text-gray-500">
+                                                    管理者2 (2026/01/07 11:10)
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="pb-4 border-b border-gray-100">
+                                            <p class="text-[14px] text-[#2E3A3C]">
+                                                <span class="font-bold">山田製作所：</span
+                                                >ステータスが「STEP2」に更新されました。
+                                            </p>
+                                            <div class="flex items-center gap-2 mt-2">
+                                                <img
+                                                    src="./img/user-default.png"
+                                                    alt="User"
+                                                    class="w-5 h-5 rounded-full"
+                                                />
+                                                <p class="text-[12px] text-gray-500">
+                                                    管理者2 (2026/01/07 11:10)
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="pb-4 border-b border-gray-100">
+                                            <p class="text-[14px] text-[#2E3A3C]">
+                                                <span class="font-bold">山田製作所：</span
+                                                >ステータスが「STEP2」に更新されました。
+                                            </p>
+                                            <div class="flex items-center gap-2 mt-2">
+                                                <img
+                                                    src="./img/user-default.png"
+                                                    alt="User"
+                                                    class="w-5 h-5 rounded-full"
+                                                />
+                                                <p class="text-[12px] text-gray-500">
+                                                    管理者2 (2026/01/07 11:10)
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="pb-4 border-b border-gray-100">
+                                            <p class="text-[14px] text-[#2E3A3C]">
+                                                <span class="font-bold">山田製作所：</span
+                                                >ステータスが「STEP2」に更新されました。
+                                            </p>
+                                            <div class="flex items-center gap-2 mt-2">
+                                                <img
+                                                    src="./img/user-default.png"
+                                                    alt="User"
+                                                    class="w-5 h-5 rounded-full"
+                                                />
+                                                <p class="text-[12px] text-gray-500">
+                                                    管理者2 (2026/01/07 11:10)
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="pb-4 border-b border-gray-100">
+                                            <p class="text-[14px] text-[#2E3A3C]">
+                                                <span class="font-bold">有限会社テスト：</span
+                                                >AIリマインドを送信しました
+                                            </p>
+                                            <div class="flex items-center gap-2 mt-2">
+                                                <img
+                                                    src="./img/user-default.png"
+                                                    alt="User"
+                                                    class="w-5 h-5 rounded-full"
+                                                />
+                                                <p class="text-[12px] text-gray-500">
+                                                    管理者2 (2026/01/06 18:45)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column -->
+                            <div class="w-full flex flex-col h-[400px]">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <h2 class="text-[18px] font-extrabold">非公開のメモ</h2>
+                                        <i class="fas fa-lock text-gray-400 text-[12px]"></i>
+                                    </div>
+                                    <p class="text-[13px] text-gray-600"></p>
+                                </div>
+                                <div
+                                    class="flex-1 bg-white rounded-[12px] p-5 border border-gray-100 flex flex-col gap-4 overflow-y-auto relative"
+                                >
+                                    <!-- Memo content area -->
+                                    <textarea
+                                        placeholder="メモを入力..."
+                                        class="w-full h-full border-none outline-none resize-none text-[14px] placeholder-gray-400"
+                                    >
+月曜9時、提出案件の一斉連絡をする
+                                    </textarea>
+                                    <button
+                                        class="px-7 py-3 rounded-[24px] absolute bottom-4 right-4 bg-[#2E3A3C] text-white"
+                                    >
+                                        保存
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

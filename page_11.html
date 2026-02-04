@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSV出力</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+            body {
+                font-family: "Noto Sans JP", sans-serif;
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-100">
+        <div class="min-h-screen flex items-center justify-center p-4 fixed inset-0">
+            <!-- Overlay Backdrop -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <!-- Modal -->
+            <div
+                class="relative bg-white rounded-[20px] shadow-xl w-[640px] max-h-[95vh] flex flex-col text-[#2E3A3C] z-10"
+            >
+                <!-- Close Button -->
+                <button
+                    class="absolute top-4 right-4 w-7 h-7 flex items-center justify-center rounded-full border-2 border-[#2E3A3C] hover:bg-gray-100 transition z-10 cursor-pointer"
+                >
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+
+                <!-- Modal Content -->
+                <div class="flex flex-col h-full overflow-hidden">
+                    <!-- Header -->
+                    <div class="text-center py-6">
+                        <h1 class="text-[28px] font-extrabold mb-2">CSV出力</h1>
+                        <p class="text-[14px]">
+                            細かく条件を設定してCSVデータをダウンロードします。
+                        </p>
+                    </div>
+
+                    <!-- Date Range Section -->
+                    <div
+                        class="flex items-center justify-between gap-0 bg-[#f5f5f5] px-5 py-3 border-b border-gray-300"
+                    >
+                        <!-- Creation Date -->
+                        <div>
+                            <h2 class="text-[14px] font-bold block mb-1">作成日</h2>
+                            <div class="flex items-center gap-2">
+                                <input
+                                    name="created_date_start"
+                                    type="date"
+                                    value="2025-12-01"
+                                    class="border border-[#c1c1c1] rounded-[8px] px-2 py-1 text-[13px] w-[120px] h-[40px]"
+                                />
+                                <span>～</span>
+                                <input
+                                    name="created_date_end"
+                                    type="date"
+                                    value="2025-12-31"
+                                    class="border border-[#c1c1c1] rounded-[8px] px-2 py-1 text-[13px] w-[120px] h-[40px]"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Vertical Divider -->
+                        <div class="flex items-center h-[65px] px-5">
+                            <div class="w-[1px] h-full bg-[#c1c1c1]"></div>
+                        </div>
+
+                        <!-- Due Date -->
+                        <div>
+                            <h2 class="text-[14px] font-bold block mb-1">締切日</h2>
+                            <div class="flex items-center gap-2">
+                                <input
+                                    name="due_date_start"
+                                    type="date"
+                                    value="2025-12-01"
+                                    class="border border-[#c1c1c1] rounded-[8px] px-2 py-1 text-[13px] w-[120px] h-[40px]"
+                                />
+                                <span>～</span>
+                                <input
+                                    name="due_date_end"
+                                    type="date"
+                                    value="2025-12-31"
+                                    class="border border-[#c1c1c1] rounded-[8px] px-2 py-1 text-[13px] w-[120px] h-[40px]"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Display Section (Scrollable) -->
+                    <div class="flex-1 flex flex-col overflow-hidden min-h-0">
+                        <div class="flex items-center justify-between px-5 py-2">
+                            <h2 class="text-[18px] font-extrabold">表示するデータ</h2>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input
+                                    name="select_all"
+                                    type="checkbox"
+                                    class="w-6 h-6 rounded-[4px] border border-[#c1c1c1] cursor-pointer"
+                                />
+                                <span class="text-[14px]">全て選択</span>
+                            </label>
+                        </div>
+
+                        <!-- Tab Buttons -->
+                        <div class="flex gap-2 overflow-x-auto px-5 py-2 text-[14px]">
+                            <button
+                                class="px-3 py-2 rounded-[20px] font-bold bg-[#2E3A3C] text-white whitespace-nowrap hover:bg-[#1a2527] transition flex items-center justify-center border border-[#c1c1c1] cursor-pointer"
+                            >
+                                全て
+                            </button>
+                            <button
+                                class="px-3 py-2 rounded-[20px] font-bold bg-white border border-[#c1c1c1] hover:bg-gray-300 transition whitespace-nowrap flex items-center justify-center cursor-pointer"
+                            >
+                                基本
+                            </button>
+                            <button
+                                class="px-3 py-2 rounded-[20px] font-bold bg-white border border-[#c1c1c1] hover:bg-gray-300 transition whitespace-nowrap flex items-center justify-center cursor-pointer"
+                            >
+                                案件
+                            </button>
+                            <button
+                                class="px-3 py-2 rounded-[20px] font-bold bg-white border border-[#c1c1c1] hover:bg-gray-300 transition whitespace-nowrap flex items-center justify-center cursor-pointer"
+                            >
+                                顧客
+                            </button>
+                            <button
+                                class="px-3 py-2 rounded-[20px] font-bold bg-white border border-[#c1c1c1] hover:bg-gray-300 transition whitespace-nowrap flex items-center justify-center cursor-pointer"
+                            >
+                                ステップ
+                            </button>
+                        </div>
+
+                        <!-- Data Columns Scrollable -->
+                        <div class="min-h-0 flex flex-col overflow-hidden">
+                            <!-- Data Header -->
+                            <div
+                                class="flex items-center justify-between text-[14px] font-bold px-5 py-2 bg-white border-b border-gray-200"
+                            >
+                                <span>データ名</span>
+                                <span>出力</span>
+                            </div>
+
+                            <div class="flex flex-col overflow-y-auto flex-1">
+                                <!-- Row 1 -->
+                                <div
+                                    class="flex items-center justify-between py-2 px-3 hover:bg-gray-50 cursor-pointer"
+                                >
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-grip-vertical text-sm text-[#9EA2AD]"></i>
+                                        <div>
+                                            <p class="text-[14px]">作成日</p>
+                                            <p class="text-[12px] text-[#1A92F7]">基本</p>
+                                        </div>
+                                    </div>
+                                    <label class="relative flex items-center cursor-pointer w-fit">
+                                        <input type="checkbox" class="sr-only peer" checked />
+                                        <div
+                                            class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition"
+                                        ></div>
+                                        <span
+                                            class="absolute left-1 w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition"
+                                            style="top: 50%; margin-top: -0.5rem"
+                                        ></span>
+                                    </label>
+                                </div>
+
+                                <!-- Row 2 -->
+                                <div
+                                    class="flex items-center justify-between py-2 px-3 hover:bg-gray-50 cursor-pointer"
+                                >
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-grip-vertical text-sm text-[#9EA2AD]"></i>
+                                        <div>
+                                            <p class="text-[14px]">現在のステータス</p>
+                                            <p class="text-[12px] text-[#1A92F7]">基本</p>
+                                        </div>
+                                    </div>
+                                    <label class="relative flex items-center cursor-pointer w-fit">
+                                        <input type="checkbox" class="sr-only peer" checked />
+                                        <div
+                                            class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition"
+                                        ></div>
+                                        <span
+                                            class="absolute left-1 w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition"
+                                            style="top: 50%; margin-top: -0.5rem"
+                                        ></span>
+                                    </label>
+                                </div>
+
+                                <!-- Row 3 -->
+                                <div
+                                    class="flex items-center justify-between py-2 px-3 hover:bg-gray-50 cursor-pointer"
+                                >
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-grip-vertical text-sm text-[#9EA2AD]"></i>
+                                        <div>
+                                            <p class="text-[14px]">納日数</p>
+                                            <p class="text-[12px] text-[#1A92F7]">基本</p>
+                                        </div>
+                                    </div>
+                                    <label class="relative flex items-center cursor-pointer w-fit">
+                                        <input type="checkbox" class="sr-only peer" checked />
+                                        <div
+                                            class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition"
+                                        ></div>
+                                        <span
+                                            class="absolute left-1 w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition"
+                                            style="top: 50%; margin-top: -0.5rem"
+                                        ></span>
+                                    </label>
+                                </div>
+
+                                <!-- Row 4 -->
+                                <div
+                                    class="flex items-center justify-between py-2 px-3 hover:bg-gray-50 cursor-pointer"
+                                >
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-grip-vertical text-sm text-[#9EA2AD]"></i>
+                                        <div>
+                                            <p class="text-[14px]">顧客名</p>
+                                            <p class="text-[12px] text-[#FD8C1A]">案件</p>
+                                        </div>
+                                    </div>
+                                    <label class="relative flex items-center cursor-pointer w-fit">
+                                        <input type="checkbox" class="sr-only peer" checked />
+                                        <div
+                                            class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition"
+                                        ></div>
+                                        <span
+                                            class="absolute left-1 w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition"
+                                            style="top: 50%; margin-top: -0.5rem"
+                                        ></span>
+                                    </label>
+                                </div>
+
+                                <!-- Row 5 -->
+                                <div
+                                    class="flex items-center justify-between py-2 px-3 hover:bg-gray-50 cursor-pointer"
+                                >
+                                    <div class="flex items-center gap-3">
+                                        <i
+                                            class="fas fa-grip-vertical text-sm text-[#9EA2AD] cursor-pointer"
+                                        ></i>
+                                        <div>
+                                            <p class="text-[14px]">締切日</p>
+                                            <p class="text-[12px] text-[#FD8C1A]">案件</p>
+                                        </div>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" class="sr-only peer" checked />
+                                        <div
+                                            class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition"
+                                        ></div>
+                                        <span
+                                            class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transform peer-checked:translate-x-5 transition"
+                                        ></span>
+                                    </label>
+                                </div>
+
+                                <!-- Row 6 -->
+                                <div
+                                    class="flex items-center justify-between py-2 px-3 hover:bg-gray-50 cursor-pointer"
+                                >
+                                    <div class="flex items-center gap-3">
+                                        <i
+                                            class="fas fa-grip-vertical text-sm text-[#9EA2AD] cursor-pointer"
+                                        ></i>
+                                        <div>
+                                            <p class="text-[14px]">顧客名</p>
+                                            <p class="text-[12px] text-[#00893A]">顧客</p>
+                                        </div>
+                                    </div>
+                                    <label class="relative flex items-center cursor-pointer w-fit">
+                                        <input type="checkbox" class="sr-only peer" />
+                                        <div
+                                            class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition"
+                                        ></div>
+                                        <span
+                                            class="absolute left-1 w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition"
+                                            style="top: 50%; margin-top: -0.5rem"
+                                        ></span>
+                                    </label>
+                                </div>
+
+                                <!-- Row 7 -->
+                                <div
+                                    class="flex items-center justify-between py-2 px-3 hover:bg-gray-50 cursor-pointer"
+                                >
+                                    <div class="flex items-center gap-3">
+                                        <i
+                                            class="fas fa-grip-vertical text-sm text-[#9EA2AD] cursor-pointer"
+                                        ></i>
+                                        <div>
+                                            <p class="text-[14px]">メールアドレス</p>
+                                            <p class="text-[12px] text-[#00893A]">顧客</p>
+                                        </div>
+                                    </div>
+                                    <label class="relative flex items-center cursor-pointer w-fit">
+                                        <input type="checkbox" class="sr-only peer" />
+                                        <div
+                                            class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition"
+                                        ></div>
+                                        <span
+                                            class="absolute left-1 w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition"
+                                            style="top: 50%; margin-top: -0.5rem"
+                                        ></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div
+                        class="flex gap-3 justify-center items-center py-3 border-t border-gray-200"
+                    >
+                        <button
+                            class="px-5 py-3 rounded-[24px] border border-[#C1C1C1] hover:bg-gray-50 transition cursor-pointer"
+                        >
+                            キャンセル
+                        </button>
+                        <button
+                            class="px-5 py-3 rounded-[24px] bg-[#1A92F7] text-white hover:bg-blue-600 transition cursor-pointer"
+                        >
+                            ダウンロード
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
