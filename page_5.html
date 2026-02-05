@@ -31,8 +31,10 @@
                         認証済の情報を編集します。
                     </p>
 
-                    <button class="absolute right-3 top-3 flex items-center justify-center z-10">
-                        <img src="./img/modal_icon_close.svg" alt="close" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px]">
+                    <button
+                        class="absolute right-3 top-3 z-10 h-7 w-7 flex items-center justify-center rounded-full border-2 border-[#2E3A3C] hover:bg-gray-100 transition cursor-pointer"
+                        aria-label="close">
+                        <i class="fas fa-times text-lg"></i>
                     </button>
                 </div>
 
@@ -60,7 +62,8 @@
                             </p>
 
                             <!-- cần check lại cách làm checkbox css -->
-                            <label class="mt-2 inline-flex items-center gap-2 text-[14px] font-normal text-[#2E3A3C] cursor-pointer">
+                            <label
+                                class="mt-2 inline-flex items-center gap-2 text-[14px] font-normal text-[#2E3A3C] cursor-pointer">
                                 <input type="checkbox" checked
                                     class="h-4 w-4 border-[#9CA3AF] text-[#1A92F7] focus:ring-[#1A92F7] rounded-[8px]" />
                                 パスワードを表示する
@@ -104,10 +107,12 @@
 
                 <div class="border-t border-[#E5E7EB] px-6 py-3">
                     <div class="flex items-center justify-center gap-3">
-                        <button class="h-11 min-w-[120px] rounded-full bg-[#ECEFF1] px-6 text-[14px] font-semibold text-[#2E3A3C]">
+                        <button
+                            class="h-11 min-w-[120px] rounded-full bg-[#ECEFF1] px-6 text-[14px] font-semibold text-[#2E3A3C]">
                             キャンセル
                         </button>
-                        <button class="h-11 min-w-[120px] rounded-full bg-[#1A92F7] px-6 text-[14px] font-semibold text-white">
+                        <button
+                            class="h-11 min-w-[120px] rounded-full bg-[#1A92F7] px-6 text-[14px] font-semibold text-white">
                             保存する
                         </button>
                     </div>
