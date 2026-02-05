@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プロジェクト詳細モーダル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+
+        body {
+            font-family: "Poppins", "Noto Sans JP", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#F3F4F6] text-[#2E3A3C]">
+
+    <div class="fixed inset-0 z-50">
+        <div class="absolute inset-0 bg-black/55"></div>
+
+        <aside
+            class="absolute top-0 right-0 w-[560px] h-full bg-white border-l border-[#e5e7eb] shadow-2xl flex flex-col"
+            role="dialog" aria-modal="true" aria-labelledby="category-setting-title">
+            <header class="relative shrink-0 px-6 pt-8 pb-6 border-b border-[#e5e7eb] text-center">
+                <button
+                    class="absolute right-3 top-3 z-10 h-7 w-7 flex items-center justify-center rounded-full border-2 border-[#2E3A3C] hover:bg-gray-100 transition cursor-pointer"
+                    aria-label="close">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+
+                <h2 id="category-setting-title"
+                    class="text-[28px] leading-none font-extrabold tracking-tight text-[#1f2937]">
+                    カテゴリ設定
+                </h2>
+                <p class="mt-2 text-[14px] text-[#4b5563] font-normal">
+                    案件をカテゴリで細かくグループ分けします。
+                </p>
+            </header>
+
+            <div class="flex-1 min-h-0 overflow-y-auto">
+                <div
+                    class="h-12 px-4 grid grid-cols-[1fr_110px_64px] items-center border-b border-[#e5e7eb] text-[22px] font-bold text-[#4b5563]">
+                    <div class="text-[14px] font-normal text-[#2E3A3C]">カテゴリ名</div>
+                    <div class="text-right pr-2 text-[14px] font-normal text-[#2E3A3C]">登録案件数</div>
+                    <div></div>
+                </div>
+
+                <div class="divide-y divide-[#eceff3]">
+                    <div class="h-52px h-[52px] px-4 grid grid-cols-[1fr_110px_64px] items-center">
+                        <div class="min-w-0 truncate text-[16px] font-normal text-[#2E3A3C]">
+                            インボイス枠（インボイス対応類型）
+                        </div>
+                        <div class="text-right pr-2 text-[16px] font-bold text-[#1f2937]">12</div>
+                        <div class="flex items-center justify-end gap-3">
+                            <button type="button" class="text-[#1d8cf8] hover:text-[#0c74dd]" aria-label="Edit">
+                                <i class="fa-solid text-[#003E72] fa-pen-to-square text-[18px]"></i>
+                            </button>
+                            <button type="button" class="text-[#ef4444] hover:text-[#dc2626]" aria-label="Delete">
+                                <i class="fa-solid text-[#C93932] fa-trash text-[18px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="h-[52px] px-4 grid grid-cols-[1fr_110px_64px] items-center">
+                        <div class="min-w-0 truncate text-[16px] font-normal text-[#2E3A3C]">
+                            インボイス枠（電子取引類型）
+                        </div>
+                        <div class="text-right pr-2 text-[16px] font-bold text-[#1f2937]">5</div>
+                        <div class="flex items-center justify-end gap-3">
+                            <button type="button" class="text-[#1d8cf8] hover:text-[#0c74dd]" aria-label="Edit">
+                                <i class="fa-solid text-[#003E72] fa-pen-to-square text-[18px]"></i>
+                            </button>
+                            <button type="button" class="text-[#ef4444] hover:text-[#dc2626]" aria-label="Delete">
+                                <i class="fa-solid text-[#C93932] fa-trash text-[18px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="h-[52px] px-4 grid grid-cols-[1fr_110px_64px] items-center">
+                        <div class="min-w-0 truncate text-[16px] font-normal text-[#2E3A3C]">
+                            セキュリティ対策推進枠
+                        </div>
+                        <div class="text-right pr-2 text-[16px] font-bold text-[#1f2937]">8</div>
+                        <div class="flex items-center justify-end gap-3">
+                            <button type="button" class="text-[#1d8cf8] hover:text-[#0c74dd]" aria-label="Edit">
+                                <i class="fa-solid text-[#003E72] fa-pen-to-square text-[18px]"></i>
+                            </button>
+                            <button type="button" class="text-[#ef4444] hover:text-[#dc2626]" aria-label="Delete">
+                                <i class="fa-solid text-[#C93932] fa-trash text-[18px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="h-[52px] px-4 grid grid-cols-[1fr_110px_64px] items-center">
+                        <div class="min-w-0 truncate text-[16px] font-normal text-[#2E3A3C]">
+                            複数社連携IT導入枠
+                        </div>
+                        <div class="text-right pr-2 text-[16px] font-bold text-[#1f2937]">2</div>
+                        <div class="flex items-center justify-end gap-3">
+                            <button type="button" class="text-[#1d8cf8] hover:text-[#0c74dd]" aria-label="Edit">
+                                <i class="fa-solid text-[#003E72] fa-pen-to-square text-[18px]"></i>
+                            </button>
+                            <button type="button" class="text-[#ef4444] hover:text-[#dc2626]" aria-label="Delete">
+                                <i class="fa-solid text-[#C93932] fa-trash text-[18px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="h-[52px] px-4 grid grid-cols-[1fr_110px_64px] items-center">
+                        <div class="min-w-0 truncate text-[16px] font-normal text-[#2E3A3C]">
+                            通常枠（A・B類型）
+                        </div>
+                        <div class="text-right pr-2 text-[16px] font-bold text-[#1f2937]">1</div>
+                        <div class="flex items-center justify-end gap-3">
+                            <button type="button" class="text-[#1d8cf8] hover:text-[#0c74dd]" aria-label="Edit">
+                                <i class="fa-solid text-[#003E72] fa-pen-to-square text-[18px]"></i>
+                            </button>
+                            <button type="button" class="text-[#ef4444] hover:text-[#dc2626]" aria-label="Delete">
+                                <i class="fa-solid text-[#C93932] fa-trash text-[18px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-4 pt-4 pb-6 border-t border-[#e5e7eb]">
+                    <button type="button"
+                        class="h-11 px-3 rounded-full border border-[#60a5fa] text-[#3b82f6] text-[14px] font-normal hover:bg-[#eff6ff] gap-1 flex items-center justify-center">
+                        <i class="fa-solid fa-plus text-[16px]"></i>カテゴリー追加
+                    </button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+
+</body>
+
+</html>
