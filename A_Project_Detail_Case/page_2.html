@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プロジェクト詳細モーダル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+
+        body {
+            font-family: "Poppins", "Noto Sans JP", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#F3F4F6] text-[#2E3A3C]">
+    <!-- Overlay -->
+    <div class="fixed inset-0 z-50">
+        <div class="absolute inset-0 bg-black/45"></div>
+        <div class="relative z-10 min-h-screen w-full grid place-items-center p-4">
+            <section
+                class="w-full sm:w-[640px] sm:h-[752px] max-h-[95vh] bg-white rounded-2xl shadow-2xl border border-[#e5e7eb] overflow-hidden flex flex-col"
+                role="dialog" aria-modal="true" aria-labelledby="display-setting-title">
+                <header class="shrink-0 relative px-8 py-6 border-b border-[#e5e7eb] text-center">
+                    <button
+                        class="absolute right-3 top-3 z-10 h-7 w-7 flex items-center justify-center rounded-full border-2 border-[#2E3A3C] hover:bg-gray-100 transition cursor-pointer"
+                        aria-label="close">
+                        <i class="fas fa-times text-lg"></i>
+                    </button>
+
+                    <h2 id="display-setting-title" class="text-[28px] leading-none font-extrabold text-[#1f2937]">
+                        表示設定
+                    </h2>
+                    <p class="mt-2 text-[14px] text-[#4b5563]">表示する項目や順序を変更できます。</p>
+                </header>
+
+                <!-- Body (scroll only here) -->
+                <div class="flex-1 min-h-0 overflow-y-auto">
+                    <div class="px-4 pb-3">
+                        <!-- Section title -->
+                        <div class="px-2 py-3 flex items-center justify-between">
+                            <h3 class="text-[18px] font-extrabold text-[#1f2937] leading-none">表示する列</h3>
+
+                            <label class="inline-flex items-center gap-2 select-none cursor-pointer">
+                                <input type="checkbox" checked
+                                    class="h-6 w-6 border-[#9CA3AF] text-[#1A92F7] focus:ring-[#1A92F7] rounded-[8px]" />
+                                <span class="text-[14px] font-bold text-[#374151]">全て表示</span>
+                            </label>
+                        </div>
+
+                        <!-- Table header -->
+                        <div
+                            class="h-12 px-2 border-b border-[#e5e7eb] grid grid-cols-[1fr_90px_32px] items-center text-[14px] font-extrabold text-[#374151]">
+                            <div>列名</div>
+                            <div class="text-center">表示</div>
+                            <div class="text-center">固定</div>
+                        </div>
+
+                        <!-- Rows -->
+                        <div class="divide-y divide-[#eceff3]">
+                            <!-- Row -->
+                            <div class="h-[54px] px-2 grid grid-cols-[minmax(0,1fr)_90px_32px] items-center">
+                                <div class="min-w-0 flex items-center gap-3">
+                                    <i class="fa-solid fa-grip-vertical text-[#c4c9d1] text-[16px]"></i>
+                                    <div class="min-w-0 px-4">
+                                        <p class="text-[14px] leading-none font-bold text-[#1f2937]">ステータス</p>
+                                        <p class="mt-1 text-[12px] leading-none font-bold text-[#2f8ce8]">システム</p>
+                                    </div>
+                                </div>
+
+                                <label class="relative flex items-center cursor-pointer w-fit shrink-0 justify-self-center">
+                                    <input type="checkbox" class="sr-only peer" checked />
+                                    <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition">
+                                    </div>
+                                    <span
+                                        class="absolute left-1 w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition">
+                                    </span>
+                                </label>
+
+                                <div class="flex justify-center">
+                                    <button type="button" aria-label="固定 ON">
+                                        <i class="fa-solid fa-thumbtack text-[#f59e0b] text-[20px]"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="h-[54px] px-2 grid grid-cols-[1fr_90px_32px] items-center">
+                                <div class="min-w-0 flex items-center gap-3">
+                                    <i class="fa-solid fa-grip-vertical text-[#c4c9d1] text-[16px]"></i>
+                                    <div class="min-w-0 px-4">
+                                        <p class="text-[14px] leading-none font-bold text-[#1f2937]">書類</p>
+                                        <p class="mt-1 text-[12px] leading-none font-bold text-[#2f8ce8]">システム</p>
+                                    </div>
+                                </div>
+
+                                <label class="relative flex items-center cursor-pointer w-fit shrink-0 justify-self-center">
+                                    <input type="checkbox" class="sr-only peer" checked />
+                                    <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition">
+                                    </div>
+                                    <span
+                                        class="absolute left-1 w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition">
+                                    </span>
+                                </label>
+
+                                <div class="flex justify-center">
+                                    <i class="fa-solid fa-thumbtack text-[#d1d5db] text-[20px]"></i>
+                                </div>
+                            </div>
+
+                            <div class="h-[54px] px-2 grid grid-cols-[1fr_90px_32px] items-center">
+                                <div class="min-w-0 flex items-center gap-3">
+                                    <i class="fa-solid fa-grip-vertical text-[#c4c9d1] text-[16px]"></i>
+                                    <div class="min-w-0 px-4">
+                                        <p class="text-[14px] leading-none font-bold text-[#1f2937]">顧客名</p>
+                                        <p class="mt-1 text-[12px] leading-none font-bold text-[#2f8ce8]">システム</p>
+                                    </div>
+                                </div>
+
+                                <label class="relative flex items-center cursor-pointer w-fit shrink-0 justify-self-center">
+                                    <input type="checkbox" class="sr-only peer" checked />
+                                    <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition">
+                                    </div>
+                                    <span
+                                        class="absolute left-1 w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition">
+                                    </span>
+                                </label>
+
+                                <div class="flex justify-center">
+                                    <i class="fa-solid fa-thumbtack text-[#d1d5db] text-[20px]"></i>
+                                </div>
+                            </div>
+
+                            <div class="h-[54px] px-2 grid grid-cols-[1fr_90px_32px] items-center">
+                                <div class="min-w-0 flex items-center gap-3">
+                                    <i class="fa-solid fa-grip-vertical text-[#c4c9d1] text-[16px]"></i>
+                                    <div class="min-w-0 px-4">
+                                        <p class="text-[14px] leading-none font-bold text-[#1f2937]">締切日</p>
+                                        <p class="mt-1 text-[12px] leading-none font-bold text-[#2f8ce8]">システム</p>
+                                    </div>
+                                </div>
+
+                                <label class="relative flex items-center cursor-pointer w-fit shrink-0 justify-self-center">
+                                    <input type="checkbox" class="sr-only peer" checked />
+                                    <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition">
+                                    </div>
+                                    <span
+                                        class="absolute left-1 w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition">
+                                    </span>
+                                </label>
+
+                                <div class="flex justify-center">
+                                    <i class="fa-solid fa-thumbtack text-[#d1d5db] text-[20px]"></i>
+                                </div>
+                            </div>
+
+                            <div class="h-[54px] px-2 grid grid-cols-[minmax(0,1fr)_90px_32px] items-center">
+                                <div class="min-w-0 flex items-center gap-3">
+                                    <i class="fa-solid fa-grip-vertical text-[#c4c9d1] text-[16px]"></i>
+                                    <div class="min-w-0 px-4">
+                                        <p class="text-[14px] leading-none font-bold text-[#1f2937]">アクション</p>
+                                        <p class="mt-1 text-[12px] leading-none font-bold text-[#2f8ce8]">システム</p>
+                                    </div>
+                                </div>
+
+                                <label class="relative flex items-center cursor-pointer w-fit shrink-0 justify-self-center">
+                                    <input type="checkbox" class="sr-only peer" checked />
+                                    <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition">
+                                    </div>
+                                    <span
+                                        class="absolute left-1 w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition">
+                                    </span>
+                                </label>
+
+                                <div class="flex justify-center">
+                                    <i class="fa-solid fa-thumbtack text-[#d1d5db] text-[20px]"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="h-[209px] bg-[#F5F5F5] px-2 flex items-start justify-end gap-2 text-[12px] text-[#b6bcc6] p-4">
+                            <i class="fa-solid fa-grip-vertical text-[16px]"></i>
+                            ドラッグで並び替え
+                        </div>
+                </div>
+
+                <!-- Footer (fixed) -->
+                <footer
+                    class="shrink-0 py-3 border-t border-[#e5e7eb] bg-white px-6 flex items-center justify-center gap-4">
+                    <button type="button"
+                        class="h-11 min-w-[120px] px-5 rounded-full bg-[#f3f4f6] text-[#6b7280] text-[16px] font-bold hover:bg-[#e5e7eb]">
+                        キャンセル
+                    </button>
+                    <button type="button"
+                        class="h-11 min-w-[120px] px-5 rounded-full bg-[#2f9cf4] text-white text-[16px] font-bold hover:bg-[#228be6]">
+                        保存する
+                    </button>
+                </footer>
+            </section>
+        </div>
+    </div>
+
+</body>
+
+</html>
