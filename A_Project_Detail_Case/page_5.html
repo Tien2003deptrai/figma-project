@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プロジェクト詳細モーダル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+
+        body {
+            font-family: "Poppins", "Noto Sans JP", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#F3F4F6] text-[#2E3A3C]">
+
+    <div class="fixed inset-0 z-[50]">
+        <div class="absolute inset-0 bg-black/45"></div>
+        <div class="relative z-10 h-screen w-full grid place-items-center p-3">
+            <section
+                class="w-[640px] h-[95vh] max-h-[95vh] bg-white rounded-[10px] border border-[#e5e7eb] shadow-2xl overflow-hidden flex flex-col"
+                role="dialog" aria-modal="true" aria-labelledby="case-register-title">
+                <header class="relative shrink-0 border-b border-[#e5e7eb] px-6 py-6 pb-3 text-center">
+                    <button class="absolute right-3 top-3 z-10 h-7 w-7 flex items-center justify-center rounded-full border-2 border-[#2E3A3C] hover:bg-gray-100 transition cursor-pointer">
+                        <i class="fas fa-times text-lg"></i>
+                    </button>
+
+                    <h2 id="case-register-title"
+                        class="text-[24px] leading-none font-extrabold tracking-tight text-[#1f2937]">
+                        案件新規登録
+                    </h2>
+                    <p class="mt-1 text-[14px] text-[#6b7280]">書類回収案件を登録しましょう。</p>
+                </header>
+
+                <div class="flex-1 min-h-0 overflow-y-auto px-6 py-4 bg-white">
+                    <form class="space-y-4">
+                        <div>
+                            <label class="inline-flex items-center gap-1 text-[16px] font-bold text-[#1f2937]">
+                                案件名
+                                <span class="text-[#ef4444]">*</span>
+                                <i class="fa-regular fa-circle-question text-[14px] text-[#9ca3af]"></i>
+                            </label>
+                            <input type="text"
+                                class="mt-1 w-full h-11 rounded-md border border-[#d1d5db] px-3 text-[18px] outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40" />
+                        </div>
+
+                        <div>
+                            <label class="inline-flex items-center gap-1 text-[16px] font-bold text-[#1f2937]">
+                                顧客名
+                                <span class="text-[#ef4444]">*</span>
+                                <i class="fa-regular fa-circle-question text-[14px] text-[#9ca3af]"></i>
+                            </label>
+
+                            <div class="relative mt-1">
+                                <select
+                                    class="w-full h-11 rounded-md border border-[#d1d5db] bg-white pl-3 pr-10 text-[16px] text-[#4b5563] outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40 appearance-none">
+                                    <option>顧客を選択</option>
+                                    <option>株式会社クライアント</option>
+                                    <option>有限会社オクト</option>
+                                    <option>株式会社Octopus</option>
+                                </select>
+                                <i
+                                    class="fa-solid fa-chevron-down pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[14px] text-[#6b7280]"></i>
+                            </div>
+
+                            <button type="button"
+                                class="mt-2 h-11 px-4 rounded-full border border-[#60a5fa] text-[#3b82f6] text-[16px] font-bold hover:bg-[#eff6ff]">
+                                ＋顧客を新規追加
+                            </button>
+                        </div>
+
+                        <div>
+                            <label class="inline-flex items-center gap-1 text-[18px] font-bold text-[#1f2937]">
+                                カテゴリー
+                                <i class="fa-regular fa-circle-question text-[14px] text-[#9ca3af]"></i>
+                            </label>
+
+                            <div class="mt-2 space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="category"
+                                        class="h-6 w-6 text-[#3b82f6] border-[#cbd5e1]" />
+                                    <span class="text-[16px] text-[#374151]">インボイス枠（インボイス対応類型）</span>
+                                </label>
+
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="category" checked
+                                        class="h-6 w-6 text-[#3b82f6] border-[#cbd5e1]" />
+                                    <span class="text-[16px] text-[#374151]">インボイス枠（電子取引類型）</span>
+                                </label>
+
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="category"
+                                        class="h-6 w-6 text-[#3b82f6] border-[#cbd5e1]" />
+                                    <span class="text-[16px] text-[#374151]">セキュリティ対策推進枠</span>
+                                </label>
+
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="category"
+                                        class="h-6 w-6 text-[#3b82f6] border-[#cbd5e1]" />
+                                    <span class="text-[16px] text-[#374151]">複数社連携IT導入枠</span>
+                                </label>
+
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="category"
+                                        class="h-6 w-6 text-[#3b82f6] border-[#cbd5e1]" />
+                                    <span class="text-[16px] text-[#374151]">通常枠（A・B類型）</span>
+                                </label>
+                            </div>
+
+                            <button type="button"
+                                class="mt-2 h-11 px-4 rounded-full border border-[#60a5fa] text-[#3b82f6] text-[16px] font-bold hover:bg-[#eff6ff]">
+                                ＋カテゴリー追加
+                            </button>
+                        </div>
+
+                        <div class="pb-2">
+                            <label class="inline-flex items-center gap-1 text-[16px] font-bold text-[#1f2937]">
+                                書類の最終締切日
+                                <span class="text-[#ef4444]">*</span>
+                                <i class="fa-regular fa-circle-question text-[14px] text-[#9ca3af]"></i>
+                            </label>
+
+                            <div class="mt-1 max-w-[200px] relative">
+                                <input type="text" placeholder="YYYY/MM/DD"
+                                    class="w-full h-11 rounded-md border border-[#d1d5db] px-3 text-[16px] text-[#6b7280] outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <footer
+                    class="shrink-0 py-2 border-t border-[#e5e7eb] px-6 bg-white flex items-center justify-center gap-3">
+                    <button type="button"
+                        class="h-11 min-w-[120px] px-5 rounded-full bg-[#eeeeee] text-[#6b7280] text-[16px] font-bold hover:bg-[#e3e3e3]">
+                        キャンセル
+                    </button>
+                    <button type="button"
+                        class="h-11 min-w-[120px] px-5 rounded-full bg-[#3b82f6] text-white text-[16px] font-bold hover:bg-[#2f72dd]">
+                        登録する
+                    </button>
+                </footer>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
