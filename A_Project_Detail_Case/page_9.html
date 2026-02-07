@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>案件詳細</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap");
+
+        html,
+        body {
+            font-family: "Noto Sans JP", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f3f4f6] text-[#2E3A3C]">
+    <div class="min-h-screen">
+        <header class="h-16 md:h-[64px] flex items-center px-4 md:px-6 w-full bg-[#003E72]">
+            <div class="flex items-center justify-between w-full mx-auto">
+                <div>
+                    <img src="./img/logo 1.png" alt="オクトン" class="w-[138px] h-[50px]" />
+                </div>
+                <div class="flex items-center gap-5">
+                    <p class="text-[14px] text-white">プロジェクト管理</p>
+                    <button
+                        class="flex items-center gap-2 bg-white/20 rounded-full px-4 h-[36px] w-[140px] hover:bg-white/30 transition-colors">
+                        <img src="./img/sidebar-avatar.png" alt="User" class="w-6 h-6 rounded-full" />
+                        <span class="text-white text-[14px]">管理者A</span>
+                        <i class="fas fa-chevron-down text-white text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex min-h-[calc(100vh-56px)]">
+            <aside class="w-[280px] bg-white shadow-sm border-r border-gray-200 min-h-screen text-[#2E3A3C]">
+                <div class="flex flex-col">
+                    <div class="bg-[#1A92F7] px-5 py-4 flex items-center bg-opacity-10 justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="./img/sidebar-avatar.png" alt="Avatar" class="w-[36px] h-[36px] rounded-full" />
+                            <h2 class="text-[16px] font-bold text-[#003E72] leading-tight">
+                                IT導入補助金
+                            </h2>
+                        </div>
+                        <button class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col py-3">
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 text-[#1A92F7] font-bold hover:bg-blue-100/50 transition-colors duration-200">
+                            <p>管理画面ホーム</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+
+                        <hr class="ml-5 my-3" />
+
+                        <h3 class="text-[14px] font-bold px-5 py-3">● 基本操作</h3>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>(1) 回収ステップの設定</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>(2) プロジェクト設定</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>(3) メッセージを送る</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+
+                        <hr class="ml-5 my-3" />
+
+                        <h3 class="text-[14px] font-bold px-5 py-3">● 管理メニュー</h3>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>顧客一覧</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>請求の管理</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+
+                        <hr class="ml-5 my-3" />
+
+                        <h3 class="text-[14px] font-bold px-5 py-3">● 設定メニュー</h3>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>Q&Aの設定</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>システム設定</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="flex-1 bg-[#f3f4f6] px-10 py-8">
+                <div class="mx-auto">
+                    <a href="#" class="text-[14px] text-[#6b7280] hover:underline inline-flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-left text-[12px]"></i>
+                        案件一覧
+                    </a>
+
+                    <div class="mt-2">
+                        <h1 class="text-[22px]">
+                            <span class="text-[#2E3A3C] font-extrabold">クライアント・インボイス枠案件</span>| 案件詳細
+                        </h1>
+                        <p class="mt-1 text-[16px] text-[#2E3A3C]">株式会社クライアント</p>
+                    </div>
+
+                    <section class="mt-5 rounded-xl bg-white border-2 border-[#0b4a7f] shadow-sm px-6 py-5">
+                        <div class="flex flex-col gap-8">
+                            <div class="min-w-0 flex-1 space-y-4">
+                                <p class="text-[16px] font-bold text-[#2E3A3C]">
+                                    現在のステップの状態：
+                                </p>
+
+                                <div class="flex items-center gap-3">
+                                    <p class="text-[24px] font-bold text-[#1A92F7]">
+                                        STEP6 必要書類の提出
+                                    </p>
+                                    <span
+                                        class="h-6 px-3 rounded-full bg-[#E9F2FF] text-[#1A92F7] text-[12px] flex items-center">
+                                        提出済
+                                    </span>
+                                </div>
+
+                                <div class="flex items-center justify-between">
+                                    <div class="space-y-2 text-[#2E3A3C]">
+                                        <div class="flex items-center gap-2 text-[14px]">
+                                            <span>提出フォーム：</span>
+                                            <a href="#" class="text-[#003E72] underline">
+                                                https://app.octon-ai.com/form/...
+                                            </a>
+                                        </div>
+
+                                        <div class="flex items-center text-[14px]">
+                                            <span>締切日：</span>
+                                            <span class="ml-2 text-[16px]">2026/03/31</span>
+                                            <span class="ml-4 text-[16px] font-bold text-[#1A92F7]">
+                                                あと56日
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="h-12 px-6 rounded-full bg-[#1178e8] text-white text-[16px] hover:opacity-90">
+                                        次のステップへ進む
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-[#E5E7EB] flex items-center justify-between">
+                            <div class="flex items-center gap-6">
+                                <button class="text-[16px] font-bold text-[#003E72] hover:underline">
+                                    ステップ一覧
+                                </button>
+                                <button class="text-[16px] font-bold text-[#003E72] hover:underline">
+                                    更新履歴
+                                </button>
+                            </div>
+
+                            <button class="text-[12px] font-extrabold text-[#F00C0C] hover:underline">
+                                ステップを前に戻す
+                            </button>
+                        </div>
+                    </section>
+
+
+                    <div class="mt-6 grid grid-cols-12 gap-6 items-start">
+                        <div class="col-span-12 lg:col-span-7 space-y-6">
+                            <section class="rounded-xl bg-white border border-[#e5e7eb] shadow-sm overflow-hidden">
+                                <div class="h-[56px] px-4 bg-[#39566F] text-white flex items-center justify-between">
+                                    <h2 class="text-[20px] font-extrabold">回収した書類</h2>
+                                    <button type="button"
+                                        class="h-8 px-5 rounded-full bg-white border border-white/20 text-[14px] text-[#39566F] font-normal hover:bg-white/20">
+                                        同期
+                                    </button>
+                                </div>
+
+                                <div class="divide-y divide-[#eef2f7]">
+                                    <div class="p-5 flex items-center justify-between gap-3">
+                                        <div class="min-w-0">
+                                            <p class="text-[14px] font-bold text-[#6b7280]">STEP6 必要書類の提出</p>
+                                            <p class="text-[16px] text-[#2E3A3C] truncate">
+                                                documentfile.pdf
+                                                <i
+                                                    class="fa-solid fa-pen-to-square ml-2 text-[#1178e8] text-[12px]"></i>
+                                            </p>
+                                        </div>
+
+                                        <div class="shrink-0 flex items-center gap-2">
+                                            <span
+                                                class="h-7 px-3 rounded-[12px] bg-[#e9f2ff] text-[#1178e8] text-[12px] font-bold grid place-items-center">
+                                                提出済
+                                            </span>
+                                            <div class="bg-gray-100 rounded-full flex items-center px-1 gap-3">
+                                                <button
+                                                    class="w-10 h-10 rounded-full bg-[#1178e8] text-white grid place-items-center">
+                                                    <i class="fa-solid fa-arrow-up-right-from-square text-[14px]"></i>
+                                                </button>
+
+                                                <button
+                                                    class="w-6 h-6 rounded-full bg-[#e5e7eb] text-[#9ca3af] grid place-items-center">
+                                                    <i class="fa-solid fa-check text-[14px]"></i>
+                                                </button>
+
+                                                <button
+                                                    class="w-6 h-6 rounded-full text-[#9ca3af] grid place-items-center">
+                                                    <i class="fa-solid fa-rotate-left text-[14px]"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-5 flex items-center justify-between gap-3">
+                                        <div class="min-w-0">
+                                            <p class="text-[14px] font-bold text-[#6b7280]">STEP4 必要書類の提出</p>
+                                            <p class="text-[16px] text-[#2E3A3C] truncate">
+                                                document-file-name___003.pdf
+                                            </p>
+                                        </div>
+
+                                        <div class="shrink-0 flex items-center gap-2">
+                                            <span
+                                                class="h-7 px-3 rounded-[12px] bg-[#ffecec] text-[#F00C0C] text-[12px] font-bold grid place-items-center">
+                                                差戻し
+                                            </span>
+                                            <div class="bg-gray-100 rounded-full flex items-center px-1 gap-3">
+                                                <button
+                                                    class="w-6 h-6 rounded-full text-[#9ca3af] grid place-items-center">
+                                                    <i class="fa-solid fa-arrow-up-right-from-square text-[14px]"></i>
+                                                </button>
+
+                                                <button
+                                                    class="w-6 h-6 rounded-full bg-[#e5e7eb] text-[#9ca3af] grid place-items-center">
+                                                    <i class="fa-solid fa-check text-[14px]"></i>
+                                                </button>
+
+                                                <button
+                                                    class="w-10 h-10 rounded-full bg-[#DD514C] text-white grid place-items-center">
+                                                    <i class="fa-solid fa-rotate-left text-[14px]"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-5 flex items-center justify-between gap-3">
+                                        <div class="min-w-0">
+                                            <p class="text-[14px] font-bold text-[#6b7280]">STEP2 必要書類の提出</p>
+                                            <p class="text-[16px] text-[#2E3A3C] truncate">document-file_20260401.pdf
+                                            </p>
+                                        </div>
+
+                                        <div class="shrink-0 flex items-center gap-2">
+                                            <span
+                                                class="h-7 px-3 rounded-[12px] bg-[#eafaf0] text-[#16a34a] text-[12px] font-bold grid place-items-center">
+                                                差戻し
+                                            </span>
+                                            <div class="bg-gray-100 rounded-full flex items-center px-1 gap-3">
+                                                <button
+                                                    class="w-6 h-6 rounded-full text-[#9ca3af] grid place-items-center">
+                                                    <i class="fa-solid fa-arrow-up-right-from-square text-[14px]"></i>
+                                                </button>
+
+                                                <button
+                                                    class="w-10 h-10 rounded-full bg-[#16a34a] text-white grid place-items-center">
+                                                    <i class="fa-solid fa-check text-[14px]"></i>
+                                                </button>
+
+                                                <button
+                                                    class="w-6 h-6 rounded-full text-[#9ca3af] grid place-items-center">
+                                                    <i class="fa-solid fa-rotate-left text-[14px]"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="rounded-xl bg-white border border-[#e5e7eb] shadow-sm overflow-hidden">
+                                <div class="h-[56px] px-4 bg-[#39566F] text-white flex items-center justify-between">
+                                    <h2 class="text-[20px] font-extrabold">案件の基本情報</h2>
+                                    <button type="button"
+                                        class="h-8 px-5 rounded-full bg-white border border-white/20 text-[14px] text-[#39566F] font-normal hover:bg-white/20">
+                                        編集
+                                    </button>
+                                </div>
+
+                                <div class="p-5 flex flex-col gap-5">
+                                    <div class="flex flex-col gap-1">
+                                        <span class="text-[#6b7280] text-[14px] font-bold">案件名</span>
+                                        <span class="text-[16px] font-normal">クライアント・インボイス枠案件</span>
+                                    </div>
+
+                                    <div class="flex flex-col gap-1">
+                                        <span class="text-[#6b7280] text-[14px] font-bold">顧客名</span>
+                                        <span class="text-[16px] font-normal">株式会社クライアント</span>
+                                    </div>
+
+                                    <div class="flex flex-col gap-1">
+                                        <span class="text-[#6b7280] text-[14px] font-bold">カテゴリ</span>
+                                        <span class="text-[16px] font-normal">インボイス枠（インボイス対応類型）</span>
+                                    </div>
+
+                                    <div class="flex flex-col gap-1">
+                                        <span class="text-[#6b7280] text-[14px] font-bold">締切日</span>
+                                        <span class="text-[16px] font-normal">2026/03/31 <span
+                                                class="ml-3 text-[#1178e8] text-[16px] font-extrabold">あと56日</span></span>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="col-span-12 lg:col-span-5 space-y-3">
+                            <button
+                                class="w-full rounded-xl bg-white border border-[#e5e7eb] shadow-sm p-4 flex items-center justify-between hover:bg-gray-50">
+                                <div class="text-left">
+                                    <p class="text-[20px] text-[#0EB254] font-extrabold">フォーム設定</p>
+                                    <p class="mt-2 text-[16px] text-[#6D7475]">書類提出用のフォームを設定します。</p>
+                                </div>
+                                <span class="h-7 w-7 rounded-full bg-[#0EB254] text-white grid place-items-center">
+                                    <i class="fa-solid fa-chevron-right text-[12px]"></i>
+                                </span>
+                            </button>
+
+                            <button
+                                class="w-full rounded-xl bg-white border border-[#e5e7eb] shadow-sm p-4 flex items-center justify-between hover:bg-gray-50">
+                                <div class="text-left">
+                                    <p class="text-[20px] text-[#EC702A] font-extrabold">SNS連携</p>
+                                    <p class="mt-1 text-[16px] text-[#6D7475]">LINEやSlackなどのSNSと連携します。</p>
+                                </div>
+                                <span class="h-7 w-7 rounded-full bg-[#f97316] text-white grid place-items-center">
+                                    <i class="fa-solid fa-chevron-right text-[12px]"></i>
+                                </span>
+                            </button>
+
+                            <button
+                                class="w-full rounded-xl bg-white border border-[#e5e7eb] shadow-sm p-4 flex items-center justify-between hover:bg-gray-50">
+                                <div class="text-left">
+                                    <p class="text-[20px] text-[#0C53B4] font-extrabold">オンライン会議</p>
+                                    <p class="mt-1 text-[16px] text-[#6D7475]">顧客とのオンライン会議を行います。</p>
+                                </div>
+                                <span class="h-7 w-7 rounded-full bg-[#0C53B4] text-white grid place-items-center">
+                                    <i class="fa-solid fa-chevron-right text-[12px]"></i>
+                                </span>
+                            </button>
+
+                            <button
+                                class="w-full rounded-xl bg-white border border-[#e5e7eb] shadow-sm p-4 flex items-center justify-between hover:bg-gray-50">
+                                <div class="text-left">
+                                    <p class="text-[20px] text-[#FA4E7C] font-extrabold">メッセージを送る</p>
+                                    <p class="mt-1 text-[16px] text-[#6D7475]">顧客へメッセージを配信します。</p>
+                                </div>
+                                <span class="h-7 w-7 rounded-full bg-[#FA4E7C] text-white grid place-items-center">
+                                    <i class="fa-solid fa-chevron-right text-[12px]"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
