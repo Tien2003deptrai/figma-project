@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CSV出力</title>
+        <title>データエクスポート</title>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -37,16 +37,16 @@
                 <div class="flex flex-col h-full overflow-hidden">
                     <!-- Header -->
                     <div class="text-center py-6 border-b border-gray-300">
-                        <h1 class="text-[28px] font-extrabold mb-2">データインポート</h1>
+                        <h1 class="text-[28px] font-extrabold mb-2">データエクスポート</h1>
                         <p class="text-[14px]">
-                            他の回収ステップデータをインポートして、一括設定できます。
+                            回収ステップのデータをエクスポートして、他のプロジェクトに一括設定できます。
                         </p>
                     </div>
 
                     <div class="flex-1 overflow-y-auto p-6 space-y-6">
                         <!-- Block 1: Select Import Source -->
                         <div>
-                            <h2 class="text-[16px] font-bold mb-1">インポート元を選択</h2>
+                            <h2 class="text-[16px] font-bold mb-1">エクスポート先を選択</h2>
                             <div class="space-y-3">
                                 <!-- Option 1: Import from other projects -->
                                 <label
@@ -60,9 +60,9 @@
                                         class="w-6 h-6 text-[#1A92F7] border-[#c1c1c1] accent-[#1A92F7] cursor-pointer flex-shrink-0"
                                     />
                                     <div class="ml-3 flex-1">
-                                        <p class="font-bold">他のプロジェクトからインポート</p>
+                                        <p class="font-bold">他のプロジェクトへエクスポート</p>
                                         <p class="text-[14px] text-[#6D7475]">
-                                            他のプロジェクトで設定したステップを、このプロジェクトにも設定します。
+                                            このプロジェクトで設定したステップを、他のプロジェクトにも設定します。
                                         </p>
                                     </div>
                                 </label>
@@ -78,9 +78,11 @@
                                         class="w-6 h-6 text-[#1A92F7] border-[#c1c1c1] accent-[#1A92F7] cursor-pointer flex-shrink-0"
                                     />
                                     <div class="ml-3 flex-1">
-                                        <p class="font-bold">オクトンのシステムからインポート</p>
+                                        <p class="font-bold">
+                                            オクトンのシステムにステップを保存する
+                                        </p>
                                         <p class="text-[14px] text-[#6D7475]">
-                                            オクトンのシステムに保存されているステップデータをインポートします。
+                                            現在のステップをテンプレートとして保存します。
                                         </p>
                                     </div>
                                 </label>
@@ -90,7 +92,7 @@
                         <!-- Block 2: Select Source Project -->
                         <div>
                             <h2 class="text-[16px] font-bold mb-1">
-                                インポート元のプロジェクトを選択
+                                エクスポート先のプロジェクトを選択
                             </h2>
                             <div class="space-y-3">
                                 <!-- Option 1: Manufacturing subsidy -->
@@ -133,7 +135,7 @@
                         <div class="flex items-center justify-center gap-2 text-[#DD514C] mb-3">
                             <i class="fa-solid fa-circle-exclamation flex-shrink-0 text-[16px]"></i>
                             <p class="text-[14px]">
-                                現在設定中のステップは全て削除され、インポートしたステップで置き換えられます
+                                エクスポート先で設定中のステップは全て削除され、新しいステップに置き換えられます
                             </p>
                         </div>
                         <div class="flex gap-3 justify-center items-center">
@@ -143,7 +145,7 @@
                                 キャンセル
                             </button>
                             <button
-                                class="px-5 py-3 rounded-[24px] bg-[#00893A] text-white hover:bg-blue-600 transition cursor-pointer"
+                                class="px-5 py-3 rounded-[24px] bg-[#3F34C9] text-white hover:bg-blue-600 transition cursor-pointer"
                             >
                                 インポート
                             </button>
