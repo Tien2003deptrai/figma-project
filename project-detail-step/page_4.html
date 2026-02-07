@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ステップ詳細</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+            body {
+                font-family: "Poppins", sans-serif;
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-100">
+        <div class="min-h-screen flex items-center justify-center p-4 fixed inset-0">
+            <!-- Overlay Backdrop -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <!-- Modal -->
+            <div
+                class="relative bg-white rounded-[20px] shadow-xl w-[640px] max-h-[95vh] flex flex-col text-[#2E3A3C] z-10"
+            >
+                <!-- Close Button -->
+                <button
+                    class="absolute top-4 right-4 w-7 h-7 flex items-center justify-center rounded-full border-2 border-[#2E3A3C] hover:bg-gray-100 transition z-10 cursor-pointer"
+                >
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+
+                <!-- Modal Content -->
+                <div class="flex flex-col h-full overflow-hidden">
+                    <!-- Header -->
+                    <div class="text-center pt-6 border-b border-gray-300">
+                        <h1 class="text-[28px] font-extrabold mb-4">ステップ詳細</h1>
+                        <div class="flex justify-center pt-4 gap-5">
+                            <button
+                                class="pb-2 font-bold border-b-4 border-[#1A92F7] text-[#1A92F7] cursor-pointer transition"
+                                data-tab="basic-info"
+                            >
+                                基本情報
+                            </button>
+                            <button
+                                class="pb-2 font-bold text-gray-500 border-b-4 border-transparent hover:text-gray-700 cursor-pointer transition"
+                                data-tab="reminder-settings"
+                            >
+                                リマインダー設定
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tabs -->
+
+                    <!-- Content Area -->
+                    <div class="flex-1 overflow-y-auto p-6 space-y-6">
+                        <!-- Tab 1: Basic Info -->
+                        <div class="space-y-6">
+                            <!-- Step Name -->
+                            <div>
+                                <label class="block text-[14px] font-bold mb-2">ステップ名</label>
+                                <p>STEP1 案内関数</p>
+                            </div>
+
+                            <!-- Message Content -->
+                            <div>
+                                <label class="block text-[14px] font-bold mb-2">
+                                    メッセージ内容
+                                </label>
+                                <div class="leading-relaxed space-y-3">
+                                    🔸START <br />
+                                    STEP1 注意事項にサインする
+                                    <br />
+                                    <br />
+                                    申請に関する注意事項をGMOサインを通じて、ご担当者様のメールアドレスにお送りしましたので、ご確認ください。
+                                    <br />
+                                    <br />
+                                    署名は代表者様またはご担当者様にお願いいたします。
+                                    <br />
+                                    <br />
+                                    詳しくはこちら <br />
+                                    ▶️ https://ai-it-hojo.info/step1_detail.html
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 2: Reminder Settings (Hidden by default) -->
+                        <div id="reminder-settings" class="hidden space-y-6">
+                            <div class="text-center py-8 text-gray-500">
+                                <p class="text-[14px]">
+                                    リマインダー設定の内容がここに表示されます
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div
+                        class="border-t border-gray-200 py-4 px-6 flex gap-3 justify-center items-center"
+                    >
+                        <button
+                            class="px-6 py-3 rounded-[24px] bg-[#2E3A3C] text-white hover:opacity-80 transition cursor-pointer text-[14px] font-bold"
+                        >
+                            編集する
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
