@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>システム設定 - SNS設定</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap");
+
+        html,
+        body {
+            font-family: "Noto Sans JP", sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f3f4f6] text-[#2E3A3C]">
+    <div class="min-h-screen w-full">
+        <!-- Header -->
+        <header class="h-16 md:h-[64px] flex items-center px-4 md:px-6 w-full bg-[#003E72]">
+            <div class="flex items-center justify-between w-full mx-auto">
+                <div>
+                    <img src="./img/logo.png" alt="オクトン" class="w-[138px] h-[50px]" />
+                </div>
+                <div class="flex items-center gap-5">
+                    <p class="text-[14px] text-white">プロジェクト管理</p>
+                    <button
+                        class="flex items-center gap-2 bg-white/20 rounded-full px-4 h-[36px] w-[140px] hover:bg-white/30 transition-colors">
+                        <img src="./img/logo.png" alt="User" class="w-6 h-6 rounded-full" />
+                        <span class="text-white text-[14px]">管理者A</span>
+                        <i class="fas fa-chevron-down text-white text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex min-h-[calc(100vh-64px)] w-full">
+            <!-- Sidebar -->
+            <aside class="w-[280px] bg-white shadow-sm border-r border-gray-200 min-h-screen text-[#2E3A3C]">
+                <div class="flex flex-col">
+                    <div class="bg-[#1A92F7] px-5 py-4 flex items-center bg-opacity-10 justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="./img/sidebar-avatar.png" alt="Avatar" class="w-[36px] h-[36px] rounded-full" />
+                            <h2 class="text-[16px] font-bold text-[#003E72] leading-tight">
+                                IT導入補助金
+                            </h2>
+                        </div>
+                        <button class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col py-3">
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 text-[#1A92F7] font-bold hover:bg-blue-100/50 transition-colors duration-200">
+                            <p>管理画面ホーム</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+
+                        <hr class="ml-5 my-3" />
+
+                        <h3 class="text-[14px] font-bold px-5 py-3">● 基本操作</h3>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>(1) 回収ステップの設定</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>(2) プロジェクト設定</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>(3) メッセージを送る</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+
+                        <hr class="ml-5 my-3" />
+
+                        <h3 class="text-[14px] font-bold px-5 py-3">● 管理メニュー</h3>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>顧客一覧</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>請求の管理</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+
+                        <hr class="ml-5 my-3" />
+
+                        <h3 class="text-[14px] font-bold px-5 py-3">● 設定メニュー</h3>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>Q&Aの設定</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>システム設定</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main -->
+            <main class="flex-1 min-w-0 px-10 py-8 w-full">
+                <div class="flex items-start justify-between mb-5">
+                    <div>
+                        <h1 class="text-[28px] font-extrabold">システム設定</h1>
+                    </div>
+                    <button class="h-10 w-10 text-[#1A92F7] grid place-items-center">
+                        <i class="fa-solid fa-sliders text-[18px]"></i>
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-[12px] overflow-hidden">
+                    <section class="min-h-[102px] bg-white border-b border-[#e5e7eb] overflow-x-auto">
+                        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 min-h-[102px]">
+                            <button class="flex flex-col items-center justify-center gap-2 bg-white text-[#2E3A3C]">
+                                <span class="text-[26px] font-extrabold leading-none">#</span>
+                                <span class="text-[16px] font-bold">SNS設定</span>
+                            </button>
+
+                            <button
+                                class="flex flex-col items-center justify-center gap-2 bg-white hover:bg-[#fafafa] transition">
+                                <i class="fa-solid fa-robot text-[24px] text-[#2E3A3C]"></i>
+                                <span class="text-[16px] font-bold text-[#2E3A3C]">
+                                    AIPRO設定
+                                </span>
+                            </button>
+
+                            <button
+                                class="flex flex-col items-center justify-center gap-2 bg-white hover:bg-[#fafafa] transition">
+                                <i class="fa-solid fa-headset text-[24px] text-[#2E3A3C]"></i>
+                                <span class="text-[16px] font-bold text-[#2E3A3C]">
+                                    会議設定
+                                </span>
+                            </button>
+
+                            <button
+                                class="flex flex-col items-center justify-center gap-2 bg-white hover:bg-[#fafafa] transition">
+                                <i class="fa-solid fa-users text-[24px] text-[#2E3A3C]"></i>
+                                <span class="text-[16px] font-bold text-[#2E3A3C]">
+                                    ユーザー管理
+                                </span>
+                            </button>
+
+                            <button
+                                class="flex flex-col items-center justify-center gap-2 bg-[#0b4a7f] transition">
+                                <i class="fa-solid fa-list-check text-[24px] text-white"></i>
+                                <span class="text-[16px] font-bold text-white">
+                                    フォーム設定
+                                </span>
+                            </button>
+
+                            <button
+                                class="flex flex-col items-center justify-center gap-2 bg-white hover:bg-[#fafafa] transition">
+                                <i class="fa-solid fa-tag text-[24px] text-[#2E3A3C]"></i>
+                                <span class="text-[16px] font-bold text-[#2E3A3C]">
+                                    タグ管理
+                                </span>
+                            </button>
+
+                            <button
+                                class="flex flex-col items-center justify-center gap-2 bg-white hover:bg-[#fafafa] transition">
+                                <i class="fa-solid fa-globe text-[24px] text-[#2E3A3C]"></i>
+                                <span class="text-[16px] font-bold text-[#2E3A3C]">
+                                    国管理
+                                </span>
+                            </button>
+                        </div>
+                    </section>
+
+                    <div class="flex-1 max-h-[95vh] h-[90vh] p-5 overflow-auto">
+                        <!-- Title -->
+                        <h2 class="text-[24px] font-extrabold text-[#0b4a7f]">フォーム設定</h2>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
