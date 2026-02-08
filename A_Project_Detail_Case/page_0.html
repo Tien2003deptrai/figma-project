@@ -12,17 +12,21 @@
 
         html,
         body {
+            height: 100%;
             font-family: "Noto Sans JP", sans-serif;
         }
+
         body {
             overflow-x: hidden;
         }
     </style>
 </head>
 
-<body class="bg-[#d9d9d9] text-[#1f2937]">
-    <div class="h-full w-full">
-        <header class="h-16 md:h-[64px] flex items-center px-4 w-full bg-[#003E72]">
+<body class="bg-[#F5F5F5] text-[#2E3A3C]">
+    <!-- ✅ FIX: min-h-screen + flex-col để luôn full viewport -->
+    <div class="min-h-screen w-full flex flex-col">
+        <!-- Header (shrink-0 để không bị co) -->
+        <header class="h-16 md:h-[64px] shrink-0 flex items-center px-4 w-full bg-[#003E72]">
             <div class="flex items-center justify-between w-full mx-auto">
                 <div>
                     <img src="./img/logo 1.png" alt="オクトン" class="w-[138px] h-[50px]" />
@@ -39,8 +43,9 @@
             </div>
         </header>
 
-        <div class="flex h-full w-full">
-            <aside class="w-[280px] bg-[#f3f4f6] border-r border-[#d1d5db]">
+        <!-- ✅ FIX: phần content flex-1 để kéo full chiều cao còn lại -->
+        <div class="flex flex-1 min-h-0 w-full">
+            <aside class="w-[280px] bg-[#f3f4f6] border-r border-[#d1d5db] shrink-0">
                 <div class="h-[64px] bg-[#dbeafe] border-b border-[#cfd8e3] px-4 flex items-center justify-between">
                     <div class="flex items-center gap-2 min-w-0">
                         <div
@@ -107,9 +112,8 @@
                 </nav>
             </aside>
 
-
-            <main class="flex-1 min-w-0 bg-[#F5F5F5] p-10">
-                <div class="w-full min-w-0">
+            <main class="flex-1 min-w-0 min-h-0 bg-[#F5F5F5] p-10 flex flex-col">
+                <div class="w-full min-w-0 flex flex-col min-h-0">
                     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <div class="w-full sm:w-auto">
                             <h1
@@ -120,26 +124,32 @@
                         </div>
 
                         <div class="flex flex-wrap gap-2 sm:gap-3 mt-4 sm:mt-0 w-full sm:w-auto">
-                            <button
-                                class="h-9 px-3 rounded-md bg-[#2E3A3C] text-white text-[12px] font-bold leading-none w-full sm:w-auto">
-                                フィルター
-                            </button>
-                            <button
-                                class="h-12 w-12 rounded-full bg-white border border-[#D1D5DB] text-[#2285ea] grid place-items-center">
-                                <i class="fa-solid fa-sliders text-[18px]"></i>
-                            </button>
+                            <div class="relative inline-flex">
+                                <button
+                                    class="h-12 w-12 rounded-full bg-white border border-[#d1d5db] text-[#2285ea] grid place-items-center">
+                                    <i class="fa-solid fa-sliders text-[18px]"></i>
+                                </button>
+                                <span
+                                    class="absolute -top-5 left-1/2 -translate-x-1/2 h-6 px-2 rounded-md bg-[#2E3A3C] text-white text-[12px] font-bold flex items-center whitespace-nowrap">
+                                    フィルター
+                                </span>
+                            </div>
+
                             <button
                                 class="h-12 w-12 rounded-full bg-white border border-[#D1D5DB] text-[#2285ea] grid place-items-center">
                                 <i class="fa-solid fa-pen text-[16px]"></i>
                             </button>
+
                             <button
                                 class="h-12 w-12 rounded-full bg-white border border-[#e5e7eb] text-[#2285ea] grid place-items-center">
                                 <i class="fa-solid fa-gear text-[18px]"></i>
                             </button>
+
                             <button
                                 class="h-12 px-6 rounded-full bg-[#0a4f86] text-white text-[15px] sm:text-[16px] font-normal hover:bg-[#0a4473] w-full sm:w-auto">
                                 カテゴリ設定
                             </button>
+
                             <button
                                 class="h-12 px-6 rounded-full bg-[#1A92F7] text-white text-[15px] sm:text-[16px] font-normal inline-flex items-center gap-2 hover:bg-[#0f7de6] w-full sm:w-auto">
                                 <i class="fa-solid fa-plus text-[18px]"></i>
@@ -148,9 +158,11 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mt-4 sm:mt-6">
-                        <p class="text-[16px] sm:text-[18px] font-extrabold text-[#2E3A3C] leading-none order-1 sm:order-none">全6件</p>
-                        <div class="flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-6 text-[13px] sm:text-[14px] order-2 sm:order-none">
+                    <div
+                        class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mt-4 sm:mt-6">
+                        <p class="text-[16px] sm:text-[18px] font-extrabold text-[#2E3A3C] leading-none">全0件</p>
+                        <div
+                            class="flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-6 text-[13px] sm:text-[14px]">
                             <label class="inline-flex items-center gap-2 text-[#2E3A3C] font-normal whitespace-nowrap">
                                 <input type="checkbox" class="h-5 w-5 sm:h-6 sm:w-6 rounded border-[#c7ced9]" />
                                 今月期日のみ表示
@@ -166,8 +178,9 @@
                         </div>
                     </div>
 
-                    <section class="mt-4 rounded-xl bg-white border border-[#dadde2] shadow-sm overflow-hidden min-w-0">
-                        <div class="overflow-auto max-h-[476px]" style="width: 100%; min-width: 0;">
+                    <section
+                        class="mt-4 rounded-xl bg-white border border-[#dadde2] shadow-sm overflow-hidden min-w-0 flex-1 min-h-0 flex flex-col">
+                        <div class="overflow-auto flex-1 min-h-0" style="width: 100%; min-width: 0;">
                             <table class="w-full min-w-[980px] border-collapse text-[14px] text-[#2E3A3C]">
                                 <thead>
                                     <tr class="h-14 border-b border-[#d1d5db] bg-white">
@@ -179,92 +192,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="border-b border-[#d8dde6]">
-                                        <td class="px-6 py-3 align-top">
-                                            <p class="text-[18px] leading-tight font-extrabold text-[#003E72] truncate max-w-[280px]">クライアント・インボイス枠案件</p>
-                                            <p class="text-[12px] text-[#374151] font-normal mt-1 truncate max-w-[280px]">案件株式会社クライアント</p>
-                                        </td>
-                                        <td class="px-6 py-3 font-normal">インボイス枠（インボイス対応類型）</td>
-                                        <td class="px-6 py-3 font-normal">Step.2 書類未提出</td>
-                                        <td class="px-6 py-3 font-bold text-[#f97316]">3日前</td>
-                                        <td class="px-6 py-3 font-normal">
-                                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-user text-[#2E3A3C] text-[24px]"></i> 管理者A</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-b border-[#d8dde6]">
-                                        <td class="px-6 py-3 align-top">
-                                            <p class="text-[18px] leading-tight font-extrabold text-[#003E72] truncate max-w-[280px]">Octopus③複数社連携IT導入枠</p>
-                                            <p class="text-[12px] text-[#374151] font-normal mt-1 truncate max-w-[280px]">株式会社Octopus</p>
-                                        </td>
-                                        <td class="px-6 py-3 font-normal">複数社連携IT導入枠</td>
-                                        <td class="px-6 py-3 font-normal">案件開始前</td>
-                                        <td class="px-6 py-3 font-medium">2026/02/28</td>
-                                        <td class="px-6 py-3 font-normal">
-                                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-user text-[#2E3A3C] text-[24px]"></i> 管理者A</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-b border-[#d8dde6]">
-                                        <td class="px-6 py-3 align-top">
-                                            <p class="text-[18px] leading-tight font-extrabold text-[#003E72] truncate max-w-[280px]">Octopus③複数社連携IT導入枠</p>
-                                            <p class="text-[12px] text-[#374151] font-normal mt-1 truncate max-w-[280px]">株式会社Octopus</p>
-                                        </td>
-                                        <td class="px-6 py-3 font-normal">複数社連携IT導入枠</td>
-                                        <td class="px-6 py-3 font-normal">案件開始前</td>
-                                        <td class="px-6 py-3 font-medium">2026/02/28</td>
-                                        <td class="px-6 py-3 font-normal">
-                                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-user text-[#2E3A3C] text-[24px]"></i> 管理者A</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-b border-[#d8dde6]">
-                                        <td class="px-6 py-3 align-top">
-                                            <p class="text-[18px] leading-tight font-extrabold text-[#003E72] truncate max-w-[280px]">Octopus③複数社連携IT導入枠</p>
-                                            <p class="text-[12px] text-[#374151] font-normal mt-1 truncate max-w-[280px]">株式会社Octopus</p>
-                                        </td>
-                                        <td class="px-6 py-3 font-normal">複数社連携IT導入枠</td>
-                                        <td class="px-6 py-3 font-normal">案件開始前</td>
-                                        <td class="px-6 py-3 font-medium">2026/02/28</td>
-                                        <td class="px-6 py-3 font-normal">
-                                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-user text-[#2E3A3C] text-[24px]"></i> 管理者A</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-b border-[#d8dde6]">
-                                        <td class="px-6 py-3 align-top">
-                                            <p class="text-[18px] leading-tight font-extrabold text-[#003E72] truncate max-w-[280px]">Octopus③複数社連携IT導入枠</p>
-                                            <p class="text-[12px] text-[#374151] font-normal mt-1 truncate max-w-[280px]">株式会社Octopus</p>
-                                        </td>
-                                        <td class="px-6 py-3 font-normal">複数社連携IT導入枠</td>
-                                        <td class="px-6 py-3 font-normal">案件開始前</td>
-                                        <td class="px-6 py-3 font-medium">2026/02/28</td>
-                                        <td class="px-6 py-3 font-normal">
-                                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-user text-[#2E3A3C] text-[24px]"></i> 管理者A</span>
-                                        </td>
-                                    </tr>
                                     <tr>
-                                        <td class="px-6 py-3 align-top">
-                                            <p class="text-[18px] leading-tight font-extrabold text-[#003E72] truncate max-w-[280px]">Octopus③複数社連携IT導入枠</p>
-                                            <p class="text-[12px] text-[#374151] font-normal mt-1 truncate max-w-[280px]">株式会社Octopus</p>
-                                        </td>
-                                        <td class="px-6 py-3 font-normal">複数社連携IT導入枠</td>
-                                        <td class="px-6 py-3 font-normal">案件開始前</td>
-                                        <td class="px-6 py-3 font-medium">2026/02/28</td>
-                                        <td class="px-6 py-3 font-normal">
-                                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-user text-[#2E3A3C] text-[24px]"></i> 管理者A</span>
+                                        <td colspan="5" class="p-0">
+                                            <div
+                                                class="min-h-[470px] h-full w-full flex flex-col items-center justify-center">
+                                                <img src="./img/main_icon.png" alt="empty" class="w-[170px] h-auto object-contain" />
+
+                                                <p class="mt-1 text-[16px] font-bold text-[#2E3A3C]">
+                                                    案件を登録しましょう！
+                                                </p>
+
+                                                <button
+                                                    class="mt-5 h-12 px-12 rounded-full bg-[#1A92F7] text-white text-[16px] font-normal inline-flex items-center gap-2 hover:bg-[#0f7de6]">
+                                                    <i class="fa-solid fa-plus text-[18px]"></i>
+                                                    案件を登録
+                                                </button>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="h-16 px-6 border-t border-[#d1d5db] flex items-center flex-shrink-0">
-                            <div class="flex items-center gap-3 text-[14px] text-[#2E3A3C] font-normal">
-                                <span>表示設定</span>
-                                <button class="h-10 px-4 rounded-lg bg-white border border-[#d1d5db] text-[16px] text-[#2E3A3C] inline-flex items-center gap-3">
-                                    50件 / ページ
-                                    <i class="fa-solid fa-chevron-down text-[14px] text-[#2E3A3C]"></i>
-                                </button>
-                            </div>
-                        </div>
                     </section>
-
                 </div>
             </main>
         </div>
