@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プロジェクト詳細モーダル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+
+        body {
+            font-family: "Poppins", "Noto Sans JP", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#F3F4F6] text-[#2E3A3C]">
+    <div class="fixed inset-0 z-[120]">
+        <div class="absolute inset-0 bg-black/45"></div>
+        <div class="relative z-10 min-h-screen w-full grid place-items-center p-4">
+            <section
+                class="w-full sm:w-[640px] max-h-[95vh] sm:h-[593px] bg-white rounded-[14px] border border-[#e5e7eb] shadow-2xl overflow-hidden flex flex-col text-[#2E3A3C]">
+                <header class="relative shrink-0 border-b border-[#e5e7eb] px-6 pt-8 pb-6 flex flex-col items-center justify-center text-center">
+                    <button type="button" class="absolute right-3 top-3 h-8 w-8 rounded-full border-2 border-[#2E3A3C] text-[#4b5563] hover:bg-gray-100 grid place-items-center">
+                        <i class="fa-solid fa-xmark text-[18px]"></i>
+                    </button>
+
+                    <h2 class="text-[28px] leading-none font-extrabold tracking-tight">
+                        顧客新規登録
+                    </h2>
+                    <p class="mt-2 text-[14px] text-[#2E3A3C] font-normal">顧客情報を登録しましょう。</p>
+                </header>
+
+                <div class="flex-1 min-h-0 overflow-y-auto px-8 py-5">
+                    <form class="space-y-5">
+                        <div>
+                            <label class="inline-flex items-center gap-1 text-[16px] font-bold">
+                                顧客名 <span class="text-[#F00C0C]">*</span>
+                            </label>
+                            <input type="text" placeholder="株式会社オクトン"
+                                class="mt-1 w-full h-12 rounded-lg border border-[#d1d5db] bg-white px-3 text-[16px] placeholder:text-[#cbd5e1] outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40" />
+                        </div>
+
+                        <div>
+                            <label class="block text-[16px] font-bold">メールアドレス</label>
+                            <input type="email" placeholder="example@octon-ai.com"
+                                class="mt-1 w-full h-12 rounded-lg border border-[#d1d5db] bg-white px-3 text-[16px] placeholder:text-[#cbd5e1] outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40" />
+                        </div>
+
+                        <div>
+                            <label class="block text-[16px] font-bold">電話番号</label>
+                            <input type="text" placeholder="03-1234-5678"
+                                class="mt-1 w-full h-12 rounded-lg border border-[#d1d5db] bg-white px-3 text-[16px] placeholder:text-[#cbd5e1] outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40" />
+                        </div>
+
+                        <div>
+                            <label class="block text-[16px] font-extrabold">代表者名</label>
+                            <input type="text" placeholder="オクト太郎"
+                                class="mt-1 w-full h-12 rounded-lg border border-[#d1d5db] bg-white px-3 text-[16px] placeholder:text-[#cbd5e1] outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40" />
+                        </div>
+                    </form>
+                </div>
+
+                <footer
+                    class="shrink-0 border-t border-[#e5e7eb] bg-white px-6 py-3 flex items-center justify-center gap-3">
+                    <button type="button"
+                        class="h-12 px-7 sm:min-w-[120px] rounded-full bg-[#eeeeee] text-[#6b7280] text-[16px] font-normal hover:bg-[#e3e3e3]">
+                        キャンセル
+                    </button>
+
+                    <button type="button"
+                        class="h-12 px-7 sm:min-w-[120px] rounded-full bg-[#1d8cf8] text-white text-[16px] font-normal hover:bg-[#1577d6]">
+                        登録する
+                    </button>
+                </footer>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
