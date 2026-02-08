@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>プロジェクト詳細 - 書類回収AI BOT オクトン</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+            body {
+                font-family: "Poppins", sans-serif;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="min-h-screen flex flex-col overflow-x-hidden text-[#2E3A3C]">
+            <!-- Header -->
+            <header class="h-16 md:h-[64px] flex items-center px-4 md:px-6 w-full bg-[#003E72]">
+                <div class="flex items-center justify-between w-full mx-auto">
+                    <!-- Logo -->
+                    <div>
+                        <img src="./img/logo 1.png" alt="オクトン" class="w-[138px] h-[50px]" />
+                    </div>
+
+                    <!-- User Button -->
+                    <div class="flex items-center gap-5">
+                        <p class="text-[14px] text-white">プロジェクト管理</p>
+                        <button
+                            class="flex items-center gap-2 bg-white/20 rounded-full px-4 h-[36px] w-[140px] hover:bg-white/30 transition-colors"
+                        >
+                            <img
+                                src="./img/user-default.png"
+                                alt="User"
+                                class="w-6 h-6 rounded-full"
+                            />
+                            <span class="text-white text-[14px]">管理者A</span>
+                            <i class="fas fa-chevron-down text-white text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Layout: Sidebar + Content -->
+            <div class="flex flex-1 overflow-hidden bg-gray-100">
+                <!-- Sidebar -->
+                <aside
+                    class="w-[280px] bg-white shadow-sm border-r border-gray-200 min-h-screen text-[#2E3A3C]"
+                >
+                    <div class="flex flex-col">
+                        <!-- Header: Project Name -->
+                        <div
+                            class="bg-[#1A92F7] px-5 py-4 flex items-center bg-opacity-10 justify-between"
+                        >
+                            <div class="flex items-center gap-3">
+                                <img
+                                    src="./img/sidebar-avatar.png"
+                                    alt="Avatar"
+                                    class="w-[36px] h-[36px] rounded-full"
+                                />
+                                <h2 class="text-[16px] font-bold text-[#003E72] leading-tight">
+                                    IT導入補助金
+                                </h2>
+                            </div>
+                            <button
+                                class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors"
+                            >
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="flex flex-col py-3">
+                            <!-- Admin Home Link -->
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>管理画面ホーム</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+
+                            <hr class="ml-5 my-3" />
+
+                            <!-- Section 1: Basic Operations -->
+                            <h3 class="text-[14px] font-bold px-5 py-3">● 基本操作</h3>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 text-[#1A92F7] font-bold hover:bg-blue-100/50 transition-colors duration-200"
+                            >
+                                <p>(1) 回収ステップの設定</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>(2) プロジェクト設定</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>(3) メッセージを送る</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+
+                            <hr class="ml-5 my-3" />
+
+                            <!-- Section 2: Management Menu -->
+                            <h3 class="text-[14px] font-bold px-5 py-3">● 管理メニュー</h3>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>顧客一覧</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>請求の管理</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+
+                            <hr class="ml-5 my-3" />
+
+                            <!-- Section 3: Settings Menu -->
+                            <h3 class="text-[14px] font-bold px-5 py-3">● 設定メニュー</h3>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>Q&Aの設定</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
+                            >
+                                <p>システム設定</p>
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="flex-1 overflow-y-auto">
+                    <div class="max-w-full mx-auto p-4 md:p-10">
+                        <button
+                            class="text-[14px] flex items-center gap-2 mb-2 hover:text-[#1A92F7] transition-colors"
+                        >
+                            <i class="fas fa-arrow-left-long text-sm"></i>
+                            <p class="underline">ステップ一覧</p>
+                        </button>
+                        <!-- Header Section -->
+                        <h2 class="md:text-[24px] font-extrabold mb-5">回収ステップの設定</h2>
+                        <!-- Tabs Navigation -->
+                        <div class="bg-white w-full rounded-[12px]">
+                            <div class="flex gap-5 border-b border-[#707070]/30 px-6 pt-5">
+                                <button
+                                    class="pb-2 font-bold border-b-4 border-transparent cursor-pointer transition hover:text-gray-700"
+                                >
+                                    基本情報
+                                </button>
+                                <button
+                                    class="pb-2 font-bold border-b-4 border-[#1A92F7] text-[#1A92F7] cursor-pointer transition"
+                                >
+                                    リマインダー設定
+                                </button>
+                                <button
+                                    class="pb-2 font-bold border-b-4 border-transparent cursor-pointer transition hover:text-gray-700"
+                                >
+                                    フォーム設定
+                                </button>
+                            </div>
+
+                            <!-- Form Container -->
+                            <div class="p-6">
+                                <!-- Enable Reminder -->
+                                <div class="flex items-center gap-1 mb-4">
+                                    <input
+                                        type="checkbox"
+                                        id="enable-reminder"
+                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                        checked
+                                    />
+                                    <label for="enable-reminder" class="cursor-pointer">
+                                        リマインダーを有効にする
+                                    </label>
+                                    <button class="text-[#6D7475] hover:text-[#003E72]">
+                                        <i class="far fa-circle-question w-4 h-4"></i>
+                                    </button>
+                                </div>
+
+                                <div class="p-5 rounded-[8px] bg-[#F5F5F5] space-y-5">
+                                    <!-- Send Timing Settings -->
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        <div class="bg-white p-5 rounded-[8px]">
+                                            <div class="flex items-center gap-1">
+                                                <h3 class="font-bold text-[20px]">
+                                                    送信タイミング設定
+                                                </h3>
+                                                <button class="text-[#6D7475] hover:text-[#003E72]">
+                                                    <i class="far fa-circle-question w-4 h-4"></i>
+                                                </button>
+                                            </div>
+                                            <div class="flex items-center gap-7 mb-3">
+                                                <!-- Option 1 -->
+                                                <div class="flex items-center gap-3">
+                                                    <input
+                                                        type="radio"
+                                                        name="timing"
+                                                        id="timing-days"
+                                                        value="days"
+                                                        class="w-6 h-6 text-[#1A92F7] border-[#c1c1c1] accent-[#1A92F7] cursor-pointer flex-shrink-0"
+                                                        checked
+                                                    />
+                                                    <label
+                                                        for="timing-days"
+                                                        class="text-[#2E3A3C] cursor-pointer"
+                                                        >送信までの日数</label
+                                                    >
+                                                </div>
+                                                <!-- Option 2 -->
+                                                <div class="flex items-center gap-3">
+                                                    <input
+                                                        type="radio"
+                                                        name="timing"
+                                                        id="timing-fixed"
+                                                        value="fixed"
+                                                        class="w-6 h-6 text-[#1A92F7] border-[#c1c1c1] accent-[#1A92F7] cursor-pointer flex-shrink-0"
+                                                    />
+                                                    <label
+                                                        for="timing-fixed"
+                                                        class="text-[#2E3A3C] cursor-pointer"
+                                                        >中盤から日数指定</label
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div class="bg-[#F1F6FE] p-4 rounded-[8px]">
+                                                <h3 class="font-bold">送信までの時間</h3>
+                                                <div class="flex items-center gap-3">
+                                                    <input
+                                                        type="number"
+                                                        value="1"
+                                                        min="0"
+                                                        class="w-[96px] px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#1A92F7] text-center [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                                                    />
+
+                                                    <span class="font-bold">日後</span>
+                                                    <input
+                                                        type="time"
+                                                        value="10:00"
+                                                        class="min-w-[80px] px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#1A92F7] text-center"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Exclude Weekdays -->
+                                        <div class="p-5 bg-white rounded-[8px]">
+                                            <div class="flex items-center gap-2 mb-2">
+                                                <h3 class="font-bold text-[20px]">除外曜日設定</h3>
+                                                <button class="text-[#6D7475] hover:text-[#003E72]">
+                                                    <i class="far fa-circle-question w-4 h-4"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="grid grid-cols-4 gap-x-5 gap-y-3">
+                                                <label
+                                                    class="flex items-center gap-2 cursor-pointer"
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                    />
+                                                    <span>月曜日</span>
+                                                </label>
+                                                <label
+                                                    class="flex items-center gap-2 cursor-pointer"
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                    />
+                                                    <span>火曜日</span>
+                                                </label>
+                                                <label
+                                                    class="flex items-center gap-2 cursor-pointer"
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                    />
+                                                    <span>水曜日</span>
+                                                </label>
+                                                <label
+                                                    class="flex items-center gap-2 cursor-pointer"
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                    />
+                                                    <span>木曜日</span>
+                                                </label>
+                                                <label
+                                                    class="flex items-center gap-2 cursor-pointer"
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                    />
+                                                    <span>金曜日</span>
+                                                </label>
+                                                <label
+                                                    class="flex items-center gap-2 cursor-pointer"
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                        checked
+                                                    />
+                                                    <span>土曜日</span>
+                                                </label>
+                                                <label
+                                                    class="flex items-center gap-2 cursor-pointer col-span-2"
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                        checked
+                                                    />
+                                                    <span>日曜日</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Reminder Message Settings -->
+                                    <div class="p-5 rounded-[8px] bg-white">
+                                        <h3 class="font-bold text-[20px] mb-2">
+                                            リマインド用メッセージ設定
+                                        </h3>
+                                        <div class="flex items-center gap-3 mb-4">
+                                            <input
+                                                type="checkbox"
+                                                id="custom-message"
+                                                class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                checked
+                                            />
+                                            <label for="custom-message" class="cursor-pointer">
+                                                カスタムリマインドメッセージを使用する
+                                            </label>
+                                            <button class="text-[#6D7475] hover:text-[#003E72]">
+                                                <i class="far fa-circle-question w-4 h-4"></i>
+                                            </button>
+                                        </div>
+
+                                        <div class="grid grid-cols-12 gap-5">
+                                            <div class="col-span-7">
+                                                <div class="flex items-center gap-3">
+                                                    <label class="block font-bold text-[#2E3A3C]"
+                                                        >メッセージ内容
+                                                    </label>
+                                                    <button
+                                                        class="text-[#6D7475] hover:text-[#003E72]"
+                                                    >
+                                                        <i
+                                                            class="far fa-circle-question w-4 h-4"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                                <textarea
+                                                    name="message-content"
+                                                    placeholder="配信するメッセージを入力"
+                                                    rows="9"
+                                                    class="w-full px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#1A92F7] focus:border-transparent resize-none"
+                                                ></textarea>
+                                            </div>
+
+                                            <div class="col-span-5">
+                                                <div
+                                                    class="bg-[#F3F4F6] rounded-[12px] p-5 h-full overflow-y-auto"
+                                                >
+                                                    <h3 class="font-bold mb-1 text-[13px]">
+                                                        利用可能なタグ（クリックで挿入）
+                                                    </h3>
+                                                    <p class="text-[11px] mb-4">
+                                                        タグは送信時に自動で実データへ置き換えられます。
+                                                    </p>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <button
+                                                            class="px-2 py-1 bg-[#E5E6EA] rounded-[3px] text-[11px] font-bold hover:opacity-80 transition-all cursor-pointer"
+                                                        >
+                                                            {フォームリンク}
+                                                        </button>
+                                                        <button
+                                                            class="px-2 py-1 bg-[#E5E6EA] rounded-[3px] text-[11px] font-bold hover:opacity-80 transition-all cursor-pointer"
+                                                        >
+                                                            {ステータス}
+                                                        </button>
+                                                        <button
+                                                            class="px-2 py-1 bg-[#E5E6EA] rounded-[3px] text-[11px] font-bold hover:opacity-80 transition-all cursor-pointer"
+                                                        >
+                                                            {請求名}
+                                                        </button>
+                                                        <button
+                                                            class="px-2 py-1 bg-[#E5E6EA] rounded-[3px] text-[11px] font-bold hover:opacity-80 transition-all cursor-pointer"
+                                                        >
+                                                            {締切日}
+                                                        </button>
+                                                        <button
+                                                            class="px-2 py-1 bg-[#E5E6EA] rounded-[3px] text-[11px] font-bold hover:opacity-80 transition-all cursor-pointer"
+                                                        >
+                                                            {メールアドレス}
+                                                        </button>
+                                                        <button
+                                                            class="px-2 py-1 bg-[#E5E6EA] rounded-[3px] text-[11px] font-bold hover:opacity-80 transition-all cursor-pointer"
+                                                        >
+                                                            {電話番号}
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Next Day Reminder Settings -->
+                                    <div class="p-5 rounded-[8px] bg-white">
+                                        <h3 class="font-bold text-[20px] mb-2">
+                                            締切日リマインダー設定
+                                        </h3>
+                                        <div class="flex items-center gap-3 mb-5">
+                                            <input
+                                                type="checkbox"
+                                                id="custom-message"
+                                                class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                checked
+                                            />
+                                            <label for="custom-message" class="cursor-pointer">
+                                                締切日リマインダーを有効にする
+                                            </label>
+                                            <button class="text-[#6D7475] hover:text-[#003E72]">
+                                                <i class="far fa-circle-question w-4 h-4"></i>
+                                            </button>
+                                        </div>
+
+                                        <div class="bg-[#F1F6FE] p-4 rounded-[8px] mb-5">
+                                            <h3 class="font-bold">送信時間設定</h3>
+                                            <input
+                                                type="time"
+                                                value="10:00"
+                                                class="min-w-[80px] px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#1A92F7] text-center"
+                                                min="00:00"
+                                                max="23:59"
+                                            />
+                                        </div>
+
+                                        <div class="grid grid-cols-12 gap-5">
+                                            <div class="col-span-7">
+                                                <div class="flex items-center gap-3">
+                                                    <label class="block font-bold text-[#2E3A3C]"
+                                                        >メッセージ内容
+                                                    </label>
+                                                    <button
+                                                        class="text-[#6D7475] hover:text-[#003E72]"
+                                                    >
+                                                        <i
+                                                            class="far fa-circle-question w-4 h-4"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                                <textarea
+                                                    name="message-content"
+                                                    placeholder="配信するメッセージを入力"
+                                                    rows="9"
+                                                    class="w-full px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#1A92F7] focus:border-transparent resize-none"
+                                                ></textarea>
+                                            </div>
+
+                                            <div class="col-span-5">
+                                                <div
+                                                    class="bg-[#F3F4F6] rounded-[12px] p-5 h-full overflow-y-auto"
+                                                >
+                                                    <h3 class="font-bold mb-1 text-[13px]">
+                                                        利用可能なタグ（クリックで挿入）
+                                                    </h3>
+                                                    <p class="text-[11px] mb-4">
+                                                        タグは送信時に自動で実データへ置き換えられます。
+                                                    </p>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <button
+                                                            class="px-2 py-1 bg-[#E5E6EA] rounded-[3px] text-[11px] font-bold hover:opacity-80 transition-all cursor-pointer"
+                                                        >
+                                                            {フォームリンク}
+                                                        </button>
+                                                        <button
+                                                            class="px-2 py-1 bg-[#E5E6EA] rounded-[3px] text-[11px] font-bold hover:opacity-80 transition-all cursor-pointer"
+                                                        >
+                                                            {ステータス}
+                                                        </button>
+                                                        <button
+                                                            class="px-2 py-1 bg-[#E5E6EA] rounded-[3px] text-[11px] font-bold hover:opacity-80 transition-all cursor-pointer"
+                                                        >
+                                                            {請求名}
+                                                        </button>
+                                                        <button
+                                                            class="px-2 py-1 bg-[#E5E6EA] rounded-[3px] text-[11px] font-bold hover:opacity-80 transition-all cursor-pointer"
+                                                        >
+                                                            {締切日}
+                                                        </button>
+                                                        <button
+                                                            class="px-2 py-1 bg-[#E5E6EA] rounded-[3px] text-[11px] font-bold hover:opacity-80 transition-all cursor-pointer"
+                                                        >
+                                                            {メールアドレス}
+                                                        </button>
+                                                        <button
+                                                            class="px-2 py-1 bg-[#E5E6EA] rounded-[3px] text-[11px] font-bold hover:opacity-80 transition-all cursor-pointer"
+                                                        >
+                                                            {電話番号}
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Save Button -->
+                            <div class="flex justify-center py-3 border-t border-[#707070]/30">
+                                <button
+                                    class="px-5 py-3 bg-[#1A92F7] text-white rounded-full font-bold hover:bg-[#1A92F7] transition-colors"
+                                >
+                                    保存する
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>
