@@ -1,0 +1,1 @@
+Màn "Project Detail Custom" gồm: page_1, page_2. Còn các màn còn lại thuộc "Project Detail Setting"
