@@ -115,7 +115,7 @@
             </aside>
 
             <!-- Main -->
-            <main class="flex-1 min-w-0 px-10 py-8 ">
+            <main class="flex-1 min-w-0 px-4 sm:px-6 lg:px-10 py-6 sm:py-8">
                 <div class="flex items-start justify-between mb-5">
                     <div>
                         <h1 class="text-[28px] font-extrabold">システム設定</h1>
@@ -126,8 +126,8 @@
                 </div>
 
                 <div class="bg-white rounded-[12px] overflow-hidden">
-                    <section class="h-[102px] bg-white border-b border-[#e5e7eb] overflow-hidden">
-                        <div class="grid h-full grid-cols-7">
+                    <section class="min-h-[102px] bg-white border-b border-[#e5e7eb] overflow-x-auto">
+                        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 min-h-[102px]">
                             <button class="flex flex-col items-center justify-center gap-2 bg-white text-[#2E3A3C]">
                                 <span class="text-[26px] font-extrabold leading-none">#</span>
                                 <span class="text-[16px] font-bold">SNS設定</span>
@@ -183,12 +183,12 @@
                         </div>
                     </section>
 
-                    <div class="space-y-4 p-5">
+                    <div class="space-y-4 p-4 sm:p-5">
                         <h2 class="text-[24px] font-extrabold text-[#0b4a7f]">AIPRO設定</h2>
-                        <section class="rounded-xl bg-[#F1F6FE] border border-[#e5e7eb] p-5">
+                        <section class="rounded-xl bg-[#F1F6FE] border border-[#e5e7eb] p-4 sm:p-5">
                             <h3 class="text-[20px] font-bold text-[#2E3A3C]">AIPRO API設定</h3>
 
-                            <div class="mt-2 grid grid-cols-2 gap-6">
+                            <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                 <div>
                                     <label class="text-[16px] font-bold text-[#2E3A3C]">AIPRO API URL</label>
                                     <input
@@ -208,10 +208,10 @@
                         </section>
 
                         <!-- 学習API設定 -->
-                        <section class="rounded-xl bg-[#F1F6FE] border border-[#e5e7eb] p-5">
+                        <section class="rounded-xl bg-[#F1F6FE] border border-[#e5e7eb] p-4 sm:p-5">
                             <h3 class="text-[20px] font-bold text-[#2E3A3C]">学習API設定</h3>
 
-                            <div class="mt-2 grid grid-cols-2 gap-6">
+                            <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                 <div>
                                     <label class="text-[16px] font-bold text-[#2E3A3C]">学習API URL</label>
                                     <input
@@ -232,12 +232,12 @@
 
                         <!-- LINE QA プロンプトテンプレート -->
                         <section>
-                            <div class="flex items-center gap-2 mb-2">
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
                                 <img src="./img/line_icon.svg" alt="LINE" class="w-6 h-6">
                                 <h3 class="text-[16px] font-extrabold text-[#2E3A3C]">LINE QA プロンプトテンプレート</h3>
                             </div>
 
-                            <div class="p-5 bg-[#F5F5F5] rounded-[12px]">
+                            <div class="p-4 sm:p-5 bg-[#F5F5F5] rounded-[12px]">
                                 <textarea class="w-full h-[150px] rounded-lg border border-[#d1d5db] bg-white p-4 text-[16px] leading-6 outline-none"># あなたの役割 あなたは「IT導入補助金 専門サポートAI」です。LINEグループに常駐し、クライアント（申請者）とサポート担当スタッフが同じ場でやり取りします。明るく親しみやすい文章を「。」で必ず改行+1行空行を入れて読みやすくしてください。</textarea>
 
                                 <div class="mt-3 text-[14px] text-[#6D7475]">
@@ -265,12 +265,12 @@
 
                         <!-- LINE 個別QA リマインダープロンプトテンプレート -->
                         <section>
-                            <div class="flex items-center gap-2 mb-2">
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
                                 <img src="./img/line_icon.svg" alt="LINE" class="w-6 h-6">
                                 <h3 class="text-[16px] font-extrabold text-[#2E3A3C]">LINE 個別QA リマインダープロンプトテンプレート</h3>
                             </div>
 
-                            <div class="p-5 bg-[#F5F5F5] rounded-[12px]">
+                            <div class="p-4 sm:p-5 bg-[#F5F5F5] rounded-[12px]">
                                 <textarea class="w-full h-[150px] rounded-lg border border-[#d1d5db] bg-white p-4 text-[16px] leading-6 outline-none"># あなたの役割 あなたは「IT導入補助金 専門サポートAI」です。LINEグループに常駐し、クライアント（申請者）とサポート担当スタッフが同じ場でやり取りします。明るく親しみやすい文章を「。」で必ず改行+1行空行を入れて読みやすくしてください。</textarea>
                                 <div class="mt-3 text-[14px] text-[#6D7475]">
                                     利用可能なタグ（クリックで挿入）：
@@ -296,26 +296,26 @@
                         </section>
 
                         <!-- テスト実行 -->
-                        <section class="rounded-xl bg-[#E8F6EA] border border-[#bbf7d0] p-5">
+                        <section class="rounded-xl bg-[#E8F6EA] border border-[#bbf7d0] p-4 sm:p-5">
                             <h3 class="text-[16px] font-extrabold text-[#00893A]">テスト実行</h3>
 
-                            <div class="mt-3 flex items-center gap-4">
+                            <div class="mt-3 flex flex-wrap items-center gap-4">
                                 <input
-                                    class="flex-1 h-12 rounded-md border border-[#d1d5db] bg-white px-3 text-[16px] outline-none"
+                                    class="flex-1 min-w-0 h-12 rounded-md border border-[#d1d5db] bg-white px-3 text-[16px] outline-none"
                                     placeholder="テスト用の質問" />
                                 <button
-                                    class="h-12 w-[120px] rounded-full bg-[#16a34a] text-white text-[16px] font-normal hover:bg-[#12823d]">
+                                    class="h-12 w-full sm:w-[120px] rounded-full bg-[#16a34a] text-white text-[16px] font-normal hover:bg-[#12823d]">
                                     テスト実行
                                 </button>
                             </div>
                         </section>
 
                         <!-- 学習テスト実行 -->
-                        <section class="rounded-xl bg-[#E8F6EA] border border-[#bbf7d0] p-5">
+                        <section class="rounded-xl bg-[#E8F6EA] border border-[#bbf7d0] p-4 sm:p-5">
                             <h3 class="text-[16px] font-bold text-[#00893A]">学習テスト実行</h3>
 
-                            <div class="mt-3 flex items-end gap-4">
-                                <div class="flex-1 flex flex-col gap-3">
+                            <div class="mt-3 flex flex-col sm:flex-row sm:items-end gap-4">
+                                <div class="flex-1 min-w-0 flex flex-col gap-3">
                                     <input
                                         class="w-full h-12 rounded-md border border-[#d1d5db] bg-white px-3 text-[16px] outline-none"
                                         placeholder="学習タイトル" />
@@ -326,14 +326,14 @@
 
                                 <div class="flex-none flex justify-end">
                                     <button
-                                        class="h-12 w-[120px] rounded-full bg-[#16a34a] text-white text-[16px] font-normal hover:bg-[#12823d]">
+                                        class="h-12 w-full sm:w-[120px] rounded-full bg-[#16a34a] text-white text-[16px] font-normal hover:bg-[#12823d]">
                                         テスト実行
                                     </button>
                                 </div>
                             </div>
                         </section>
 
-                        <div class="mt-4 pt-3 border-t border-[#e5e7eb] flex items-center justify-center gap-3">
+                        <div class="mt-4 pt-3 border-t border-[#e5e7eb] flex flex-wrap items-center justify-center gap-3">
                             <button
                                 class="h-12 min-w-[120px] px-6 rounded-full bg-[#eeeeee] text-[#2D3A3C] text-[16px] font-normal hover:bg-[#e3e3e3]">
                                 キャンセル

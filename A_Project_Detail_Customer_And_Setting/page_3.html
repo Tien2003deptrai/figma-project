@@ -129,8 +129,8 @@
                 </div>
 
                 <div class="bg-white rounded-[12px] overflow-hidden">
-                    <section class="h-[102px] bg-white border-b border-[#e5e7eb] overflow-hidden">
-                        <div class="grid h-full grid-cols-7">
+                    <section class="min-h-[102px] bg-white border-b border-[#e5e7eb] overflow-x-auto">
+                        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 min-h-[102px]">
                             <button class="flex flex-col items-center justify-center gap-2 bg-[#0b4a7f] text-white">
                                 <span class="text-[26px] font-extrabold leading-none">#</span>
                                 <span class="text-[16px] font-bold">SNS設定</span>
@@ -193,7 +193,7 @@
                                 <h3 class="text-[20px] font-extrabold">デフォルトSNS</h3>
                                 <p class="mt-1 text-[14px] text-[#6b7280]">デフォルトで使用するSNSアプリを選択してください</p>
 
-                                <div class="mt-4 grid grid-cols-5 gap-3">
+                                <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
                                     <button
                                         class="relative h-[109px] rounded-lg border-2 border-[#1A92F7] bg-white grid place-items-center">
                                         <span
@@ -254,10 +254,10 @@
                             <p class="mt-1 text-[14px] text-[#2E3A3C]">SNSアプリとのアクセストークンなどの設定をします</p>
 
 
-                            <div class="mt-4 flex gap-5">
+                            <div class="mt-4 flex flex-col lg:flex-row gap-5">
                                 <!-- Left SNS list min-w-[188px] -->
-                                <aside class="w-[188px]">
-                                    <div class="space-y-2">
+                                <aside class="w-full lg:w-[188px] shrink-0">
+                                    <div class="flex flex-row flex-wrap lg:flex-col gap-2">
                                         <button
                                             class="w-full h-12 rounded-md border border-[#2E3A3C]/30 bg-white flex items-center gap-2 px-3">
                                             <img src="./img/line_icon.svg" class="h-7 w-7">
@@ -291,7 +291,7 @@
                                 </aside>
 
                                 <!-- Right form -->
-                                <div class="flex-1">
+                                <div class="flex-1 min-w-0">
                                     <div class="rounded-xl bg-white border border-[#e5e7eb] ">
                                         <!-- Token -->
                                         <div class="px-5 pt-6 pb-3">
@@ -349,7 +349,7 @@
                                             <!-- Template tabs -->
                                             <div class="mt-5 space-y-2">
                                                 <label class="text-[16px] font-bold">LINEメッセージテンプレート</label>
-                                                <div class="mt-2 flex items-center gap-4 text-[16px]">
+                                                <div class="mt-2 flex flex-wrap items-center gap-4 text-[16px]">
                                                     <button class="text-[#1A92F7] font-bold">グループメッセージ</button>
                                                     <span> | </span>
                                                     <button
@@ -409,15 +409,15 @@
 
                                                 <!-- Test box -->
                                                 <div
-                                                    class="rounded-lg bg-[#E8F6EA] border border-[#bbf7d0] p-5 flex items-center justify-between">
-                                                    <div>
+                                                    class="rounded-lg bg-[#E8F6EA] border border-[#bbf7d0] p-5 flex flex-wrap items-center justify-between gap-4">
+                                                    <div class="min-w-0">
                                                         <p class="text-[18px] text-[#00893A] font-extrabold">LINE
                                                             API接続テスト</p>
                                                         <p class="mt-1 text-[14px] text-[#6D7475]">LINE APIとの接続状況を確認します
                                                         </p>
                                                     </div>
                                                     <button
-                                                        class="h-12 w-[120px] px-5 rounded-full bg-[#16a34a] text-white text-[16px] font-normal hover:bg-[#12823d]">
+                                                        class="h-12 w-[120px] px-5 rounded-full bg-[#16a34a] text-white text-[16px] font-normal hover:bg-[#12823d] shrink-0">
                                                         テスト実行
                                                     </button>
                                                 </div>
@@ -426,7 +426,7 @@
 
                                         <!-- Bottom actions -->
                                         <div
-                                            class="mt-4 py-3 border-t border-[#e5e7eb] flex items-center justify-center gap-3">
+                                            class="mt-4 py-3 border-t border-[#e5e7eb] flex flex-wrap items-center justify-center gap-3">
                                             <button
                                                 class="h-12 min-w-[120px] px-6 rounded-full bg-[#eeeeee] text-[#2D3A3C] text-[16px] font-normal hover:bg-[#e3e3e3]">
                                                 キャンセル
