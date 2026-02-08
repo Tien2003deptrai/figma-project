@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プロジェクト詳細モーダル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+
+        body {
+            font-family: "Poppins", "Noto Sans JP", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-[#F3F4F6] text-[#2E3A3C]">
+
+    <!-- Overlay -->
+    <div class="fixed inset-0 z-[110]">
+        <div class="absolute inset-0 bg-black/45"></div>
+
+        <!-- Center -->
+        <div class="relative z-10 min-h-screen w-full grid place-items-center p-4">
+            <!-- Modal: 488 x 536 -->
+            <section
+                class="w-full sm:w-[488px] max-h-[95vh] h-[536px] bg-white rounded-[18px] border-[3px] border-white shadow-[0_22px_60px_rgba(0,0,0,0.35)] overflow-hidden flex flex-col text-[#2E3A3C]">
+                <!-- Header -->
+                <header class="relative h-[84px] shrink-0 bg-[#003E72] flex items-center justify-center">
+                    <h2 id="lark-create-title" class="text-[24px] font-extrabold text-white">Lark会議を作成</h2>
+
+                    <button type="button" aria-label="閉じる"
+                        class="absolute right-3 top-3 h-8 w-8 rounded-full border-2 border-white text-white hover:bg-white/10 grid place-items-center">
+                        <i class="fa-solid fa-xmark text-[14px]"></i>
+                    </button>
+                </header>
+
+                <!-- Body -->
+                <div class="flex-1 min-h-0 overflow-y-auto px-6 py-5 bg-white space-y-3">
+                    <!-- 開始時間 -->
+                    <div>
+                        <label class="inline-flex items-center gap-1 text-[16px] font-bold">
+                            開始時間 <span class="text-[#F00C0C]">*</span>
+                        </label>
+
+                        <div class="mt-2 flex items-center gap-2">
+                            <input type="text" value="2026.01.31"
+                                class="h-12 w-[120px] rounded-lg border border-[#d1d5db] bg-white px-3 text-[16px] outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40" />
+                            <input type="text" value="10:00"
+                                class="h-12 w-[120px] rounded-lg border border-[#d1d5db] bg-white px-3 text-[16px] outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40" />
+                        </div>
+
+                        <p class="mt-1 text-[12px] text-[#2E3A3C] font-normal">
+                            会議の開催日・開始時刻を設定してください
+                        </p>
+                    </div>
+
+                    <!-- アクセス制御設定 -->
+                    <div>
+                        <label class="block text-[16px] font-bold">アクセス制御設定（任意）</label>
+
+                        <div class="mt-2 h-12 rounded-lg border border-[#3761E2] bg-[#eff6ff] p-3">
+                            <label class="flex items-center gap-2 text-[16px] font-normal cursor-pointer">
+                                <input type="checkbox" checked
+                                    class="h-6 w-6 rounded border-[#cbd5e1] accent-[#1d8cf8]" />
+                                セキュアアクセスを有効にする
+                            </label>
+                        </div>
+
+                        <p class="mt-1 text-[12px] text-[#2E3A3C] font-normal">
+                            有効にすると、参加者は指定時間まで会議URLにアクセスできません。
+                        </p>
+                    </div>
+
+                    <!-- アクセスパスワード -->
+                    <div>
+                        <label class="block text-[16px] font-bold">アクセスパスワード（任意）</label>
+
+                        <input type="text" placeholder="会議参加用パスワード"
+                            class="mt-2 w-full h-12 rounded-lg border border-[#d1d5db] bg-white px-3 text-[13px] outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40" />
+
+                        <p class="mt-1 text-[12px] text-[#2E3A3C] font-normal">
+                            設定すると参加時にパスワード入力が必要になります。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer
+                    class="shrink-0 py-3 border-t border-[#e5e7eb] bg-white px-6 flex items-center justify-center gap-3">
+                    <button type="button"
+                        class="h-12 min-w-[120px] px-6 rounded-full bg-[#eeeeee] text-[#6b7280] text-[16px] font-normal hover:bg-[#e3e3e3]">
+                        キャンセル
+                    </button>
+                    <button type="button"
+                        class="h-12 min-w-[120px] px-6 rounded-full bg-[#1d8cf8] text-white text-[16px] font-normal hover:bg-[#1577d6]">
+                        作成する
+                    </button>
+                </footer>
+            </section>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
