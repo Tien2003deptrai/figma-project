@@ -171,12 +171,12 @@
                                     基本情報
                                 </button>
                                 <button
-                                    class="pb-2 font-bold border-b-4 border-[#1A92F7] text-[#1A92F7] cursor-pointer transition"
+                                    class="pb-2 font-bold border-b-4 border-transparent cursor-pointer transition hover:text-gray-700"
                                 >
                                     リマインダー設定
                                 </button>
                                 <button
-                                    class="pb-2 font-bold border-b-4 border-transparent cursor-pointer transition hover:text-gray-700"
+                                    class="pb-2 font-bold border-b-4 border-[#1A92F7] text-[#1A92F7] cursor-pointer transition"
                                 >
                                     フォーム設定
                                 </button>
@@ -184,190 +184,154 @@
 
                             <!-- Form Container -->
                             <div class="p-6">
-                                <!-- Enable Reminder -->
-                                <div class="flex items-center gap-1 mb-4">
-                                    <input
-                                        type="checkbox"
-                                        id="enable-reminder"
-                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
-                                        checked
-                                    />
-                                    <label for="enable-reminder" class="cursor-pointer">
-                                        リマインダーを有効にする
-                                    </label>
-                                    <button class="text-[#6D7475] hover:text-[#003E72]">
-                                        <i class="far fa-circle-question w-4 h-4"></i>
-                                    </button>
-                                </div>
-
                                 <div class="p-5 rounded-[8px] bg-[#F5F5F5] space-y-5">
-                                    <!-- Send Timing Settings -->
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                        <div class="bg-white p-5 rounded-[8px]">
-                                            <div class="flex items-center gap-1">
-                                                <h3 class="font-bold text-[20px]">
-                                                    送信タイミング設定
-                                                </h3>
-                                                <button class="text-[#6D7475] hover:text-[#003E72]">
-                                                    <i class="far fa-circle-question w-4 h-4"></i>
-                                                </button>
+                                    <div class="flex justify-between items-end">
+                                        <div
+                                            class="bg-white rounded-[8px] w-[720px] flex items-center justify-between px-5 py-4"
+                                        >
+                                            <div>
+                                                <h3 class="font-bold">自動ステータス遷移設定</h3>
+                                                <p class="text-[14px]">
+                                                    ファイルアップロード後に自動的に次のステータスに遷移します
+                                                </p>
                                             </div>
-                                            <div class="flex items-center gap-7 mb-3">
-                                                <!-- Option 1 -->
-                                                <div class="flex items-center gap-3">
+                                            <div>
+                                                <label
+                                                    class="relative flex items-center cursor-pointer w-fit"
+                                                >
                                                     <input
-                                                        type="radio"
-                                                        name="timing"
-                                                        id="timing-days"
-                                                        value="days"
-                                                        class="w-6 h-6 text-[#1A92F7] border-[#c1c1c1] accent-[#1A92F7] cursor-pointer flex-shrink-0"
+                                                        type="checkbox"
+                                                        class="sr-only peer"
                                                         checked
                                                     />
-                                                    <label
-                                                        for="timing-days"
-                                                        class="text-[#2E3A3C] cursor-pointer"
-                                                        >送信までの日数</label
+                                                    <div
+                                                        class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-[#1A92F7] transition"
+                                                    ></div>
+                                                    <span
+                                                        class="absolute left-1 w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition"
+                                                        style="top: 50%; margin-top: -0.5rem"
+                                                    ></span>
+                                                    <span class="font-bold text-[14px] ml-2"
+                                                        >自動遷移を有効にする</span
                                                     >
-                                                </div>
-                                                <!-- Option 2 -->
-                                                <div class="flex items-center gap-3">
-                                                    <input
-                                                        type="radio"
-                                                        name="timing"
-                                                        id="timing-fixed"
-                                                        value="fixed"
-                                                        class="w-6 h-6 text-[#1A92F7] border-[#c1c1c1] accent-[#1A92F7] cursor-pointer flex-shrink-0"
-                                                    />
-                                                    <label
-                                                        for="timing-fixed"
-                                                        class="text-[#2E3A3C] cursor-pointer"
-                                                        >中盤から日数指定</label
-                                                    >
-                                                </div>
-                                            </div>
-                                            <div class="bg-[#F1F6FE] p-4 rounded-[8px]">
-                                                <h3 class="font-bold">送信までの時間</h3>
-                                                <div class="flex items-center gap-3">
-                                                    <input
-                                                        type="number"
-                                                        value="1"
-                                                        min="0"
-                                                        class="w-[96px] px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#1A92F7] text-center [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                                                    />
-
-                                                    <span class="font-bold">日後</span>
-                                                    <input
-                                                        type="time"
-                                                        value="10:00"
-                                                        class="min-w-[80px] px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#1A92F7] text-center"
-                                                    />
-                                                </div>
+                                                </label>
                                             </div>
                                         </div>
-                                        <!-- Exclude Weekdays -->
-                                        <div class="p-5 bg-white rounded-[8px]">
-                                            <div class="flex items-center gap-2 mb-2">
-                                                <h3 class="font-bold text-[20px]">除外曜日設定</h3>
-                                                <button class="text-[#6D7475] hover:text-[#003E72]">
-                                                    <i class="far fa-circle-question w-4 h-4"></i>
-                                                </button>
+                                        <p class="text-[#6D7475] text-[14px]">
+                                            最終更新・<span>2026/01/31 15:01</span>
+                                        </p>
+                                    </div>
+                                    <div class="p-5 bg-white rounded-[8px]">
+                                        <h3 class="mb-3 text-[20px] font-bold">フォーム設定</h3>
+                                        <div class="space-y-3">
+                                            <div
+                                                class="border border-[#C1C1C1] rounded-[8px] p-3 bg-white"
+                                            >
+                                                <!-- Form Field Item -->
+                                                <div class="flex items-center gap-3">
+                                                    <!-- Icon Circle -->
+                                                    <div
+                                                        class="flex-shrink-0 w-11 h-11 bg-[#D2EDD6] rounded-[8px] flex items-center justify-center"
+                                                    >
+                                                        <i
+                                                            class="fas fa-a text-[#00893A] text-[20px]"
+                                                        ></i>
+                                                    </div>
+                                                    <!-- Content -->
+                                                    <div class="flex-1">
+                                                        <h4 class="text-[#003E72] font-bold">
+                                                            お名前
+                                                        </h4>
+                                                        <p class="text-[#003E72] text-[14px]">
+                                                            姓名で入力してください。
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-
-                                            <div class="grid grid-cols-4 gap-x-5 gap-y-3">
-                                                <label
-                                                    class="flex items-center gap-2 cursor-pointer"
-                                                >
-                                                    <input
-                                                        type="checkbox"
-                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
-                                                    />
-                                                    <span>月曜日</span>
-                                                </label>
-                                                <label
-                                                    class="flex items-center gap-2 cursor-pointer"
-                                                >
-                                                    <input
-                                                        type="checkbox"
-                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
-                                                    />
-                                                    <span>火曜日</span>
-                                                </label>
-                                                <label
-                                                    class="flex items-center gap-2 cursor-pointer"
-                                                >
-                                                    <input
-                                                        type="checkbox"
-                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
-                                                    />
-                                                    <span>水曜日</span>
-                                                </label>
-                                                <label
-                                                    class="flex items-center gap-2 cursor-pointer"
-                                                >
-                                                    <input
-                                                        type="checkbox"
-                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
-                                                    />
-                                                    <span>木曜日</span>
-                                                </label>
-                                                <label
-                                                    class="flex items-center gap-2 cursor-pointer"
-                                                >
-                                                    <input
-                                                        type="checkbox"
-                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
-                                                    />
-                                                    <span>金曜日</span>
-                                                </label>
-                                                <label
-                                                    class="flex items-center gap-2 cursor-pointer"
-                                                >
-                                                    <input
-                                                        type="checkbox"
-                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
-                                                        checked
-                                                    />
-                                                    <span>土曜日</span>
-                                                </label>
-                                                <label
-                                                    class="flex items-center gap-2 cursor-pointer col-span-2"
-                                                >
-                                                    <input
-                                                        type="checkbox"
-                                                        class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
-                                                        checked
-                                                    />
-                                                    <span>日曜日</span>
-                                                </label>
+                                            <div
+                                                class="border border-[#C1C1C1] rounded-[8px] p-3 bg-white"
+                                            >
+                                                <!-- Form Field Item -->
+                                                <div class="flex items-center gap-3">
+                                                    <!-- Icon Circle -->
+                                                    <div
+                                                        class="flex-shrink-0 w-11 h-11 bg-[#003E72] rounded-[8px] flex items-center justify-center"
+                                                    >
+                                                        <i
+                                                            class="fas fa-file-arrow-up text-white text-[20px]"
+                                                        ></i>
+                                                    </div>
+                                                    <!-- Content -->
+                                                    <div class="flex-1">
+                                                        <h4 class="text-[#003E72] font-bold">
+                                                            書類のアップロード
+                                                        </h4>
+                                                        <p class="text-[#003E72] text-[14px]">
+                                                            書類のファイル（pdfまたはjpg）をアップロードしてください。
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="border border-[#C1C1C1] rounded-[8px] p-3 bg-white"
+                                            >
+                                                <!-- Form Field Item -->
+                                                <div class="flex items-center gap-3">
+                                                    <!-- Icon Circle -->
+                                                    <div
+                                                        class="flex-shrink-0 w-11 h-11 bg-[#FAE6E5] rounded-[8px] flex items-center justify-center"
+                                                    >
+                                                        <i
+                                                            class="fas fa-list-check text-[#DD514C] text-[20px]"
+                                                        ></i>
+                                                    </div>
+                                                    <!-- Content -->
+                                                    <div class="flex-1">
+                                                        <h4 class="text-[#003E72] font-bold">
+                                                            書類の種類チェック
+                                                        </h4>
+                                                        <p class="text-[#003E72] text-[14px]">
+                                                            アップロードする書類の種類を選択してください。
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="border border-[#C1C1C1] rounded-[8px] p-3 bg-white"
+                                            >
+                                                <!-- Form Field Item -->
+                                                <div class="flex items-center gap-3">
+                                                    <!-- Icon Circle -->
+                                                    <div
+                                                        class="flex-shrink-0 w-11 h-11 bg-[#E6F4FF] rounded-[8px] flex items-center justify-center"
+                                                    >
+                                                        <i
+                                                            class="fas fa-list text-[#1A92F7] text-[20px]"
+                                                        ></i>
+                                                    </div>
+                                                    <!-- Content -->
+                                                    <div class="flex-1">
+                                                        <h4 class="text-[#003E72] font-bold">
+                                                            希望の連絡方法
+                                                        </h4>
+                                                        <p class="text-[#003E72] text-[14px]">
+                                                            希望の連絡方法を選択してください。（複数選択可）
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Reminder Message Settings -->
                                     <div class="p-5 rounded-[8px] bg-white">
                                         <h3 class="font-bold text-[20px] mb-2">
-                                            リマインド用メッセージ設定
+                                            メッセージテンプレート設定
                                         </h3>
-                                        <div class="flex items-center gap-3 mb-4">
-                                            <input
-                                                type="checkbox"
-                                                id="custom-message"
-                                                class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
-                                                checked
-                                            />
-                                            <label for="custom-message" class="cursor-pointer">
-                                                カスタムリマインドメッセージを使用する
-                                            </label>
-                                            <button class="text-[#6D7475] hover:text-[#003E72]">
-                                                <i class="far fa-circle-question w-4 h-4"></i>
-                                            </button>
-                                        </div>
 
                                         <div class="grid grid-cols-12 gap-5">
                                             <div class="col-span-7">
                                                 <div class="flex items-center gap-3">
                                                     <label class="block font-bold text-[#2E3A3C]"
-                                                        >メッセージ内容
+                                                        >書類差し戻し時メッセージ
                                                     </label>
                                                     <button
                                                         class="text-[#6D7475] hover:text-[#003E72]"
@@ -431,11 +395,9 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Next Day Reminder Settings -->
                                     <div class="p-5 rounded-[8px] bg-white">
                                         <h3 class="font-bold text-[20px] mb-2">
-                                            締切日リマインダー設定
+                                            リマインダーデフォルト設定
                                         </h3>
                                         <div class="flex items-center gap-3 mb-5">
                                             <input
@@ -445,7 +407,7 @@
                                                 checked
                                             />
                                             <label for="custom-message" class="cursor-pointer">
-                                                締切日リマインダーを有効にする
+                                                リマインダーを有効にする
                                             </label>
                                             <button class="text-[#6D7475] hover:text-[#003E72]">
                                                 <i class="far fa-circle-question w-4 h-4"></i>
@@ -453,14 +415,22 @@
                                         </div>
 
                                         <div class="bg-[#F1F6FE] p-4 rounded-[8px] mb-5">
-                                            <h3 class="font-bold">送信時間設定</h3>
-                                            <input
-                                                type="time"
-                                                value="10:00"
-                                                class="min-w-[80px] px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#1A92F7] text-center"
-                                                min="00:00"
-                                                max="23:59"
-                                            />
+                                            <h3 class="font-bold">送信までの時間</h3>
+                                            <div class="flex items-center gap-3">
+                                                <input
+                                                    type="number"
+                                                    value="1"
+                                                    min="0"
+                                                    class="w-[96px] px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#1A92F7] text-center [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                                                />
+
+                                                <span class="font-bold">日後</span>
+                                                <input
+                                                    type="time"
+                                                    value="10:00"
+                                                    class="min-w-[80px] px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#1A92F7] text-center"
+                                                />
+                                            </div>
                                         </div>
 
                                         <div class="grid grid-cols-12 gap-5">
