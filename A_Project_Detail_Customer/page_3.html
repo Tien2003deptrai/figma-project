@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>システム設定 - SNS設定</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap");
+
+        html,
+        body {
+            font-family: "Noto Sans JP", sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f3f4f6] text-[#2E3A3C]">
+    <div class="min-h-screen w-full">
+        <!-- Header -->
+        <header class="h-16 md:h-[64px] flex items-center px-4 md:px-6 w-full bg-[#003E72]">
+            <div class="flex items-center justify-between w-full mx-auto">
+                <div>
+                    <img src="./img/logo.png" alt="オクトン" class="w-[138px] h-[50px]" />
+                </div>
+                <div class="flex items-center gap-5">
+                    <p class="text-[14px] text-white">プロジェクト管理</p>
+                    <button
+                        class="flex items-center gap-2 bg-white/20 rounded-full px-4 h-[36px] w-[140px] hover:bg-white/30 transition-colors">
+                        <img src="./img/logo.png" alt="User" class="w-6 h-6 rounded-full" />
+                        <span class="text-white text-[14px]">管理者A</span>
+                        <i class="fas fa-chevron-down text-white text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex min-h-[calc(100vh-64px)] w-full">
+            <!-- Sidebar -->
+            <aside class="w-[280px] bg-white shadow-sm border-r border-gray-200 min-h-screen text-[#2E3A3C]">
+                <div class="flex flex-col">
+                    <div class="bg-[#1A92F7] px-5 py-4 flex items-center bg-opacity-10 justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="./img/sidebar-avatar.png" alt="Avatar" class="w-[36px] h-[36px] rounded-full" />
+                            <h2 class="text-[16px] font-bold text-[#003E72] leading-tight">
+                                IT導入補助金
+                            </h2>
+                        </div>
+                        <button class="text-sm hover:text-[#1A92F7] hover:font-bold transition-colors">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col py-3">
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 text-[#1A92F7] font-bold hover:bg-blue-100/50 transition-colors duration-200">
+                            <p>管理画面ホーム</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+
+                        <hr class="ml-5 my-3" />
+
+                        <h3 class="text-[14px] font-bold px-5 py-3">● 基本操作</h3>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>(1) 回収ステップの設定</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>(2) プロジェクト設定</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>(3) メッセージを送る</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+
+                        <hr class="ml-5 my-3" />
+
+                        <h3 class="text-[14px] font-bold px-5 py-3">● 管理メニュー</h3>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>顧客一覧</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>請求の管理</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+
+                        <hr class="ml-5 my-3" />
+
+                        <h3 class="text-[14px] font-bold px-5 py-3">● 設定メニュー</h3>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>Q&Aの設定</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200">
+                            <p>システム設定</p>
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+
+
+            <!-- Main -->
+            <main class="flex-1 min-w-0 px-10 py-8 ">
+                <div class="flex items-start justify-between mb-5">
+                    <div>
+                        <h1 class="text-[28px] font-extrabold">システム設定</h1>
+                    </div>
+                    <button
+                        class="h-10 w-10 text-[#1A92F7] grid place-items-center">
+                        <i class="fa-solid fa-sliders text-[18px]"></i>
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-[12px] overflow-hidden">
+                    <section class="h-[102px] bg-white border-b border-[#e5e7eb] overflow-hidden">
+                        <div class="grid h-full grid-cols-7">
+                            <button class="flex flex-col items-center justify-center gap-2 bg-[#0b4a7f] text-white">
+                                <span class="text-[26px] font-extrabold leading-none">#</span>
+                                <span class="text-[16px] font-bold">SNS設定</span>
+                            </button>
+
+                            <button
+                                class="flex flex-col items-center justify-center gap-2 bg-white hover:bg-[#fafafa] transition">
+                                <i class="fa-solid fa-robot text-[24px] text-[#2E3A3C]"></i>
+                                <span class="text-[16px] font-bold text-[#2E3A3C]">
+                                    AIPRO設定
+                                </span>
+                            </button>
+
+                            <button
+                                class="flex flex-col items-center justify-center gap-2 bg-white hover:bg-[#fafafa] transition">
+                                <i class="fa-solid fa-headset text-[24px] text-[#2E3A3C]"></i>
+                                <span class="text-[16px] font-bold text-[#2E3A3C]">
+                                    会議設定
+                                </span>
+                            </button>
+
+                            <button
+                                class="flex flex-col items-center justify-center gap-2 bg-white hover:bg-[#fafafa] transition">
+                                <i class="fa-solid fa-users text-[24px] text-[#2E3A3C]"></i>
+                                <span class="text-[16px] font-bold text-[#2E3A3C]">
+                                    ユーザー管理
+                                </span>
+                            </button>
+
+                            <button
+                                class="flex flex-col items-center justify-center gap-2 bg-white hover:bg-[#fafafa] transition">
+                                <i class="fa-solid fa-list-check text-[24px] text-[#2E3A3C]"></i>
+                                <span class="text-[16px] font-bold text-[#2E3A3C]">
+                                    フォーム設定
+                                </span>
+                            </button>
+
+                            <button
+                                class="flex flex-col items-center justify-center gap-2 bg-white hover:bg-[#fafafa] transition">
+                                <i class="fa-solid fa-tag text-[24px] text-[#2E3A3C]"></i>
+                                <span class="text-[16px] font-bold text-[#2E3A3C]">
+                                    タグ管理
+                                </span>
+                            </button>
+
+                            <button
+                                class="flex flex-col items-center justify-center gap-2 bg-white hover:bg-[#fafafa] transition">
+                                <i class="fa-solid fa-globe text-[24px] text-[#2E3A3C]"></i>
+                                <span class="text-[16px] font-bold text-[#2E3A3C]">
+                                    国管理
+                                </span>
+                            </button>
+                        </div>
+                    </section>
+
+                    <div class="p-5 space-y-4">
+                        <h2 class="text-[24px] font-extrabold text-[#0b4a7f]">SNS設定</h2>
+                        <section class="py-3 rounded-xl bg-[#F1F6FE] border border-[#e5e7eb]">
+                            <div class="px-5">
+                                <h3 class="text-[20px] font-extrabold">デフォルトSNS</h3>
+                                <p class="mt-1 text-[14px] text-[#6b7280]">デフォルトで使用するSNSアプリを選択してください</p>
+
+                                <div class="mt-4 grid grid-cols-5 gap-3">
+                                    <button
+                                        class="relative h-[109px] rounded-lg border-2 border-[#1A92F7] bg-white grid place-items-center">
+                                        <span
+                                            class="absolute top-2 right-2 h-6 px-3 rounded-full bg-[#dcfce7] text-[#16a34a] text-[12px] font-extrabold grid place-items-center">
+                                            選択中
+                                        </span>
+                                        <div class="flex flex-col items-center gap-1">
+                                            <img src="./img/line_icon.svg" class="h-12 w-12">
+                                            <div class="text-[18px] font-bold">LINE</div>
+                                        </div>
+                                    </button>
+
+                                    <button
+                                        class="h-[109px] rounded-lg border border-[#e5e7eb] bg-white grid place-items-center hover:bg-[#fafafa]">
+                                        <div class="flex flex-col items-center gap-1">
+                                            <img src="./img/slack_icon.svg" class="h-12 w-12">
+                                            <div class="text-[18px] font-bold">Slack</div>
+                                            </img>
+                                    </button>
+
+                                    <button
+                                        class="h-[109px] rounded-lg border border-[#e5e7eb] bg-white grid place-items-center hover:bg-[#fafafa]">
+                                        <div class="flex flex-col items-center gap-1">
+                                            <img src="./img/chat_work_icon.svg" class="h-12 w-12">
+                                            <div class="text-[18px] font-bold">Chatwork</div>
+                                        </div>
+                                    </button>
+
+                                    <button
+                                        class="h-[109px] rounded-lg border border-[#e5e7eb] bg-white grid place-items-center hover:bg-[#fafafa]">
+                                        <div class="flex flex-col items-center gap-1">
+                                            <img src="./img/telegram_icon.svg" class="h-12 w-12">
+                                            <div class="text-[18px] font-bold">Telegram</div>
+                                            </img>
+                                    </button>
+
+                                    <button
+                                        class="h-[109px] rounded-lg border border-[#e5e7eb] bg-white grid place-items-center hover:bg-[#fafafa]">
+                                        <div class="flex flex-col items-center gap-1">
+                                            <img src="./img/lark_icon.svg" class="h-12 w-12">
+                                            <div class="text-[18px] font-bold">Lark</div>
+                                            </img>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-3 border-t border-[#e5e7eb] px-5 flex justify-end">
+                                <button
+                                    class="h-12 min-w-[120px] px-6 rounded-full bg-[#1A92F7] text-white text-[16px] font-normal hover:bg-[#0f7de6]">
+                                    保存する
+                                </button>
+                            </div>
+                        </section>
+
+                        <!-- SNS service settings -->
+                        <section class="mt-4 rounded-xl bg-[#F1F6FE] border border-[#e5e7eb] p-5">
+                            <h3 class="text-[20px] text-[#2E3A3C] font-extrabold">SNSサービス設定</h3>
+                            <p class="mt-1 text-[14px] text-[#2E3A3C]">SNSアプリとのアクセストークンなどの設定をします</p>
+
+
+                            <div class="mt-4 flex gap-5">
+                                <!-- Left SNS list min-w-[188px] -->
+                                <aside class="w-[188px]">
+                                    <div class="space-y-2">
+                                        <button
+                                            class="w-full h-12 rounded-md border border-[#2E3A3C]/30 bg-white flex items-center gap-2 px-3">
+                                            <img src="./img/line_icon.svg" class="h-7 w-7">
+                                            <span class="text-[14px] font-bold">LINE</span>
+                                        </button>
+
+                                        <button
+                                            class="w-full h-12 rounded-md bg-white hover:bg-[#fafafa] flex items-center gap-2 px-3 border border-[#e5e7eb]">
+                                            <img src="./img/slack_icon.svg" class="h-7 w-7">
+                                            <span class="text-[14px] font-bold">Slack</span>
+                                        </button>
+
+                                        <button
+                                            class="w-full h-12 rounded-md bg-white hover:bg-[#fafafa] flex items-center gap-2 px-3 border border-[#e5e7eb]">
+                                            <img src="./img/chat_work_icon.svg" class="h-7 w-7">
+                                            <span class="text-[14px] font-bold">Chatwork</span>
+                                        </button>
+
+                                        <button
+                                            class="w-full h-12 rounded-md bg-white hover:bg-[#fafafa] flex items-center gap-2 px-3 border border-[#e5e7eb]">
+                                            <img src="./img/telegram_icon.svg" class="h-7 w-7">
+                                            <span class="text-[14px] font-bold">Telegram</span>
+                                        </button>
+
+                                        <button
+                                            class="w-full h-12 rounded-md bg-white hover:bg-[#fafafa] flex items-center gap-2 px-3 border border-[#e5e7eb]">
+                                            <img src="./img/lark_icon.svg" class="h-7 w-7">
+                                            <span class="text-[14px] font-bold">Lark</span>
+                                        </button>
+                                    </div>
+                                </aside>
+
+                                <!-- Right form -->
+                                <div class="flex-1">
+                                    <div class="rounded-xl bg-white border border-[#e5e7eb] ">
+                                        <!-- Token -->
+                                        <div class="px-5 pt-6 pb-3">
+                                            <div>
+                                                <label class="text-[16px] font-extrabold">
+                                                    Channel Access Token<span class="text-[#2E3A3C]">*</span>
+                                                </label>
+                                                <input
+                                                    class="mt-2 w-full h-12 rounded-lg border border-[#d1d5db] px-3 text-[16px] outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40"
+                                                    value="fUYnkML+KLH...（ダミー）" />
+                                                <p class="mt-1 text-[12px] text-[#6D7475]">LINE
+                                                    Developersコンソールから発行してください
+                                                </p>
+                                            </div>
+
+                                            <!-- Secret -->
+                                            <div class="mt-4">
+                                                <label class="text-[16px] font-extrabold">Channel Secret<span
+                                                        class="text-[#2E3A3C]">*</span></label>
+                                                <input
+                                                    class="mt-2 w-full h-12 rounded-lg border border-[#d1d5db] px-3 text-[16px] outline-none focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40"
+                                                    value="04bb2...（ダミー）" />
+                                                <p class="mt-1 text-[12px] text-[#2E3A3C]">LINE
+                                                    Developersコンソールから発行してください
+                                                </p>
+                                            </div>
+
+                                            <!-- Webhook -->
+                                            <div class="mt-4">
+                                                <label class="text-[16px] font-extrabold">Webhook URL</label>
+                                                <div class="mt-2 relative">
+                                                    <input
+                                                        class="w-full h-12 rounded-lg border border-[#d1d5db] px-3 pr-10 text-[16px] outline-none"
+                                                        value="https://app.octon-ai.com/api/line/webhook/1" />
+                                                    <img src="./img/copy_icon.png"
+                                                        class="h-[26px] w-[26px] absolute right-2 top-1/2 -translate-y-1/2">
+                                                </div>
+                                                <p class="mt-1 text-[12px] text-[#2E3A3C]">このURLをLINE
+                                                    Developersコンソールに設定してください
+                                                </p>
+                                            </div>
+
+                                            <!-- Bot name -->
+                                            <div class="mt-4">
+                                                <label class="text-[16px] font-extrabold">Bot名（任意）</label>
+                                                <div class="mt-2 relative">
+                                                    <input
+                                                        class="w-full h-12 rounded-lg border border-[#d1d5db] px-3 pr-10 text-[16px] outline-none"
+                                                        value="IT補助金申請 AIサポーター" />
+                                                    <img src="./img/copy_icon.png"
+                                                        class="h-[26px] w-[26px] absolute right-2 top-1/2 -translate-y-1/2">
+                                                </div>
+                                            </div>
+
+                                            <!-- Template tabs -->
+                                            <div class="mt-5 space-y-2">
+                                                <label class="text-[16px] font-bold">LINEメッセージテンプレート</label>
+                                                <div class="mt-2 flex items-center gap-4 text-[16px]">
+                                                    <button class="text-[#1A92F7] font-bold">グループメッセージ</button>
+                                                    <span> | </span>
+                                                    <button
+                                                        class="text-[#2E3A3C] font-normal hover:text-[#2E3A3C]">個人メッセージ</button>
+                                                    <span> | </span>
+                                                    <button
+                                                        class="text-[#2E3A3C] font-normal hover:text-[#2E3A3C]">共通メッセージ</button>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <span
+                                                        class="text-[14px] font-normal text-[#6D7475]">グループチャットのメッセージテンプレート</span>
+                                                    <span
+                                                        class="text-[14px] font-normal text-[#6D7475]">LINEグループに送信されるメッセージのテンプレートを設定します。</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Template cards -->
+                                            <div class="mt-4 space-y-4">
+                                                <div class="rounded-lg bg-[#f7f7f8] border border-[#e5e7eb] p-4">
+                                                    <h4 class="text-[16px] font-bold">グループ参加時メッセージ</h4>
+                                                    <textarea
+                                                        class="mt-2 w-full h-[160px] rounded-lg border border-[#d1d5db] bg-white p-3 text-[16px] outline-none"
+                                                        placeholder="グループに追加されました。"></textarea>
+                                                    <div class="mt-2 text-[12px] flex flex-col gap-1">
+                                                        <span class="text-[#6D7475]">利用可能なタグ（クリックで挿入）：</span>
+                                                        <button
+                                                            class="h-[29px] w-[86px] rounded-md bg-[#F1F5F9] border border-[#d1d5db] text-[12px] font-bold">【ボット名】
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="rounded-lg bg-[#f7f7f8] border border-[#e5e7eb] p-4">
+                                                    <h4 class="text-[16px] font-bold">グループ未認証メッセージ</h4>
+                                                    <textarea
+                                                        class="mt-2 w-full h-[160px] rounded-lg border border-[#d1d5db] bg-white p-3 text-[16px] outline-none"
+                                                        placeholder="グループに追加されました。"></textarea>
+                                                    <div class="mt-2 text-[12px] flex flex-col gap-1">
+                                                        <span class="text-[#6D7475]">利用可能なタグ（クリックで挿入）：</span>
+                                                        <button
+                                                            class="h-[29px] w-[86px] rounded-md bg-[#F1F5F9] border border-[#d1d5db] text-[12px] font-bold">【ボット名】
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="rounded-lg bg-[#f7f7f8] border border-[#e5e7eb] p-4">
+                                                    <h4 class="text-[16px] font-bold">グループ認証成功メッセージ</h4>
+                                                    <textarea
+                                                        class="mt-2 w-full h-[160px] rounded-lg border border-[#d1d5db] bg-white p-3 text-[16px] outline-none"
+                                                        placeholder="グループに追加されました。"></textarea>
+                                                    <div class="mt-2 text-[12px] flex flex-col gap-1">
+                                                        <span class="text-[#6D7475]">利用可能なタグ（クリックで挿入）：</span>
+                                                        <button
+                                                            class="h-[29px] w-[86px] rounded-md bg-[#F1F5F9] border border-[#d1d5db] text-[12px] font-bold">【ボット名】
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Test box -->
+                                                <div
+                                                    class="rounded-lg bg-[#E8F6EA] border border-[#bbf7d0] p-5 flex items-center justify-between">
+                                                    <div>
+                                                        <p class="text-[18px] text-[#00893A] font-extrabold">LINE
+                                                            API接続テスト</p>
+                                                        <p class="mt-1 text-[14px] text-[#6D7475]">LINE APIとの接続状況を確認します
+                                                        </p>
+                                                    </div>
+                                                    <button
+                                                        class="h-12 w-[120px] px-5 rounded-full bg-[#16a34a] text-white text-[16px] font-normal hover:bg-[#12823d]">
+                                                        テスト実行
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Bottom actions -->
+                                        <div
+                                            class="mt-4 py-3 border-t border-[#e5e7eb] flex items-center justify-center gap-3">
+                                            <button
+                                                class="h-12 min-w-[120px] px-6 rounded-full bg-[#eeeeee] text-[#2D3A3C] text-[16px] font-normal hover:bg-[#e3e3e3]">
+                                                キャンセル
+                                            </button>
+                                            <button
+                                                class="h-12 min-w-[120px] px-6 rounded-full bg-[#1A92F7] text-white text-[16px] font-normal hover:bg-[#0f7de6]">
+                                                登録する
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
