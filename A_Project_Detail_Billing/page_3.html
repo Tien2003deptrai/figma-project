@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>請求の管理</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap");
+
+        html,
+        body {
+            font-family: "Noto Sans JP", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f3f4f6] text-[#2E3A3C]">
+    <div class="fixed inset-0 z-[50]">
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <div class="relative h-full w-full flex items-center justify-center p-4">
+            <div class="relative w-[640px] max-w-[calc(100vw-32px)] rounded-[16px] bg-white shadow-xl border border-[#e5e7eb]
+             h-[min(928px,90vh)] flex flex-col overflow-hidden">
+
+                <button class="absolute right-3 top-3 h-8 w-8 rounded-full border border-[#e5e7eb] bg-white
+               grid place-items-center text-[#6b7280] hover:bg-[#f8fafc]">
+                    <i class="fa-solid fa-xmark text-[14px]"></i>
+                </button>
+
+                <div class="px-6 pt-6 pb-4 border-b border-[#e5e7eb]">
+                    <div class="flex items-center justify-center gap-2">
+                        <span class="text-[28px] font-extrabold text-[#2E3A3C]">回答修正</span>
+                    </div>
+                    <p class="mt-1 text-center text-[14px] text-[#6b7280]">
+                        AIの回答を修正し、学習させることができます
+                    </p>
+                </div>
+
+                <div class="flex-1 min-h-0 overflow-auto">
+                    <div class="bg-[#F1F6FE] px-6 py-5 border-b border-[#e5e7eb]">
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-[#0b4a7f] text-[16px] font-bold">質問</div>
+                                <div class="mt-1 text-[16px] text-[#2E3A3C]">
+                                    売上げの条件について詳しく教えて
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-[#0b4a7f] text-[16px] font-bold">AIの回答</div>
+                                <div class="mt-2 text-[16px] leading-6 text-[#2E3A3C] space-y-3">
+                                    <p>売上げの条件について詳しくご説明いたします。</p>
+                                    <p>
+                                        IT導入補助金2025では、売上げの条件を満たすことで補助率が引き上げられる可能性があります。<br />
+                                        具体的には、以下の条件を満たした場合、補助率が通常の1/2以内から2/3以内に引き上げられます。
+                                    </p>
+                                    <p>
+                                        ・3か月以上、地域別最低賃金＋50円以内で雇用している従業員数が、全従業員の30%以上であること。<br />
+                                        ・この条件を満たすことで、より多くの補助を受けることができるため、賃上げを行う際にはこの点に注意してください。
+                                    </p>
+                                    <p>他にご不明点やご質問がありましたら、どうぞお気軽にお知らせください。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-6 py-5">
+                        <div class="text-[16px] font-bold text-[#2E3A3C]">修正後の回答</div>
+
+                        <textarea class="mt-2 w-full h-[244px] resize-none rounded-[10px] border border-[#d1d5db] bg-white p-4
+                   text-[16px] leading-6 outline-none
+                   focus:border-[#60a5fa] focus:ring-2 focus:ring-[#60a5fa]/40" placeholder="回答文を入力"></textarea>
+                    </div>
+                </div>
+
+                <div class="px-6 py-4 border-t border-[#e5e7eb] bg-white">
+                    <div class="flex items-center justify-center gap-3">
+                        <button class="h-11 min-w-[120px] px-8 rounded-full bg-[#eeeeee] text-[#2D3A3C] text-[16px] font-normal
+                   hover:bg-[#e3e3e3]">
+                            キャンセル
+                        </button>
+                        <button class="h-11 min-w-[180px] px-8 rounded-full bg-[#0E8A3D] text-white text-[16px] font-normal
+                   hover:bg-[#0b7031] inline-flex items-center justify-center gap-2">
+                            保存して学習させる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
