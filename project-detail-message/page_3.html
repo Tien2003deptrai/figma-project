@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>メッセージ配信設定</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+            body {
+                font-family: "Poppins", sans-serif;
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-100">
+        <div class="min-h-screen flex items-center justify-center p-4 fixed inset-0">
+            <!-- Overlay Backdrop -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <!-- Modal -->
+            <div
+                class="relative bg-white rounded-[12px] sm:rounded-[16px] md:rounded-[20px] shadow-xl w-[calc(100%-32px)] sm:w-[95vw] md:w-[1080px] max-h-[95vh] flex flex-col text-[#2E3A3C] z-10 overflow-hidden"
+            >
+                <!-- Close Button -->
+                <button
+                    class="absolute top-3 right-3 sm:top-4 sm:right-4 w-7 h-7 flex items-center justify-center rounded-full border-2 border-[#2E3A3C] hover:bg-gray-100 transition z-20 cursor-pointer"
+                >
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+
+                <!-- Modal Content -->
+                <div class="flex flex-col h-full overflow-hidden">
+                    <!-- Header -->
+                    <div class="text-center py-4 sm:py-5 md:py-6 px-4 border-b border-[#707070]/30">
+                        <h1
+                            class="text-[20px] sm:text-[24px] md:text-[28px] font-extrabold mb-1 sm:mb-2"
+                        >
+                            メッセージ配信
+                        </h1>
+                        <p class="text-[12px] sm:text-[13px] md:text-[14px] text-[#666666]">
+                            配信先アプリ、顧客、定型文を選択して配信を実行します。
+                        </p>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex-1 overflow-y-auto p-4 sm:p-5 md:p-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
+                            <!-- Left Section -->
+                            <div class="space-y-4 sm:space-y-5 md:space-y-6">
+                                <!-- App Selection -->
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <label class="font-bold"> 送信するアプリを選択</label>
+                                        <span class="text-red-600 text-lg font-extrabold">*</span>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                        <!-- LINE Option -->
+                                        <div
+                                            class="flex items-center gap-3 p-2 border-2 border-[#1A92F7] rounded-[8px] cursor-pointer hover:bg-blue-50 transition"
+                                        >
+                                            <div class="flex items-center gap-2 flex-1">
+                                                <img
+                                                    src="./img/line.svg"
+                                                    alt="line"
+                                                    class="w-7 h-7"
+                                                />
+                                                <span class="font-bold text-[14px]">LINE</span>
+                                            </div>
+                                            <span
+                                                class="text-[12px] bg-[#D2EDD6] text-[#00893A] px-2 py-1 rounded-full font-medium"
+                                            >
+                                                接続済
+                                            </span>
+                                        </div>
+
+                                        <!-- Slack Option -->
+                                        <div
+                                            class="flex items-center gap-3 p-2 border-2 border-[#DBDBDB] rounded-[8px] cursor-pointer hover:bg-blue-50 transition"
+                                        >
+                                            <div class="flex items-center gap-2 flex-1">
+                                                <img
+                                                    src="./img/slack.svg"
+                                                    alt="slack"
+                                                    class="w-7 h-7"
+                                                />
+                                                <span class="font-bold text-[14px]">Slack</span>
+                                            </div>
+                                            <span
+                                                class="text-[12px] bg-[#FAE6E5] text-[#DD514C] px-2 py-1 rounded-full font-medium"
+                                            >
+                                                未接続
+                                            </span>
+                                        </div>
+
+                                        <!-- Telegram Option -->
+                                        <div
+                                            class="flex items-center gap-3 p-2 border-2 border-[#DBDBDB] rounded-[8px] cursor-pointer hover:bg-blue-50 transition"
+                                        >
+                                            <div class="flex items-center gap-2 flex-1">
+                                                <img
+                                                    src="./img/telegram.svg"
+                                                    alt="telegram"
+                                                    class="w-7 h-7"
+                                                />
+                                                <span class="font-bold text-[14px]">Telegram</span>
+                                            </div>
+                                            <span
+                                                class="text-[12px] bg-[#FAE6E5] text-[#DD514C] px-2 py-1 rounded-full font-medium"
+                                            >
+                                                未接続
+                                            </span>
+                                        </div>
+
+                                        <!-- Chatwork Option -->
+                                        <div
+                                            class="flex items-center gap-3 p-2 border-2 border-[#DBDBDB] rounded-[8px] cursor-pointer hover:bg-blue-50 transition"
+                                        >
+                                            <div class="flex items-center gap-2 flex-1">
+                                                <img
+                                                    src="./img/chatwork.svg"
+                                                    alt="chatwork"
+                                                    class="w-7 h-7"
+                                                />
+                                                <span class="font-bold text-[14px]">Chatwork</span>
+                                            </div>
+                                            <span
+                                                class="text-[12px] bg-[#FAE6E5] text-[#DD514C] px-2 py-1 rounded-full font-medium"
+                                            >
+                                                未接続
+                                            </span>
+                                        </div>
+
+                                        <!-- Lark Option -->
+                                        <div
+                                            class="flex items-center gap-3 p-2 border-2 border-[#DBDBDB] rounded-[8px] cursor-pointer hover:bg-blue-50 transition"
+                                        >
+                                            <div class="flex items-center gap-2 flex-1">
+                                                <img
+                                                    src="./img/lark.svg"
+                                                    alt="lark"
+                                                    class="w-7 h-7"
+                                                />
+                                                <span class="font-bold text-[14px]">Lark</span>
+                                            </div>
+                                            <span
+                                                class="text-[12px] bg-[#FAE6E5] text-[#DD514C] px-2 py-1 rounded-full font-medium"
+                                            >
+                                                未接続
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Customer Selection -->
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <label class="font-bold"> 送信する顧客を選択 </label>
+                                        <span class="text-red-600 text-lg font-extrabold">*</span>
+                                    </div>
+
+                                    <!-- Search Input -->
+                                    <div class="flex items-center gap-5 mb-3">
+                                        <input
+                                            type="text"
+                                            placeholder="名前で検索"
+                                            class="w-full px-4 py-2 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-[#1A92F7] focus:border-transparent flex-1"
+                                        />
+                                        <div class="flex items-center gap-2 bg-white rounded-[8px]">
+                                            <input
+                                                type="checkbox"
+                                                id="select-all-customers"
+                                                class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                            />
+                                            <label
+                                                for="select-all-customers"
+                                                class="cursor-pointer text-[14px]"
+                                            >
+                                                全ての顧客を選択
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- Customer Checkboxes -->
+                                    <div
+                                        class="max-h-screen md:max-h-[236px] overflow-y-auto rounded-[8px] border border-[#c1c1c1]"
+                                    >
+                                        <!-- Select All -->
+                                        <div
+                                            class="flex items-center gap-2 p-3 border-b border-[#707070]/30 bg-[#E6F4FF] cursor-pointer transition"
+                                        >
+                                            <div
+                                                class="flex items-center gap-2 rounded-[8px] flex-1"
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    id="select-all-customers"
+                                                    class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                    checked
+                                                />
+                                                <label
+                                                    for="select-all-customers"
+                                                    class="cursor-pointer text-[14px]"
+                                                >
+                                                    全ての顧客を選択
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Customer 1: 株式会社クライアント -->
+                                        <div
+                                            class="flex items-center gap-2 p-3 border-b border-[#707070]/30 bg-[#E6F4FF] cursor-pointer transition"
+                                        >
+                                            <div
+                                                class="flex items-center gap-2 rounded-[8px] flex-1"
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    id="customer-client"
+                                                    class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                    checked
+                                                />
+                                                <label
+                                                    for="customer-client"
+                                                    class="cursor-pointer text-[14px]"
+                                                >
+                                                    株式会社クライアント
+                                                </label>
+                                            </div>
+                                            <p class="text-[12px] text-[#666666]">
+                                                クライアント・インボイス株式会
+                                            </p>
+                                        </div>
+
+                                        <!-- Customer 2: 山田製作所 -->
+                                        <div
+                                            class="flex items-center gap-2 p-3 border-b border-[#707070]/30 bg-[#E6F4FF] cursor-pointer transition"
+                                        >
+                                            <div
+                                                class="flex items-center gap-2 rounded-[8px] flex-1"
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    id="customer-yamada"
+                                                    class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                    checked
+                                                />
+                                                <label
+                                                    for="customer-yamada"
+                                                    class="cursor-pointer text-[14px]"
+                                                >
+                                                    山田製作所
+                                                </label>
+                                            </div>
+                                            <p class="text-[12px] text-[#666666]">
+                                                山田製作所・インボイス枠案件
+                                            </p>
+                                        </div>
+
+                                        <!-- Customer 3: 有限会社オクト -->
+                                        <div
+                                            class="flex items-center gap-2 p-3 border-b border-[#707070]/30 cursor-pointer transition"
+                                        >
+                                            <div
+                                                class="flex items-center gap-2 rounded-[8px] flex-1"
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    id="customer-octo"
+                                                    class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                />
+                                                <label
+                                                    for="customer-octo"
+                                                    class="cursor-pointer text-[14px]"
+                                                >
+                                                    有限会社オクト
+                                                </label>
+                                            </div>
+                                            <p class="text-[12px] text-[#666666]">
+                                                オクト・インボイス枠案件❷
+                                            </p>
+                                        </div>
+
+                                        <!-- Customer 4: 株式会社Octopus -->
+                                        <div
+                                            class="flex items-center gap-2 p-3 border-b border-[#707070]/30 cursor-pointer transition"
+                                        >
+                                            <div
+                                                class="flex items-center gap-2 rounded-[8px] flex-1"
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    id="customer-octopus"
+                                                    class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                />
+                                                <label
+                                                    for="customer-octopus"
+                                                    class="cursor-pointer text-[14px]"
+                                                >
+                                                    株式会社Octopus
+                                                </label>
+                                            </div>
+                                            <p class="text-[12px] text-[#666666]">
+                                                Octopus①セキュリティ対策推進枠
+                                            </p>
+                                        </div>
+
+                                        <!-- Customer 5: 株式会社カンパニー -->
+                                        <div
+                                            class="flex items-center gap-2 p-3 border-b border-[#707070]/30 cursor-pointer transition"
+                                        >
+                                            <div
+                                                class="flex items-center gap-2 rounded-[8px] flex-1"
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    id="customer-company-1"
+                                                    class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                />
+                                                <label
+                                                    for="customer-company-1"
+                                                    class="cursor-pointer text-[14px]"
+                                                >
+                                                    株式会社カンパニー
+                                                </label>
+                                            </div>
+                                            <p class="text-[12px] text-[#666666]">
+                                                カンパニー案件12月度
+                                            </p>
+                                        </div>
+
+                                        <!-- Customer 6: 株式会社カンパニー (Duplicate) -->
+                                        <div
+                                            class="flex items-center gap-2 p-3 cursor-pointer transition"
+                                        >
+                                            <div
+                                                class="flex items-center gap-2 rounded-[8px] flex-1"
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    id="customer-company-2"
+                                                    class="w-6 h-6 border border-[#C1C1C1] bg-[#F5F5F5] accent-[#1A92F7] cursor-pointer rounded"
+                                                />
+                                                <label
+                                                    for="customer-company-2"
+                                                    class="cursor-pointer text-[14px]"
+                                                >
+                                                    株式会社カンパニー
+                                                </label>
+                                            </div>
+                                            <p class="text-[12px] text-[#666666]">
+                                                カンパニー案件12月度
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Section -->
+                            <div class="space-y-4">
+                                <!-- Template Selection -->
+                                <div>
+                                    <label class="block font-bold mb-1"> 定型文を選択 </label>
+                                    <div class="relative">
+                                        <select
+                                            class="w-full px-4 py-3 pr-10 border border-[#C1C1C1] font-bold rounded-[8px] focus:outline-none focus:border-[#1A92F7] bg-white appearance-none cursor-pointer"
+                                        >
+                                            <option>申請入力日当日のメッセージ</option>
+                                        </select>
+                                        <i
+                                            class="fas fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[12px]"
+                                        ></i>
+                                    </div>
+                                </div>
+
+                                <!-- Message Preview -->
+                                <div>
+                                    <label class="block font-bold mb-1 flex items-center gap-1">
+                                        メッセージ内容
+                                        <i
+                                            class="far fa-circle-question w-4 h-4 text-[#6D7475]"
+                                        ></i>
+                                    </label>
+
+                                    <textarea
+                                        rows="14"
+                                        class="border border-[#C1C1C1] rounded-[8px] p-4 w-full resize-none focus:outline-none focus:ring-2 focus:ring-[#1A92F7] focus:border-transparent text-[14px] leading-relaxed"
+                                    >
+お世話になっております。
+申請入力日当日となりましたので、下記ご案内いたします。
+
+🔶マイページ招待/必要書類
+下記ご担当者様宛に【マイページ招待メール】をお送りしております。
+マイページ開設からご対応ください。
+nobuhiro_suzuki@infinityconsulting-co.com
+
+🔶必要書類/事業内容
+下記のドライブに申請時に必要な書類等が格納されております。
+https://drive.google.com/drive/folders/1lhjxQgtKCj2QmAgYAW21Nz
+                                    </textarea>
+
+                                    <!-- Action Buttons -->
+                                    <div
+                                        class="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-3 sm:mt-4"
+                                    >
+                                        <button
+                                            class="flex items-center gap-2 px-4 py-[10px] border border-[#2B4DD0] text-[#2B4DD0] rounded-full bg-[#F1F6FF] hover:bg-[#2B4DD0] hover:text-white transition-colors text-[14px]"
+                                        >
+                                            <i class="fas fa-image"></i>
+                                            画像を追加
+                                        </button>
+                                        <button
+                                            class="flex items-center gap-2 px-4 py-[10px] border border-[#00893A] text-[#00893A] rounded-full bg-[#EEFDF7] font-bold hover:bg-[#00893A] hover:text-white transition-colors text-[14px]"
+                                        >
+                                            <i class="fas fa-eye"></i>
+                                            プレビュー
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div
+                        class="border-t border-[#707070]/30 py-2 sm:py-3 md:py-3 px-4 sm:px-5 md:px-6"
+                    >
+                        <div class="flex gap-2 justify-center items-center">
+                            <button
+                                class="w-full sm:w-auto px-4 sm:px-5 py-2 sm:py-3 rounded-[16px] sm:rounded-[20px] md:rounded-[24px] bg-[#F5F5F5] hover:opacity-80 transition cursor-pointer text-[13px] sm:text-[14px] font-medium"
+                            >
+                                キャンセル
+                            </button>
+                            <button
+                                class="w-full sm:w-auto px-4 sm:px-5 py-2 sm:py-3 rounded-[16px] sm:rounded-[20px] md:rounded-[24px] bg-[#1A92F7] text-white hover:opacity-80 transition cursor-pointer text-[13px] sm:text-[14px] font-medium"
+                            >
+                                配信する
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
