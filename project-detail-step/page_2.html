@@ -20,14 +20,11 @@
 
     <body class="bg-gray-100">
         <div class="min-h-screen flex items-center justify-center p-4 fixed inset-0">
-            <!-- Overlay Backdrop -->
             <div class="absolute inset-0 bg-black/50"></div>
 
-            <!-- Modal -->
             <div
-                class="relative bg-white rounded-[20px] shadow-xl w-[640px] max-h-[95vh] flex flex-col text-[#2E3A3C] z-10"
+                class="relative bg-white rounded-[20px] shadow-xl w-full max-w-[640px] max-h-[95vh] flex flex-col text-[#2E3A3C] z-10"
             >
-                <!-- Close Button -->
                 <button
                     class="absolute top-4 right-4 w-7 h-7 flex items-center justify-center rounded-full border-2 border-[#2E3A3C] hover:bg-gray-100 transition z-10 cursor-pointer"
                 >
@@ -45,13 +42,11 @@
                     </div>
 
                     <div class="flex-1 overflow-y-auto p-6 space-y-6">
-                        <!-- Block 1: Select Import Source -->
                         <div>
                             <h2 class="text-[16px] font-bold mb-1">インポート元を選択</h2>
                             <div class="space-y-3">
-                                <!-- Option 1: Import from other projects -->
                                 <label
-                                    class="flex items-center p-4 border-2 border-[#c1c1c1] rounded-[12px] bg-[#E6F4FF] cursor-pointer"
+                                    class="flex flex-wrap items-center p-4 border-2 border-[#c1c1c1] rounded-[12px] bg-[#E6F4FF] cursor-pointer"
                                 >
                                     <input
                                         type="radio"
@@ -60,7 +55,7 @@
                                         checked
                                         class="w-6 h-6 text-[#1A92F7] border-[#c1c1c1] accent-[#1A92F7] cursor-pointer flex-shrink-0"
                                     />
-                                    <div class="ml-3 flex-1">
+                                    <div class="ml-3 flex-1 min-w-0">
                                         <p class="font-bold">他のプロジェクトからインポート</p>
                                         <p class="text-[14px] text-[#6D7475]">
                                             他のプロジェクトで設定したステップを、このプロジェクトにも設定します。
@@ -68,9 +63,8 @@
                                     </div>
                                 </label>
 
-                                <!-- Option 2: Import from Octon system -->
                                 <label
-                                    class="flex items-center p-4 border-2 border-[#c1c1c1] rounded-[12px] cursor-pointer"
+                                    class="flex flex-wrap items-center p-4 border-2 border-[#c1c1c1] rounded-[12px] cursor-pointer"
                                 >
                                     <input
                                         type="radio"
@@ -78,7 +72,7 @@
                                         value="octon_system"
                                         class="w-6 h-6 text-[#1A92F7] border-[#c1c1c1] accent-[#1A92F7] cursor-pointer flex-shrink-0"
                                     />
-                                    <div class="ml-3 flex-1">
+                                    <div class="ml-3 flex-1 min-w-0">
                                         <p class="font-bold">オクトンのシステムからインポート</p>
                                         <p class="text-[14px] text-[#6D7475]">
                                             オクトンのシステムに保存されているステップデータをインポートします。
@@ -94,9 +88,8 @@
                                 インポート元のプロジェクトを選択
                             </h2>
                             <div class="space-y-3">
-                                <!-- Option 1: Manufacturing subsidy -->
                                 <label
-                                    class="flex items-center p-4 border-2 border-[#c1c1c1] rounded-[12px] bg-[#E6F4FF] cursor-pointer"
+                                    class="flex flex-wrap items-center p-4 border-2 border-[#c1c1c1] rounded-[12px] bg-[#E6F4FF] cursor-pointer"
                                 >
                                     <input
                                         type="radio"
@@ -105,14 +98,13 @@
                                         checked
                                         class="w-6 h-6 text-[#1A92F7] border-[#c1c1c1] accent-[#1A92F7] cursor-pointer flex-shrink-0"
                                     />
-                                    <div class="ml-3 flex-1">
+                                    <div class="ml-3 flex-1 min-w-0">
                                         <p class="font-bold">ものづくり補助金</p>
                                     </div>
                                 </label>
 
-                                <!-- Option 2: Business restructuring subsidy -->
                                 <label
-                                    class="flex items-center p-4 border-2 border-[#c1c1c1] rounded-[12px] cursor-pointer"
+                                    class="flex flex-wrap items-center p-4 border-2 border-[#c1c1c1] rounded-[12px] cursor-pointer"
                                 >
                                     <input
                                         type="radio"
@@ -120,7 +112,7 @@
                                         value="saikouchiku"
                                         class="w-6 h-6 text-[#1A92F7] border-[#c1c1c1] accent-[#1A92F7] cursor-pointer flex-shrink-0"
                                     />
-                                    <div class="ml-3 flex-1">
+                                    <div class="ml-3 flex-1 min-w-0">
                                         <p class="font-bold">事業再構築補助金</p>
                                     </div>
                                 </label>
@@ -128,16 +120,14 @@
                         </div>
                     </div>
 
-                    <!-- Buttons -->
-
                     <div class="border-t border-gray-200 py-3 px-6">
-                        <div class="flex items-center justify-center gap-2 text-[#DD514C] mb-3">
+                        <div class="flex flex-wrap items-center justify-center gap-2 text-[#DD514C] mb-3">
                             <i class="fa-solid fa-circle-exclamation flex-shrink-0 text-[16px]"></i>
                             <p class="text-[14px]">
                                 現在設定中のステップは全て削除され、インポートしたステップで置き換えられます
                             </p>
                         </div>
-                        <div class="flex gap-3 justify-center items-center">
+                        <div class="flex flex-wrap gap-3 justify-center items-center">
                             <button
                                 class="px-5 py-3 rounded-[24px] border border-[#C1C1C1] hover:opacity-80 transition cursor-pointer"
                             >

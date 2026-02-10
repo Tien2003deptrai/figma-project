@@ -20,30 +20,24 @@
 
     <body class="bg-gray-100">
         <div class="min-h-screen flex items-center justify-center p-4 fixed inset-0">
-            <!-- Overlay Backdrop -->
             <div class="absolute inset-0 bg-black/50"></div>
 
-            <!-- Modal -->
             <div
-                class="relative bg-white rounded-[20px] shadow-xl w-[640px] max-h-[95vh] flex flex-col text-[#2E3A3C] z-10"
+                class="relative bg-white rounded-[20px] shadow-xl w-full max-w-[640px] max-h-[95vh] flex flex-col text-[#2E3A3C] z-10"
             >
-                <!-- Close Button -->
                 <button
                     class="absolute top-4 right-4 w-7 h-7 flex items-center justify-center rounded-full border-2 border-[#2E3A3C] hover:bg-gray-100 transition z-10 cursor-pointer"
                 >
                     <i class="fas fa-times text-lg"></i>
                 </button>
 
-                <!-- Modal Content -->
                 <div class="flex flex-col h-full overflow-hidden">
-                    <!-- Header -->
                     <div class="text-center pt-6 pb-4 border-b border-gray-300">
                         <h1 class="text-[28px] font-extrabold">フォーム編集</h1>
                     </div>
 
                     <div class="flex-1 overflow-y-auto px-6 py-4 space-y-4">
-                        <!-- Header: Field Count + Add Button -->
-                        <div class="flex items-center justify-between mb-4">
+                        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
                             <h2>項目フィールド数：<span class="font-bold">2</span></h2>
                             <button
                                 class="flex items-center gap-1 px-4 py-2 bg-[#2E3A3C] text-white text-[14px] rounded-full hover:opacity-80 transition"
@@ -53,10 +47,8 @@
                             </button>
                         </div>
 
-                        <!-- Field 1: File Upload Field -->
                         <div class="bg-[#F1F6FE] rounded-[8px] px-3 pt-4 pb-3">
-                            <!-- Field Header - Expandable -->
-                            <div class="flex items-center justify-end gap-3 mb-4">
+                            <div class="flex flex-wrap items-center justify-end gap-3 mb-4">
                                 <button>
                                     <i class="fas fa-chevron-up w-4 h-4 text-[#2E3A3C]/30"></i>
                                 </button>
@@ -64,24 +56,19 @@
                                     <i class="fas fa-chevron-down w-4 h-4 text-[#2E3A3C]"></i>
                                 </button>
                             </div>
-
-                            <!-- Field Content - Expandable -->
                             <div class="space-y-3">
-                                <!-- Field Name Input -->
                                 <input
                                     type="text"
                                     placeholder="項目フィールド名"
                                     class="w-full px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:border-[#1A92F7]"
                                 />
 
-                                <!-- Field Description Input -->
                                 <input
                                     type="text"
                                     placeholder="項目フィールドの説明文"
                                     class="w-full px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:border-[#1A92F7]"
                                 />
 
-                                <!-- Field Type Dropdown -->
                                 <div class="relative">
                                     <select
                                         class="w-full px-4 py-3 pr-10 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:border-[#1A92F7] bg-white appearance-none cursor-pointer"
@@ -93,8 +80,7 @@
                                     ></i>
                                 </div>
 
-                                <!-- Checkboxes Row -->
-                                <div class="flex items-center gap-6 py-2">
+                                <div class="flex flex-wrap items-center gap-6 py-2">
                                     <div class="flex items-center gap-1">
                                         <input
                                             type="checkbox"
@@ -133,11 +119,9 @@
                                         </label>
                                     </div>
                                 </div>
-
-                                <!-- Show Item Checkbox -->
-                                <div class="flex items-center justify-between">
+                                <div class="flex flex-wrap items-center justify-between gap-3">
                                     <div
-                                        class="flex items-center gap-1 bg-white px-4 py-2 rounded-[8px]"
+                                        class="flex items-center gap-1 bg-white px-4 py-2 rounded-[8px] min-w-0"
                                     >
                                         <input
                                             type="checkbox"
@@ -152,8 +136,7 @@
                                         </label>
                                     </div>
 
-                                    <!-- Action Buttons -->
-                                    <div class="flex items-center gap-3">
+                                    <div class="flex flex-wrap items-center gap-3">
                                         <button
                                             class="flex items-center gap-2 px-4 py-3 border border-[#2B4DD0] text-[#2B4DD0] rounded-full text-[14px] font-bold hover:bg-[#E8F4FF] transition"
                                         >
@@ -171,10 +154,8 @@
                             </div>
                         </div>
 
-                        <!-- Field 2 -->
                         <div class="bg-[#F1F6FE] rounded-[8px] px-3 pt-4 pb-3">
-                            <!-- Field Header - Expandable -->
-                            <div class="flex items-center justify-end gap-3 mb-4">
+                            <div class="flex flex-wrap items-center justify-end gap-3 mb-4">
                                 <button>
                                     <i class="fas fa-chevron-up w-4 h-4 text-[#2E3A3C]"></i>
                                 </button>
@@ -182,24 +163,18 @@
                                     <i class="fas fa-chevron-down w-4 h-4 text-[#2E3A3C]"></i>
                                 </button>
                             </div>
-
-                            <!-- Field Content - Expandable -->
                             <div class="space-y-3">
-                                <!-- Field Name Input -->
                                 <input
                                     type="text"
                                     placeholder="項目フィールド名"
                                     class="w-full px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:border-[#1A92F7]"
                                 />
 
-                                <!-- Field Description Input -->
                                 <input
                                     type="text"
                                     placeholder="項目フィールドの説明文"
                                     class="w-full px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:border-[#1A92F7]"
                                 />
-
-                                <!-- Field Type Dropdown -->
                                 <div class="relative">
                                     <select
                                         class="w-full px-4 py-3 pr-10 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:border-[#1A92F7] bg-white appearance-none cursor-pointer"
@@ -210,9 +185,7 @@
                                         class="fas fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-[12px]"
                                     ></i>
                                 </div>
-
-                                <!-- Checkboxes Row -->
-                                <div class="flex items-center gap-6 py-2">
+                                <div class="flex flex-wrap items-center gap-6 py-2">
                                     <div class="flex items-center gap-1">
                                         <input
                                             type="checkbox"
@@ -253,22 +226,19 @@
                                 </div>
 
                                 <div>
-                                    <!-- Options Label -->
-                                    <label class="flex items-center gap-2 font-bold mb-2">
+                                    <label class="flex flex-wrap items-center gap-2 font-bold mb-2">
                                         <span>選択肢<span class="text-[#DD514C]">*</span></span>
                                         <i class="far fa-circle-question w-4 h-4"></i>
                                     </label>
-                                    <!-- Options Textarea -->
                                     <textarea
                                         placeholder="ここに選択肢を入力&#10;例：&#10;選択肢1&#10;選択肢2&#10;選択肢3"
                                         class="w-full px-4 py-3 border border-[#C1C1C1] rounded-[8px] focus:outline-none focus:border-[#1A92F7] resize-none h-[150px] bg-white"
                                     ></textarea>
                                 </div>
 
-                                <!-- Show Item Checkbox -->
-                                <div class="flex items-center justify-between">
+                                <div class="flex flex-wrap items-center justify-between gap-3">
                                     <div
-                                        class="flex items-center gap-1 bg-white px-4 py-2 rounded-[8px]"
+                                        class="flex items-center gap-1 bg-white px-4 py-2 rounded-[8px] min-w-0"
                                     >
                                         <input
                                             type="checkbox"
@@ -283,8 +253,7 @@
                                         </label>
                                     </div>
 
-                                    <!-- Action Buttons -->
-                                    <div class="flex items-center gap-3">
+                                    <div class="flex flex-wrap items-center gap-3">
                                         <button
                                             class="flex items-center gap-2 px-4 py-3 border border-[#2B4DD0] text-[#2B4DD0] rounded-full text-[14px] font-bold hover:bg-[#E8F4FF] transition"
                                         >
@@ -303,9 +272,8 @@
                         </div>
                     </div>
 
-                    <!-- Buttons -->
                     <div class="border-t border-gray-200 py-3 px-6">
-                        <div class="flex gap-3 justify-center items-center">
+                        <div class="flex flex-wrap gap-3 justify-center items-center">
                             <button
                                 class="px-5 py-3 rounded-[24px] border border-transparent hover:opacity-80 transition cursor-pointer bg-[#F5F5F5]"
                             >

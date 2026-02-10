@@ -20,16 +20,13 @@
 
     <body>
         <div class="min-h-screen flex flex-col overflow-x-hidden text-[#2E3A3C]">
-            <!-- Header -->
             <header class="h-16 md:h-[64px] flex items-center px-4 md:px-6 w-full bg-[#003E72]">
-                <div class="flex items-center justify-between w-full mx-auto">
-                    <!-- Logo -->
+                <div class="flex flex-wrap items-center justify-between gap-2 w-full mx-auto">
                     <div>
                         <img src="./img/logo 1.png" alt="オクトン" class="w-[138px] h-[50px]" />
                     </div>
 
-                    <!-- User Button -->
-                    <div class="flex items-center gap-5">
+                    <div class="flex flex-wrap items-center gap-5">
                         <p class="text-[14px] text-white">プロジェクト管理</p>
                         <button
                             class="flex items-center gap-2 bg-white/20 rounded-full px-4 h-[36px] w-[140px] hover:bg-white/30 transition-colors"
@@ -46,14 +43,11 @@
                 </div>
             </header>
 
-            <!-- Main Layout: Sidebar + Content -->
-            <div class="flex flex-1 overflow-hidden bg-gray-100">
-                <!-- Sidebar -->
+            <div class="flex flex-1 flex-col md:flex-row overflow-hidden bg-gray-100 min-h-0">
                 <aside
-                    class="w-[280px] bg-white shadow-sm border-r border-gray-200 min-h-screen text-[#2E3A3C]"
+                    class="w-full md:w-[280px] flex-shrink-0 bg-white shadow-sm border-r border-gray-200 md:min-h-screen text-[#2E3A3C]"
                 >
                     <div class="flex flex-col">
-                        <!-- Header: Project Name -->
                         <div
                             class="bg-[#1A92F7] px-5 py-4 flex items-center bg-opacity-10 justify-between"
                         >
@@ -75,7 +69,6 @@
                         </div>
 
                         <div class="flex flex-col py-3">
-                            <!-- Admin Home Link -->
                             <a
                                 href="#"
                                 class="flex items-center justify-between px-5 py-3 hover:bg-blue-100/50 hover:text-[#1A92F7] transition-colors duration-200"
@@ -86,7 +79,6 @@
 
                             <hr class="ml-5 my-3" />
 
-                            <!-- Section 1: Basic Operations -->
                             <h3 class="text-[14px] font-bold px-5 py-3">● 基本操作</h3>
                             <a
                                 href="#"
@@ -112,7 +104,6 @@
 
                             <hr class="ml-5 my-3" />
 
-                            <!-- Section 2: Management Menu -->
                             <h3 class="text-[14px] font-bold px-5 py-3">● 管理メニュー</h3>
                             <a
                                 href="#"
@@ -131,7 +122,6 @@
 
                             <hr class="ml-5 my-3" />
 
-                            <!-- Section 3: Settings Menu -->
                             <h3 class="text-[14px] font-bold px-5 py-3">● 設定メニュー</h3>
                             <a
                                 href="#"
@@ -151,20 +141,17 @@
                     </div>
                 </aside>
 
-                <!-- Main Content -->
-                <main class="flex-1 overflow-y-auto">
+                <main class="flex-1 overflow-y-auto min-w-0">
                     <div class="max-w-full mx-auto p-4 md:p-10">
                         <button
-                            class="text-[14px] flex items-center gap-2 mb-2 hover:text-[#1A92F7] transition-colors"
+                            class="text-[14px] flex flex-wrap items-center gap-2 mb-2 hover:text-[#1A92F7] transition-colors"
                         >
                             <i class="fas fa-arrow-left-long text-sm"></i>
                             <p class="underline">ステップ一覧</p>
                         </button>
-                        <!-- Header Section -->
                         <h2 class="md:text-[24px] font-extrabold mb-5">回収ステップの設定</h2>
-                        <!-- Tabs Navigation -->
                         <div class="bg-white w-full rounded-[12px]">
-                            <div class="flex gap-5 border-b border-[#707070]/30 px-6 pt-5">
+                            <div class="flex flex-wrap gap-5 border-b border-[#707070]/30 px-6 pt-5">
                                 <button
                                     class="pb-2 font-bold border-b-4 border-transparent cursor-pointer transition hover:text-gray-700"
                                 >
@@ -182,10 +169,8 @@
                                 </button>
                             </div>
 
-                            <!-- Form Container -->
                             <div class="p-6">
-                                <!-- Enable Reminder -->
-                                <div class="flex items-center gap-1 mb-4">
+                                <div class="flex flex-wrap items-center gap-1 mb-4">
                                     <input
                                         type="checkbox"
                                         id="enable-reminder"
@@ -201,7 +186,6 @@
                                 </div>
 
                                 <div class="p-5 rounded-[8px] bg-[#F5F5F5] space-y-5">
-                                    <!-- Send Timing Settings -->
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                         <div class="bg-white p-5 rounded-[8px]">
                                             <div class="flex items-center gap-1">
@@ -212,8 +196,7 @@
                                                     <i class="far fa-circle-question w-4 h-4"></i>
                                                 </button>
                                             </div>
-                                            <div class="flex items-center gap-7 mb-3">
-                                                <!-- Option 1 -->
+                                            <div class="flex flex-wrap items-center gap-7 mb-3">
                                                 <div class="flex items-center gap-3">
                                                     <input
                                                         type="radio"
@@ -229,7 +212,6 @@
                                                         >送信までの日数</label
                                                     >
                                                 </div>
-                                                <!-- Option 2 -->
                                                 <div class="flex items-center gap-3">
                                                     <input
                                                         type="radio"
@@ -247,7 +229,7 @@
                                             </div>
                                             <div class="bg-[#F1F6FE] p-4 rounded-[8px]">
                                                 <h3 class="font-bold">送信までの時間</h3>
-                                                <div class="flex items-center gap-3">
+                                                <div class="flex flex-wrap items-center gap-3">
                                                     <input
                                                         type="number"
                                                         value="1"
@@ -264,7 +246,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Exclude Weekdays -->
                                         <div class="p-5 bg-white rounded-[8px]">
                                             <div class="flex items-center gap-2 mb-2">
                                                 <h3 class="font-bold text-[20px]">除外曜日設定</h3>
@@ -273,7 +254,7 @@
                                                 </button>
                                             </div>
 
-                                            <div class="grid grid-cols-4 gap-x-5 gap-y-3">
+                                            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-3">
                                                 <label
                                                     class="flex items-center gap-2 cursor-pointer"
                                                 >
@@ -330,7 +311,7 @@
                                                     <span>土曜日</span>
                                                 </label>
                                                 <label
-                                                    class="flex items-center gap-2 cursor-pointer col-span-2"
+                                                    class="flex items-center gap-2 cursor-pointer md:col-span-2"
                                                 >
                                                     <input
                                                         type="checkbox"
@@ -343,12 +324,11 @@
                                         </div>
                                     </div>
 
-                                    <!-- Reminder Message Settings -->
                                     <div class="p-5 rounded-[8px] bg-white">
                                         <h3 class="font-bold text-[20px] mb-2">
                                             リマインド用メッセージ設定
                                         </h3>
-                                        <div class="flex items-center gap-3 mb-4">
+                                        <div class="flex flex-wrap items-center gap-3 mb-4">
                                             <input
                                                 type="checkbox"
                                                 id="custom-message"
@@ -363,9 +343,9 @@
                                             </button>
                                         </div>
 
-                                        <div class="grid grid-cols-12 gap-5">
-                                            <div class="col-span-7">
-                                                <div class="flex items-center gap-3">
+                                        <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+                                            <div class="md:col-span-7 min-w-0">
+                                                <div class="flex flex-wrap items-center gap-3">
                                                     <label class="block font-bold text-[#2E3A3C]"
                                                         >メッセージ内容
                                                     </label>
@@ -385,7 +365,7 @@
                                                 ></textarea>
                                             </div>
 
-                                            <div class="col-span-5">
+                                            <div class="md:col-span-5 min-w-0">
                                                 <div
                                                     class="bg-[#F3F4F6] rounded-[12px] p-5 h-full overflow-y-auto"
                                                 >
@@ -432,12 +412,11 @@
                                         </div>
                                     </div>
 
-                                    <!-- Next Day Reminder Settings -->
                                     <div class="p-5 rounded-[8px] bg-white">
                                         <h3 class="font-bold text-[20px] mb-2">
                                             締切日リマインダー設定
                                         </h3>
-                                        <div class="flex items-center gap-3 mb-5">
+                                        <div class="flex flex-wrap items-center gap-3 mb-5">
                                             <input
                                                 type="checkbox"
                                                 id="custom-message"
@@ -463,9 +442,9 @@
                                             />
                                         </div>
 
-                                        <div class="grid grid-cols-12 gap-5">
-                                            <div class="col-span-7">
-                                                <div class="flex items-center gap-3">
+                                        <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+                                            <div class="md:col-span-7 min-w-0">
+                                                <div class="flex flex-wrap items-center gap-3">
                                                     <label class="block font-bold text-[#2E3A3C]"
                                                         >メッセージ内容
                                                     </label>
@@ -485,7 +464,7 @@
                                                 ></textarea>
                                             </div>
 
-                                            <div class="col-span-5">
+                                            <div class="md:col-span-5 min-w-0">
                                                 <div
                                                     class="bg-[#F3F4F6] rounded-[12px] p-5 h-full overflow-y-auto"
                                                 >
@@ -534,7 +513,7 @@
                                 </div>
                             </div>
                             <!-- Save Button -->
-                            <div class="flex justify-center py-3 border-t border-[#707070]/30">
+                            <div class="flex flex-wrap justify-center py-3 border-t border-[#707070]/30">
                                 <button
                                     class="px-5 py-3 bg-[#1A92F7] text-white rounded-full font-bold hover:bg-[#1A92F7] transition-colors"
                                 >
